@@ -25,8 +25,8 @@ export function LogoMark({
       )}
     >
       <Image
-        src={tone === "inverse" ? "/brand/logo-inverse.png" : "/brand/logo-mark.png"}
-        alt="Prime House Removals Logo"
+        src={tone === "inverse" ? "/brand/logo-emblem-inverse.png" : "/brand/logo-emblem.png"}
+        alt="Prime House Removals Emblem"
         width={96}
         height={96}
         className="size-full object-contain p-1"
@@ -46,30 +46,18 @@ export function Logo({
   compact?: boolean;
 }) {
   return (
-    <span className={cn("inline-flex items-center gap-2.5 sm:gap-3", className)}>
-      <LogoMark
-        tone={tone}
-        className={compact ? "size-9 rounded-lg" : "size-10 sm:size-11 rounded-xl"}
+    <span className={cn("inline-flex items-center select-none", className)}>
+      <Image
+        src={tone === "inverse" ? "/brand/logo-lockup-inverse.png" : "/brand/logo-lockup.png"}
+        alt="Prime House Removals"
+        width={280}
+        height={70}
+        className={cn(
+          "w-auto object-contain transition-transform duration-200",
+          compact ? "h-8 sm:h-8.5" : "h-9 sm:h-10",
+        )}
+        priority
       />
-      <span className="flex flex-col leading-tight">
-        <span
-          className={cn(
-            "font-display font-bold tracking-[-0.02em]",
-            compact ? "text-[15.5px]" : "text-[17px] sm:text-[18.5px]",
-            tone === "inverse" ? "text-white" : "text-navy-950",
-          )}
-        >
-          Prime House
-        </span>
-        <span
-          className={cn(
-            "mt-0.5 font-sans text-[8.5px] sm:text-[9px] font-bold uppercase tracking-[0.24em]",
-            tone === "inverse" ? "text-accent-300" : "text-accent-600",
-          )}
-        >
-          Removals
-        </span>
-      </span>
     </span>
   );
 }

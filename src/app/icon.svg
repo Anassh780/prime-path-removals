@@ -1,13 +1,8 @@
 <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Prime House Removals">
   <defs>
-    <linearGradient id="phr-green" x1="0%" y1="100%" x2="100%" y2="0%">
-      <stop offset="0%" stop-color="#12734a" />
-      <stop offset="60%" stop-color="#16a34a" />
-      <stop offset="100%" stop-color="#22c55e" />
-    </linearGradient>
-    <linearGradient id="phr-accent" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#2b95f5" />
-      <stop offset="100%" stop-color="#12734a" />
+    <linearGradient id="phr-orange" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#ff7a1a" />
+      <stop offset="100%" stop-color="#ea580c" />
     </linearGradient>
   </defs>
 
@@ -15,32 +10,54 @@
   <rect width="64" height="64" rx="14" fill="#04101f" />
   <rect x="0.75" y="0.75" width="62.5" height="62.5" rx="13.25" stroke="#ffffff" stroke-opacity="0.12" stroke-width="1.5" />
 
-  <!-- Chimney -->
-  <rect x="17" y="16" width="5" height="8" rx="0.5" fill="#ffffff" />
-
-  <!-- House Gable Roof & 'P' Stem -->
+  <!-- Dynamic Orange Orbital Swoosh -->
   <path
-    d="M10 30L29 14L41 24V28L29 18.5L15 30H10Z"
-    fill="#ffffff"
-  />
-  <path
-    d="M17 28H23V50H17V28Z"
-    fill="#ffffff"
-  />
-  <!-- Inner P arch -->
-  <path
-    d="M23 28H33C37.4 28 41 31.6 41 36C41 40.4 37.4 44 33 44H23V39H33C34.7 39 36 37.7 36 36C36 34.3 34.7 33 33 33H23V28Z"
-    fill="#ffffff"
-    fill-opacity="0.95"
+    d="M8 43C5 38 6 26 18 18C30 10 49 11 56 18C61 23 59 31 52 38C46 44 38 48 30 49C18 50 10 46 8 43Z"
+    stroke="url(#phr-orange)"
+    stroke-width="2.5"
+    stroke-linecap="round"
+    fill="none"
   />
 
-  <!-- Dynamic Upward Transit Arrow (Emerald & Azure) -->
+  <!-- House Roof & Chimney -->
   <path
-    d="M21 48C21 48 26 36 39 30L37 25L54 22L47 39L42 34C31 38 27 48 27 48H21Z"
-    fill="url(#phr-green)"
+    d="M14 31L31 16L48 31H42L31 21L20 31H14Z"
+    fill="#ffffff"
+  />
+  <rect x="36" y="18" width="4.5" height="7" rx="0.5" fill="#ffffff" />
+  
+  <!-- Orange Inner Gable Peak -->
+  <path
+    d="M23 30L31 23L39 30H35L31 26.5L27 30H23Z"
+    fill="url(#phr-orange)"
+  />
+
+  <!-- Removals Van -->
+  <rect x="18" y="32" width="23" height="12" rx="1" fill="#ffffff" />
+  <!-- Cab -->
+  <path
+    d="M41 34H48L53 39V44H41V34Z"
+    fill="#ffffff"
+  />
+  <!-- Cab Window -->
+  <path
+    d="M43 35.5H47L50.5 39.5H43V35.5Z"
+    fill="#04101f"
+  />
+  
+  <!-- Speed Lines on Van Body -->
+  <path
+    d="M19 35L33 33.5V35.5L19 37V35Z"
+    fill="url(#phr-orange)"
   />
   <path
-    d="M39 30L54 22L47 39L42 34L39 30Z"
-    fill="url(#phr-accent)"
+    d="M20 38.5L31 37.5V39.5L20 40.5V38.5Z"
+    fill="url(#phr-orange)"
   />
+
+  <!-- Wheels -->
+  <circle cx="27" cy="44" r="3.2" fill="#04101f" stroke="#ffffff" stroke-width="1" />
+  <circle cx="48" cy="44" r="3.2" fill="#04101f" stroke="#ffffff" stroke-width="1" />
+  <circle cx="27" cy="44" r="1.2" fill="#ffffff" />
+  <circle cx="48" cy="44" r="1.2" fill="#ffffff" />
 </svg>

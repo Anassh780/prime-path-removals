@@ -2,7 +2,7 @@ import Image from "next/image";
 import { cn } from "@/lib/utils";
 
 /**
- * Prime Path House Removals — Brand Mark:
+ * Prime House Removals — Brand Mark:
  * High-definition brand emblem badge framed cleanly for light and dark surfaces
  * without visual distortion or dullness.
  */
@@ -25,7 +25,7 @@ export function LogoMark({
     >
       <Image
         src="/brand/logo.png"
-        alt="Prime Path House Removals Logo"
+        alt="Prime House Removals Logo"
         width={96}
         height={96}
         className="size-full object-cover object-center"
@@ -58,7 +58,7 @@ export function Logo({
             tone === "inverse" ? "text-white" : "text-navy-950",
           )}
         >
-          Prime Path
+          Prime House
         </span>
         <span
           className={cn(
@@ -66,7 +66,7 @@ export function Logo({
             tone === "inverse" ? "text-emerald-400" : "text-emerald-700",
           )}
         >
-          House Removals
+          Removals
         </span>
       </span>
     </span>

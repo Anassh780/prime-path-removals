@@ -4,7 +4,7 @@ import { Coverage } from "@/components/home/coverage";
 import { Faq } from "@/components/home/faq";
 import { FinalCta } from "@/components/home/final-cta";
 import { Hero } from "@/components/home/hero";
-import { Intro } from "@/components/home/intro";
+import { HeroVideoSection } from "@/components/home/hero-video-section";
 import { Process } from "@/components/home/process";
 import { ServicesOverview } from "@/components/home/services-overview";
 import { Testimonials } from "@/components/home/testimonials";
@@ -35,7 +35,7 @@ export default function HomePage() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(organisationSchema) }}
       />
       <Hero />
-      <Intro />
+      <HeroVideoSection />
       <ServicesOverview />
       <WhyChoose />
       <Process />

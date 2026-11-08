@@ -30,11 +30,13 @@ const approachSteps = [
 
 /**
  * "Our approach" — how a move is planned and delivered, as a numbered sequence
- * beside a sticky heading rather than a row of identical cards.
+ * beside a sticky heading rather than a row of identical cards. Oversized
+ * tabular step numbers carry the scale; the working principle sits in a tinted
+ * azure panel so the section does not read as another flat white block.
  */
 export function Approach() {
   return (
-    <Section id="our-approach" tone="default">
+    <Section id="our-approach" tone="subtle">
       <Container className="grid gap-12 lg:grid-cols-[minmax(0,0.85fr)_minmax(0,1.15fr)] lg:gap-16">
         <div className="lg:sticky lg:top-28 lg:self-start">
           <Reveal>
@@ -45,8 +47,8 @@ export function Approach() {
             />
           </Reveal>
           <Reveal delay={0.1} className="mt-8">
-            <div className="rounded-xl border border-line bg-surface-subtle p-6">
-              <p className="text-xs font-semibold uppercase tracking-[0.18em] text-ink-muted">
+            <div className="rounded-xl border border-royal-200 bg-royal-50 p-6">
+              <p className="text-xs font-semibold uppercase tracking-[0.18em] text-royal-700">
                 Working principle
               </p>
               <p className="mt-3 text-[15px] leading-relaxed text-ink-soft">
@@ -64,10 +66,10 @@ export function Approach() {
               <StaggerItem
                 key={step.number}
                 as="li"
-                className="grid grid-cols-[2.5rem_minmax(0,1fr)] gap-x-5 py-7"
+                className="grid grid-cols-[3.5rem_minmax(0,1fr)] gap-x-5 py-7"
               >
                 <span
-                  className="pt-0.5 font-display text-sm font-semibold tabular-nums text-royal-700"
+                  className="pt-1 font-display text-2xl font-semibold leading-none tabular-nums text-royal-700 sm:text-3xl"
                   aria-hidden="true"
                 >
                   {step.number}

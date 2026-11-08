@@ -63,7 +63,7 @@ export function Logo({
         <span
           className={cn(
             "mt-1 font-sans text-[8.5px] font-bold uppercase tracking-[0.24em]",
-            tone === "inverse" ? "text-emerald-400" : "text-emerald-700",
+            tone === "inverse" ? "text-accent-300" : "text-accent-600",
           )}
         >
           Removals

@@ -18,7 +18,8 @@ type ServicesCtaProps = {
 
 /**
  * Closing conversion band shared by the services listing and service detail
- * pages. Navy surface, one accent action, one neutral action.
+ * pages. Navy surface with a faint inverse dot grid, one accent action and one
+ * neutral action.
  */
 export function ServicesCta({
   eyebrow = "Next step",
@@ -30,8 +31,15 @@ export function ServicesCta({
   secondaryLabel = "Contact us",
 }: ServicesCtaProps) {
   return (
-    <Section tone="navy" className="border-t border-navy-800">
-      <Container>
+    <Section
+      tone="navy"
+      className="relative overflow-hidden border-t border-navy-800"
+    >
+      <div
+        aria-hidden="true"
+        className="pointer-events-none absolute inset-0 bg-grid-inverse opacity-40"
+      />
+      <Container className="relative">
         <div className="grid gap-10 lg:grid-cols-12 lg:items-end lg:gap-16">
           <Reveal className="lg:col-span-8">
             <span className="eyebrow text-accent-300">

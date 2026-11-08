@@ -69,7 +69,7 @@ export default async function ServicePage({ params }: ServicePageProps) {
                   <section aria-labelledby="whats-included">
                     <h3
                       id="whats-included"
-                      className="text-lg font-semibold text-ink sm:text-xl"
+                      className="text-xl font-semibold text-ink sm:text-2xl"
                     >
                       What’s included
                     </h3>
@@ -96,7 +96,7 @@ export default async function ServicePage({ params }: ServicePageProps) {
                   <section aria-labelledby="why-it-works">
                     <h3
                       id="why-it-works"
-                      className="text-lg font-semibold text-ink sm:text-xl"
+                      className="text-xl font-semibold text-ink sm:text-2xl"
                     >
                       Why it works
                     </h3>
@@ -107,7 +107,7 @@ export default async function ServicePage({ params }: ServicePageProps) {
                           key={benefit}
                           className="flex gap-4 border-b border-line py-3.5"
                         >
-                          <span className="font-display text-sm font-semibold tabular-nums text-royal-700">
+                          <span className="font-display text-base font-semibold tabular-nums text-royal-700">
                             {String(index + 1).padStart(2, "0")}
                           </span>
                           <span className="text-sm leading-relaxed text-ink-soft">
@@ -120,7 +120,7 @@ export default async function ServicePage({ params }: ServicePageProps) {
                 </div>
               </Reveal>
 
-              <div className="mt-10 rounded-xl border border-line bg-surface-subtle p-5 sm:p-6">
+              <div className="mt-10 rounded-xl border border-royal-200 bg-royal-50 p-5 sm:p-6">
                 <p className="text-sm leading-relaxed text-ink-soft">
                   Not sure this is the right service?{" "}
                   <Link

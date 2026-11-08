@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Suspense } from "react";
 
+import { RouteLine } from "@/components/brand/motifs";
 import { QuoteContainer } from "@/components/quote/quote-container";
 import { QuoteFormSkeleton } from "@/components/quote/quote-form-skeleton";
 import { Container, Section } from "@/components/shared/section";
@@ -17,22 +18,35 @@ export const metadata: Metadata = buildMetadata({
 export default function QuotePage() {
   return (
     <>
-      <Section className="pb-10 pt-14 md:pb-14 md:pt-20 lg:pt-24">
-        <Container>
-          <Reveal className="max-w-3xl">
-            <span className="eyebrow">
-              <span className="h-px w-6 bg-royal-600/40" aria-hidden="true" />
+      {/*
+        Full-bleed navy band: the page's dark anchor before the light form
+        section. The route motif is decorative only and sits behind the copy.
+      */}
+      <Section
+        tone="navy"
+        className="relative overflow-hidden border-b border-white/10"
+      >
+        <div
+          className="pointer-events-none absolute inset-0 bg-grid-inverse"
+          aria-hidden="true"
+        />
+        <RouteLine className="pointer-events-none absolute -right-24 top-1/2 hidden w-[30rem] -translate-y-1/2 opacity-40 lg:block" />
+        <Container className="relative">
+          <Reveal immediate y={20} duration={0.6} className="max-w-3xl">
+            <span className="eyebrow text-royal-300">
+              <span className="h-px w-6 bg-royal-300/60" aria-hidden="true" />
               Live Quote &amp; Booking
             </span>
-            <h1 className="mt-5 font-display text-4xl leading-[1.05] tracking-[-0.02em] text-ink sm:text-5xl lg:text-6xl">
+            <h1 className="mt-5 max-w-[20ch] font-display text-4xl leading-[1.05] tracking-[-0.02em] text-white sm:text-5xl lg:text-6xl">
               Live quote &amp; pricing, built around your move
             </h1>
           </Reveal>
-          <Reveal delay={0.08} className="max-w-3xl">
-            <p className="mt-6 text-[15px] leading-relaxed text-ink-soft sm:text-base">
+          <Reveal immediate delay={0.08} y={16} className="max-w-2xl">
+            <p className="mt-6 text-[15px] leading-relaxed text-navy-300 sm:text-base">
               Enter your property size, locations and services below to view an
               instant live estimated guide price. Submit when ready and we will
-              confirm your guaranteed fixed price in writing. No obligation to book.
+              confirm your guaranteed fixed price in writing. No obligation to
+              book.
             </p>
           </Reveal>
         </Container>

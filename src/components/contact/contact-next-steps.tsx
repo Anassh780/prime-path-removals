@@ -26,7 +26,7 @@ export function ContactNextSteps() {
     <Reveal delay={0.08}>
       <section
         aria-labelledby="contact-next-heading"
-        className="rounded-xl border border-line bg-white p-6 shadow-card sm:p-7"
+        className="rounded-xl border border-accent-200 bg-accent-50 p-6 shadow-card sm:p-7"
       >
         <h2
           id="contact-next-heading"
@@ -35,18 +35,21 @@ export function ContactNextSteps() {
           What happens next
         </h2>
         <p className="mt-2 text-sm leading-relaxed text-ink-soft">
-          No scripts and no automated replies — just a short, clear outline of how
-          we handle an enquiry.
+          No scripts and no automated replies — just a short, clear outline of
+          how we handle an enquiry.
         </p>
 
         <ol className="mt-5 flex flex-col gap-4">
           {STEPS.map((step, index) => (
-            <li key={step.title} className="flex items-start gap-3">
+            <li
+              key={step.title}
+              className="flex items-start gap-3 border-t border-accent-200/70 pt-4 first:border-t-0 first:pt-0"
+            >
               <span
-                className="mt-0.5 flex size-6 shrink-0 items-center justify-center rounded-full border border-line bg-surface-subtle text-[11px] font-semibold text-ink-soft"
+                className="w-9 shrink-0 font-display text-[1.75rem] font-semibold leading-none tracking-[-0.02em] tabular-nums text-accent-700/30"
                 aria-hidden="true"
               >
-                {index + 1}
+                {String(index + 1).padStart(2, "0")}
               </span>
               <div className="min-w-0">
                 <p className="text-sm font-medium leading-relaxed text-ink">
@@ -60,11 +63,11 @@ export function ContactNextSteps() {
           ))}
         </ol>
 
-        <p className="mt-5 border-t border-line pt-4 text-sm leading-relaxed text-ink-soft">
+        <p className="mt-5 border-t border-accent-200/70 pt-4 text-sm leading-relaxed text-ink-soft">
           Ready to price the move?{" "}
           <Link
             href="/quote"
-            className="font-medium text-royal-700 link-underline transition-colors hover:text-royal-800"
+            className="font-medium text-accent-700 link-underline transition-colors hover:text-accent-800"
           >
             Start with the quote form
           </Link>

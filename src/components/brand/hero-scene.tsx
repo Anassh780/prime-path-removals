@@ -45,9 +45,9 @@ function IsoBox({
   d,
   h,
   top = "#ffffff",
-  right = "#eef2f7",
-  left = "#dfe7f1",
-  stroke = "#c7d7e9",
+  right = "#dbe7f1",
+  left = "#dbe7f1",
+  stroke = "#b9cee0",
 }: BoxProps) {
   return (
     <g strokeLinejoin="round">
@@ -162,14 +162,14 @@ export function HeroScene({ className, animated = true }: HeroSceneProps) {
           height="22"
           patternUnits="userSpaceOnUse"
         >
-          <circle cx="1.4" cy="1.4" r="1.2" fill="#0d1a2b" opacity="0.08" />
+          <circle cx="1.4" cy="1.4" r="1.2" fill="#04101f" opacity="0.08" />
         </pattern>
         <filter id="hero-shadow" x="-40%" y="-40%" width="180%" height="180%">
           <feDropShadow
             dx="0"
             dy="10"
             stdDeviation="14"
-            floodColor="#0d1a2b"
+            floodColor="#04101f"
             floodOpacity="0.12"
           />
         </filter>
@@ -178,13 +178,13 @@ export function HeroScene({ className, animated = true }: HeroSceneProps) {
             dx="0"
             dy="6"
             stdDeviation="10"
-            floodColor="#0d1a2b"
+            floodColor="#04101f"
             floodOpacity="0.1"
           />
         </filter>
         <linearGradient id="hero-panel" x1="0" y1="0" x2="1" y2="1">
-          <stop offset="0%" stopColor="#f7f8fa" />
-          <stop offset="100%" stopColor="#eef2f8" />
+          <stop offset="0%" stopColor="#f7f9fb" />
+          <stop offset="100%" stopColor="#dbe7f1" />
         </linearGradient>
       </defs>
 
@@ -200,13 +200,13 @@ export function HeroScene({ className, animated = true }: HeroSceneProps) {
         height="519"
         rx="23.5"
         fill="none"
-        stroke="#dfe7f1"
+        stroke="#dbe7f1"
       />
 
       {/* floor plate — the ground the scene is built on */}
       <g {...enter(STAGE.floor, "fade")}>
-        <ellipse cx="300" cy="418" rx="176" ry="34" fill="#0d1a2b" opacity="0.07" />
-        <ellipse cx="300" cy="418" rx="118" ry="22" fill="#0d1a2b" opacity="0.05" />
+        <ellipse cx="300" cy="418" rx="176" ry="34" fill="#04101f" opacity="0.07" />
+        <ellipse cx="300" cy="418" rx="118" ry="22" fill="#04101f" opacity="0.05" />
       </g>
 
       {/* large box */}
@@ -223,7 +223,7 @@ export function HeroScene({ className, animated = true }: HeroSceneProps) {
             [140, 80, 95],
             [0, 80, 95],
           ])}
-          fill="#ea7a2f"
+          fill="#1f6f4d"
           opacity="0.92"
         />
         <polygon
@@ -233,7 +233,7 @@ export function HeroScene({ className, animated = true }: HeroSceneProps) {
             [74, 140, 95],
             [52, 140, 95],
           ])}
-          fill="#ea7a2f"
+          fill="#1f6f4d"
           opacity="0.92"
         />
       </g>
@@ -248,7 +248,7 @@ export function HeroScene({ className, animated = true }: HeroSceneProps) {
             [24, 140, 70],
           ])}
           fill="#ffffff"
-          stroke="#ea7a2f"
+          stroke="#1f6f4d"
           strokeWidth="1.4"
         />
         <line
@@ -256,7 +256,7 @@ export function HeroScene({ className, animated = true }: HeroSceneProps) {
           y1={pt(31, 140, 52).split(",")[1]}
           x2={pt(61, 140, 52).split(",")[0]}
           y2={pt(61, 140, 52).split(",")[1]}
-          stroke="#ea7a2f"
+          stroke="#1f6f4d"
           strokeWidth="2.4"
           strokeLinecap="round"
         />
@@ -265,7 +265,7 @@ export function HeroScene({ className, animated = true }: HeroSceneProps) {
           y1={pt(31, 140, 61).split(",")[1]}
           x2={pt(52, 140, 61).split(",")[0]}
           y2={pt(52, 140, 61).split(",")[1]}
-          stroke="#ea7a2f"
+          stroke="#1f6f4d"
           strokeWidth="2.4"
           strokeLinecap="round"
           opacity="0.55"
@@ -284,7 +284,7 @@ export function HeroScene({ className, animated = true }: HeroSceneProps) {
             [110, 74, 167],
             [22, 74, 167],
           ])}
-          fill="#ea7a2f"
+          fill="#1f6f4d"
           opacity="0.9"
         />
         <polygon
@@ -294,7 +294,7 @@ export function HeroScene({ className, animated = true }: HeroSceneProps) {
             [70, 110, 167],
             [56, 110, 167],
           ])}
-          fill="#ea7a2f"
+          fill="#1f6f4d"
           opacity="0.9"
         />
       </g>
@@ -311,7 +311,7 @@ export function HeroScene({ className, animated = true }: HeroSceneProps) {
             [240, 54, 58],
             [168, 54, 58],
           ])}
-          fill="#2559e0"
+          fill="#1173d4"
           opacity="0.16"
         />
       </g>
@@ -330,26 +330,26 @@ export function HeroScene({ className, animated = true }: HeroSceneProps) {
             height="140"
             rx="12"
             fill="#ffffff"
-            stroke="#dfe7f1"
+            stroke="#dbe7f1"
           />
-          <rect x="108" y="108" width="124" height="34" rx="12" fill="#0d1a2b" />
-          <rect x="108" y="130" width="124" height="12" fill="#0d1a2b" />
+          <rect x="108" y="108" width="124" height="34" rx="12" fill="#04101f" />
+          <rect x="108" y="130" width="124" height="12" fill="#04101f" />
           <rect x="124" y="119" width="52" height="6" rx="3" fill="#ffffff" opacity="0.85" />
-          <rect x="124" y="158" width="10" height="10" rx="3" fill="#dbe6fe" />
-          <rect x="142" y="160" width="64" height="6" rx="3" fill="#c7d7e9" />
-          <rect x="124" y="180" width="10" height="10" rx="3" fill="#dbe6fe" />
-          <rect x="142" y="182" width="52" height="6" rx="3" fill="#c7d7e9" />
-          <rect x="124" y="202" width="10" height="10" rx="3" fill="#dbe6fe" />
-          <rect x="142" y="204" width="58" height="6" rx="3" fill="#c7d7e9" />
-          <circle cx="129" cy="230" r="7" fill="#ea7a2f" opacity="0.16" />
+          <rect x="124" y="158" width="10" height="10" rx="3" fill="#d9edfe" />
+          <rect x="142" y="160" width="64" height="6" rx="3" fill="#b9cee0" />
+          <rect x="124" y="180" width="10" height="10" rx="3" fill="#d9edfe" />
+          <rect x="142" y="182" width="52" height="6" rx="3" fill="#b9cee0" />
+          <rect x="124" y="202" width="10" height="10" rx="3" fill="#d9edfe" />
+          <rect x="142" y="204" width="58" height="6" rx="3" fill="#b9cee0" />
+          <circle cx="129" cy="230" r="7" fill="#1f6f4d" opacity="0.16" />
           <path
             d="M125.5 230l2.6 2.6 4.4-4.6"
             fill="none"
-            stroke="#ea7a2f"
+            stroke="#1f6f4d"
             strokeWidth="2"
             strokeLinecap="round"
           />
-          <rect x="144" y="227" width="56" height="6" rx="3" fill="#c7d7e9" />
+          <rect x="144" y="227" width="56" height="6" rx="3" fill="#b9cee0" />
         </g>
       </g>
 
@@ -358,17 +358,17 @@ export function HeroScene({ className, animated = true }: HeroSceneProps) {
         <g filter="url(#hero-shadow)">
           <path
             d="M470 126c0-17.7 14.3-32 32-32s32 14.3 32 32c0 22-32 46-32 46s-32-24-32-46z"
-            fill="#0d1a2b"
+            fill="#04101f"
           />
           <circle cx="502" cy="125" r="11" fill="#ffffff" />
-          <circle cx="502" cy="125" r="4.5" fill="#ea7a2f" />
+          <circle cx="502" cy="125" r="4.5" fill="#1f6f4d" />
         </g>
       </g>
       <path
         {...enter(STAGE.route, "fade")}
         d="M470 190c-26 22-52 30-84 30"
         fill="none"
-        stroke="#93b4fd"
+        stroke="#7cc2fb"
         strokeWidth="2.4"
         strokeLinecap="round"
         strokeDasharray="2 9"
@@ -378,7 +378,7 @@ export function HeroScene({ className, animated = true }: HeroSceneProps) {
       <path
         {...enter(STAGE.floor, "fade")}
         d="M96 402h44M404 356h56"
-        stroke="#c7d7e9"
+        stroke="#b9cee0"
         strokeWidth="2"
         strokeLinecap="round"
       />

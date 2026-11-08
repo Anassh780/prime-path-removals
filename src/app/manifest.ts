@@ -4,7 +4,7 @@ import { siteConfig } from "@/config/site";
 
 /**
  * Web app manifest. Colours are the brand tokens from `globals.css`
- * (`navy-900` for the chrome, white for the launch screen).
+ * (`navy-950` for the browser chrome, white for the launch screen).
  */
 export default function manifest(): MetadataRoute.Manifest {
   return {
@@ -14,7 +14,7 @@ export default function manifest(): MetadataRoute.Manifest {
     start_url: "/",
     display: "standalone",
     background_color: "#ffffff",
-    theme_color: "#0d1a2b",
+    theme_color: "#04101f",
     lang: "en-GB",
     icons: [
       {

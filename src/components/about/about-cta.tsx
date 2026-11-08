@@ -13,6 +13,10 @@ import { Button } from "@/components/ui/button";
 export function AboutCta() {
   return (
     <Section id="next-step" tone="navy" className="relative overflow-hidden">
+      <div
+        aria-hidden="true"
+        className="pointer-events-none absolute inset-0 bg-grid-inverse opacity-30"
+      />
       <RouteLine className="pointer-events-none absolute -right-28 top-1/2 hidden w-[34rem] -translate-y-1/2 opacity-20 lg:block" />
       <Container className="relative">
         <div className="grid gap-8 lg:grid-cols-[minmax(0,1fr)_auto] lg:items-end lg:gap-16">

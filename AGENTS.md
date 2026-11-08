@@ -50,18 +50,27 @@ dribbble-style floating blobs.
 
 ### Colour tokens (use these, never raw hex)
 
+The palette is derived from the brand logo: deep navy `#021e40`, azure blue
+`#2b95f5`, forest green `#11543b`.
+
 | Purpose | Token |
 | --- | --- |
-| Primary brand / dark surfaces | `navy-950` `navy-900` `navy-800` `navy-700` |
-| Secondary / links / focus | `royal-600` `royal-700` `royal-50` |
-| Accent (primary CTA only) | `accent-600` (button fill, 4.7:1 on white text) · `accent-500` (decorative) · `accent-50` |
+| Primary brand / dark surfaces | `navy-950` `#04101f` · `navy-900` `#071a33` · `navy-800` `#0d2547` · `navy-700` `#163559` |
+| Secondary / links / focus (azure) | `royal-600` `#1173d4` · `royal-700` `#0b5aa8` · `royal-500` `#2b95f5` · `royal-50` `#eef7ff` |
+| Accent (primary CTA only, forest green) | `accent-600` `#11543b` (button fill, 8.9:1 with white text) · `accent-500` `#1f6f4d` (decorative) · `accent-300` `#7fb99b` (accents on dark) · `accent-50` `#eef6f1` |
 | Text | `ink` (headings/body strong), `ink-soft` (body), `ink-muted` (meta) |
 | Surfaces | `surface` (white), `surface-subtle`, `surface-muted` |
 | Borders | `line` (hairline), `line-strong` (form controls) |
 
-Accent orange is for **primary conversion actions only** (quote CTA, key submit
-buttons). Everything else is navy, royal or neutral. Never put orange text on
-white for body copy.
+Forest green is for **primary conversion actions only** (quote CTA, key submit
+buttons) and affirmative states. Azure is for links, focus rings and
+informational accents. Navy carries dark surfaces and headings. The warm orange
+that the first design used is retired — do not reintroduce it, and never put
+`accent-300` on white (it fails contrast).
+
+Dark bands are part of the design language: a full-bleed `navy-950` section
+between white sections is what gives the pages rhythm. On `navy-950` use white
+or `navy-300` for text and `azure-300` / `accent-300` for accents.
 
 ### Type scale
 
@@ -121,7 +130,10 @@ Import with `@/` alias.
 
 ```tsx
 <Reveal delay={0.05} className="">…</Reveal>
-<RevealItem index={i} className="">…</RevealItem>
+<Stagger stagger={0.06}>
+  <StaggerItem>…</StaggerItem>
+</Stagger>
+<RevealText text="…" />
 ```
 
 ### Brand — `@/components/brand/logo`
@@ -231,8 +243,9 @@ hairline rules, and an illustration — no `background-image` stock photos.
 - Focus states come from the primitives — never remove `outline` without a
   replacement ring.
 - Decorative images `alt=""`; icon-only buttons need `aria-label`.
-- Colour contrast ≥ 4.5:1 for body text. Accent buttons use `accent-600` because
-  white on `accent-500` is only 2.9:1.
+- Colour contrast ≥ 4.5:1 for body text. Accent buttons use `accent-600`
+  (`#11543b`, 8.9:1 with white) — never `accent-500` as a text background with
+  white on it at small sizes.
 - Standalone text links get a 24px+ pointer target; `globals.css` adds vertical
   padding to `a.inline-flex` / `a.link-underline` without shifting layout.
 

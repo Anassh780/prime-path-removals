@@ -37,20 +37,20 @@ export function LiveEstimateCard({
       )}
     >
       {/* Header bar */}
-      <div className="border-b border-line/80 bg-surface-subtle px-5 py-3.5">
+      <div className="border-b border-royal-200/70 bg-royal-50 px-5 py-3.5">
         <div className="flex items-center justify-between gap-3">
           <div className="flex items-center gap-2">
             {/* Static marker: the figure below is a computed guide price, not a
                 live connection — so there is no pulsing "live" state here. */}
             <span
-              className="inline-block size-2 rounded-full bg-emerald-500"
+              className="inline-block size-2 rounded-full bg-accent-500"
               aria-hidden="true"
             />
             <span className="text-[11px] font-semibold uppercase tracking-[0.1em] text-navy-900">
               Live Estimated Guide Price
             </span>
           </div>
-          <span className="rounded-md border border-royal-200 bg-royal-50 px-2 py-0.5 text-[11px] font-medium text-royal-700">
+          <span className="rounded-md border border-royal-200 bg-white px-2 py-0.5 text-[11px] font-medium text-royal-700">
             Instant guidance
           </span>
         </div>
@@ -59,8 +59,8 @@ export function LiveEstimateCard({
       <div className="p-5 sm:p-6">
         {/* Price headline — both figures are computed by calculateQuoteEstimate. */}
         <div className="flex flex-col gap-1">
-          <div className="flex items-baseline gap-2">
-            <span className="font-display text-3xl font-semibold tabular-nums tracking-[-0.02em] text-ink sm:text-4xl">
+          <div className="flex flex-wrap items-baseline gap-x-2 gap-y-1">
+            <span className="font-display text-3xl font-semibold leading-none tabular-nums tracking-[-0.04em] text-ink sm:text-4xl xl:text-[2.5rem]">
               £
               <AnimatedNumber value={estimate.minPrice} format={formatAmount} />{" "}
               – £
@@ -75,8 +75,8 @@ export function LiveEstimateCard({
         </div>
 
         {/* Core move specifications */}
-        <div className="mt-4 grid grid-cols-2 gap-2.5 border-t border-line pt-4 text-left">
-          <div className="flex items-start gap-2.5 rounded-lg border border-line/70 bg-surface-subtle p-2.5">
+        <div className="mt-4 grid grid-cols-2 gap-2.5 border-t border-royal-200/60 pt-4 text-left">
+          <div className="flex items-start gap-2.5 rounded-lg border border-royal-200/60 bg-royal-50/60 p-2.5">
             <Truck
               className="mt-0.5 size-4 shrink-0 text-royal-700"
               aria-hidden="true"
@@ -91,7 +91,7 @@ export function LiveEstimateCard({
             </div>
           </div>
 
-          <div className="flex items-start gap-2.5 rounded-lg border border-line/70 bg-surface-subtle p-2.5">
+          <div className="flex items-start gap-2.5 rounded-lg border border-royal-200/60 bg-royal-50/60 p-2.5">
             <Users
               className="mt-0.5 size-4 shrink-0 text-royal-700"
               aria-hidden="true"
@@ -106,7 +106,7 @@ export function LiveEstimateCard({
             </div>
           </div>
 
-          <div className="flex items-start gap-2.5 rounded-lg border border-line/70 bg-surface-subtle p-2.5">
+          <div className="flex items-start gap-2.5 rounded-lg border border-royal-200/60 bg-royal-50/60 p-2.5">
             <Clock
               className="mt-0.5 size-4 shrink-0 text-royal-700"
               aria-hidden="true"
@@ -121,7 +121,7 @@ export function LiveEstimateCard({
             </div>
           </div>
 
-          <div className="flex items-start gap-2.5 rounded-lg border border-line/70 bg-surface-subtle p-2.5">
+          <div className="flex items-start gap-2.5 rounded-lg border border-royal-200/60 bg-royal-50/60 p-2.5">
             <Package
               className="mt-0.5 size-4 shrink-0 text-royal-700"
               aria-hidden="true"
@@ -178,7 +178,7 @@ export function LiveEstimateCard({
         )}
 
         {/* Assurance and process disclaimer */}
-        <div className="mt-4 flex items-start gap-2.5 rounded-lg bg-royal-50/70 p-3 text-xs leading-relaxed text-royal-950">
+        <div className="mt-4 flex items-start gap-2.5 rounded-lg border border-royal-200/60 bg-royal-50/70 p-3 text-xs leading-relaxed text-royal-900">
           <ShieldCheck
             className="mt-0.5 size-4 shrink-0 text-royal-700"
             aria-hidden="true"

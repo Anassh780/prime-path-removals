@@ -55,9 +55,9 @@ export function QuoteSuccess({
   return (
     <section
       aria-labelledby="quote-success-heading"
-      className="rounded-xl border border-line bg-white p-6 shadow-card sm:p-8"
+      className="rounded-xl border border-line border-t-4 border-t-accent-600 bg-white p-6 shadow-card sm:p-8"
     >
-      <span className="inline-flex size-11 animate-pop-in items-center justify-center rounded-full bg-emerald-50 text-emerald-600">
+      <span className="inline-flex size-12 animate-pop-in items-center justify-center rounded-full border border-accent-200 bg-accent-50 text-accent-600">
         <Check
           className="size-6 animate-check-in [stroke-dasharray:24]"
           strokeWidth={2.5}
@@ -69,7 +69,7 @@ export function QuoteSuccess({
         id="quote-success-heading"
         ref={headingRef}
         tabIndex={-1}
-        className="mt-5 text-2xl font-semibold tracking-[-0.02em] text-ink outline-none sm:text-[1.7rem]"
+        className="mt-5 text-2xl font-semibold tracking-[-0.02em] text-ink outline-none sm:text-3xl"
       >
         {firstName ? `Thank you, ${firstName} — your request is in.` : "Thank you — your request is in."}
       </h2>
@@ -79,11 +79,11 @@ export function QuoteSuccess({
         If anything is unclear, we will ask before quoting.
       </p>
 
-      <div className="mt-6 rounded-lg border border-line bg-surface-subtle p-4 sm:p-5">
+      <div className="mt-6 rounded-lg border border-accent-200 bg-accent-50 p-4 sm:p-5">
         <p className="text-[11px] font-semibold uppercase tracking-[0.08em] text-ink-muted">
           Your reference
         </p>
-        <p className="mt-1.5 font-display text-xl font-semibold tracking-[0.04em] text-ink">
+        <p className="mt-1.5 font-display text-2xl font-semibold tracking-[0.04em] text-ink">
           {reference}
         </p>
         <p className="mt-2 text-sm leading-relaxed text-ink-muted">
@@ -91,11 +91,11 @@ export function QuoteSuccess({
         </p>
 
         {hasPhone || hasWhatsApp ? (
-          <div className="mt-4 flex flex-wrap gap-2.5 border-t border-line/60 pt-3.5">
+          <div className="mt-4 flex flex-wrap gap-2.5 border-t border-accent-200/70 pt-3.5">
             {hasPhone ? (
               <a
                 href={formatPhoneHref(siteConfig.contact.phone)}
-                className="inline-flex items-center gap-1.5 rounded-md border border-line bg-white px-3 py-1.5 text-xs font-medium text-navy-900 shadow-xs transition-colors duration-150 hover:bg-surface-subtle"
+                className="inline-flex items-center gap-1.5 rounded-md border border-accent-200 bg-white px-3 py-1.5 text-xs font-medium text-navy-900 shadow-xs transition-colors duration-150 hover:bg-accent-50"
               >
                 <Phone className="size-3.5 text-royal-700" aria-hidden="true" />
                 Call {siteConfig.contact.phone}
@@ -130,7 +130,7 @@ export function QuoteSuccess({
           {nextSteps.map((step) => (
             <motion.li key={step.step} variants={STEP_ITEM} className="flex gap-3.5">
               <span
-                className="flex size-7 shrink-0 items-center justify-center rounded-full border border-line bg-surface-subtle text-[11px] font-semibold tabular-nums text-ink-soft"
+                className="flex size-7 shrink-0 items-center justify-center rounded-full border border-royal-200 bg-royal-50 text-[11px] font-semibold tabular-nums text-royal-700"
                 aria-hidden="true"
               >
                 {step.step}

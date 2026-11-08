@@ -5,10 +5,13 @@ import Link from "next/link";
 import {
   ArrowRight,
   Boxes,
+  Building,
   Check,
   Clock,
+  PackagePlus,
   Phone,
   RotateCcw,
+  Route,
   ShieldCheck,
   Truck,
   Users,
@@ -127,14 +130,22 @@ export function MoveCalculator() {
       <div className="lg:col-span-7 flex flex-col gap-6">
         {/* Step 1: Mode selector (Property vs Itemised Inventory) */}
         <div className="rounded-xl border border-line bg-white p-5 shadow-card sm:p-6">
-          <div className="flex flex-col gap-2 sm:flex-row sm:items-center sm:justify-between border-b border-line pb-4">
-            <div>
-              <h2 className="text-base font-semibold text-ink">
-                1. What are you moving?
-              </h2>
-              <p className="text-xs text-ink-muted mt-0.5">
-                Choose standard property size or itemise your specific furniture.
-              </p>
+          <div className="flex flex-col gap-4 border-b border-line pb-4 sm:flex-row sm:items-center sm:justify-between">
+            <div className="flex items-start gap-3">
+              <span
+                className="flex size-10 shrink-0 items-center justify-center rounded-lg border border-royal-200 bg-royal-50 text-royal-700"
+                aria-hidden="true"
+              >
+                <Boxes className="size-5" />
+              </span>
+              <div>
+                <h2 className="text-base font-semibold text-ink">
+                  1. What are you moving?
+                </h2>
+                <p className="mt-0.5 text-xs text-ink-muted">
+                  Choose standard property size or itemise your specific furniture.
+                </p>
+              </div>
             </div>
 
             <div className="flex rounded-lg border border-line bg-surface-subtle p-1 self-start sm:self-auto">
@@ -266,12 +277,22 @@ export function MoveCalculator() {
 
         {/* Step 2: Distance Tier */}
         <div className="rounded-xl border border-line bg-white p-5 shadow-card sm:p-6">
-          <h2 className="text-base font-semibold text-ink">
-            2. Estimated moving distance
-          </h2>
-          <p className="text-xs text-ink-muted mt-0.5">
-            Distance between collection and delivery addresses.
-          </p>
+          <div className="flex items-start gap-3">
+            <span
+              className="flex size-10 shrink-0 items-center justify-center rounded-lg border border-royal-200 bg-royal-50 text-royal-700"
+              aria-hidden="true"
+            >
+              <Route className="size-5" />
+            </span>
+            <div>
+              <h2 className="text-base font-semibold text-ink">
+                2. Estimated moving distance
+              </h2>
+              <p className="mt-0.5 text-xs text-ink-muted">
+                Distance between collection and delivery addresses.
+              </p>
+            </div>
+          </div>
 
           <div className="mt-4 grid gap-2.5 sm:grid-cols-2">
             {DISTANCE_TIERS.map((tier) => {
@@ -305,12 +326,22 @@ export function MoveCalculator() {
 
         {/* Step 3: Access & Stairs */}
         <div className="rounded-xl border border-line bg-white p-5 shadow-card sm:p-6">
-          <h2 className="text-base font-semibold text-ink">
-            3. Property access &amp; floor levels
-          </h2>
-          <p className="text-xs text-ink-muted mt-0.5">
-            Stairs and lift availability affect carrying time and crew sizing.
-          </p>
+          <div className="flex items-start gap-3">
+            <span
+              className="flex size-10 shrink-0 items-center justify-center rounded-lg border border-royal-200 bg-royal-50 text-royal-700"
+              aria-hidden="true"
+            >
+              <Building className="size-5" />
+            </span>
+            <div>
+              <h2 className="text-base font-semibold text-ink">
+                3. Property access &amp; floor levels
+              </h2>
+              <p className="mt-0.5 text-xs text-ink-muted">
+                Stairs and lift availability affect carrying time and crew sizing.
+              </p>
+            </div>
+          </div>
 
           <div className="mt-4 grid gap-4 sm:grid-cols-2">
             <div>
@@ -377,12 +408,22 @@ export function MoveCalculator() {
 
         {/* Step 4: Optional Add-on Services */}
         <div className="rounded-xl border border-line bg-white p-5 shadow-card sm:p-6">
-          <h2 className="text-base font-semibold text-ink">
-            4. Additional moving services
-          </h2>
-          <p className="text-xs text-ink-muted mt-0.5">
-            Add packing, furniture assembly, or clearance to your live estimate.
-          </p>
+          <div className="flex items-start gap-3">
+            <span
+              className="flex size-10 shrink-0 items-center justify-center rounded-lg border border-royal-200 bg-royal-50 text-royal-700"
+              aria-hidden="true"
+            >
+              <PackagePlus className="size-5" />
+            </span>
+            <div>
+              <h2 className="text-base font-semibold text-ink">
+                4. Additional moving services
+              </h2>
+              <p className="mt-0.5 text-xs text-ink-muted">
+                Add packing, furniture assembly, or clearance to your live estimate.
+              </p>
+            </div>
+          </div>
 
           <div className="mt-4 flex flex-col gap-2.5">
             <label
@@ -460,30 +501,31 @@ export function MoveCalculator() {
       {/* Live Quote Summary Column */}
       <div className="lg:col-span-5">
         <div className="lg:sticky lg:top-24 flex flex-col gap-5">
-          <div className="rounded-xl border border-line bg-white p-6 shadow-card">
-            <div className="flex items-center justify-between border-b border-line pb-3">
+          <div className="overflow-hidden rounded-2xl border border-royal-200 bg-royal-50 p-5 shadow-card sm:p-6">
+            {/* Dark rail header — this panel is the page's focal point. */}
+            <div className="-mx-5 -mt-5 mb-5 flex items-center justify-between gap-3 bg-navy-950 px-5 py-4 sm:-mx-6 sm:-mt-6 sm:px-6">
               <div className="flex items-center gap-2">
                 <span
-                  className="size-2 rounded-full bg-emerald-500"
+                  className="size-2 rounded-full bg-accent-300"
                   aria-hidden="true"
                 />
-                <span className="text-[11px] font-semibold uppercase tracking-wider text-navy-950">
+                <span className="text-[11px] font-semibold uppercase tracking-[0.16em] text-white">
                   Live Price Estimate
                 </span>
               </div>
               <button
                 type="button"
                 onClick={handleReset}
-                className="u-card -my-1 flex items-center gap-1 py-1 text-[11px] font-medium text-ink-muted hover:text-red-700 active:translate-y-px"
+                className="u-card -my-1 flex shrink-0 items-center gap-1 py-1 text-[11px] font-medium text-navy-300 hover:text-white active:translate-y-px"
               >
                 <RotateCcw className="size-3" />
                 Reset
               </button>
             </div>
 
-            <div className="mt-4">
+            <div>
               <span
-                className="block font-display text-4xl font-semibold tracking-tight text-navy-950 tabular-nums"
+                className="block font-display text-4xl font-semibold leading-none tracking-[-0.03em] text-navy-950 tabular-nums sm:text-5xl"
                 aria-hidden="true"
               >
                 £
@@ -498,14 +540,14 @@ export function MoveCalculator() {
               <span className="sr-only" aria-live="polite" aria-atomic="true">
                 Estimated price {estimate.priceFormatted}
               </span>
-              <span className="mt-1 block text-xs text-ink-muted">
+              <span className="mt-2.5 block text-xs text-ink-soft">
                 Indicative guidance price inc. VAT &amp; standard equipment.
               </span>
             </div>
 
             {/* Spec tags */}
-            <div className="mt-5 grid grid-cols-2 gap-2 border-t border-line pt-4 text-xs">
-              <div className="rounded-lg border border-line bg-surface-subtle p-2.5">
+            <div className="mt-5 grid grid-cols-2 gap-2 border-t border-royal-200 pt-4 text-xs">
+              <div className="rounded-lg border border-royal-100 bg-white p-2.5">
                 <div className="flex items-center gap-1.5 text-royal-700 font-semibold">
                   <Truck className="size-3.5" />
                   Vehicle
@@ -515,7 +557,7 @@ export function MoveCalculator() {
                 </span>
               </div>
 
-              <div className="rounded-lg border border-line bg-surface-subtle p-2.5">
+              <div className="rounded-lg border border-royal-100 bg-white p-2.5">
                 <div className="flex items-center gap-1.5 text-royal-700 font-semibold">
                   <Users className="size-3.5" />
                   Moving crew
@@ -525,7 +567,7 @@ export function MoveCalculator() {
                 </span>
               </div>
 
-              <div className="rounded-lg border border-line bg-surface-subtle p-2.5">
+              <div className="rounded-lg border border-royal-100 bg-white p-2.5">
                 <div className="flex items-center gap-1.5 text-royal-700 font-semibold">
                   <Clock className="size-3.5" />
                   Est. duration
@@ -535,7 +577,7 @@ export function MoveCalculator() {
                 </span>
               </div>
 
-              <div className="rounded-lg border border-line bg-surface-subtle p-2.5">
+              <div className="rounded-lg border border-royal-100 bg-white p-2.5">
                 <div className="flex items-center gap-1.5 text-royal-700 font-semibold">
                   <Boxes className="size-3.5" />
                   Est. volume
@@ -551,11 +593,11 @@ export function MoveCalculator() {
             </div>
 
             {/* Itemised Breakdown */}
-            <div className="mt-5 border-t border-line pt-4">
-              <h3 className="text-xs font-semibold uppercase tracking-wider text-ink-muted">
+            <div className="mt-5 border-t border-royal-200 pt-4">
+              <h3 className="text-xs font-semibold uppercase tracking-wider text-royal-700">
                 Itemised estimate breakdown
               </h3>
-              <ul className="mt-2.5 flex flex-col gap-2 rounded-lg border border-line bg-surface-subtle p-3">
+              <ul className="mt-2.5 flex flex-col gap-2 rounded-lg border border-royal-100 bg-white p-3">
                 {estimate.breakdown.map((item) => (
                   <li key={item.label} className="flex flex-col gap-0.5 border-b border-line/40 pb-2 last:border-0 last:pb-0">
                     <div className="flex items-center justify-between text-xs">
@@ -575,19 +617,19 @@ export function MoveCalculator() {
             </div>
 
             {/* CTA to lock in quote */}
-            <div className="mt-6 border-t border-line pt-5">
+            <div className="mt-6 border-t border-royal-200 pt-5">
               <Button asChild variant="accent" size="lg" className="w-full">
                 <Link href={quoteHref}>
                   Lock in this quote &amp; choose date
                   <ArrowRight className="size-4" aria-hidden="true" />
                 </Link>
               </Button>
-              <p className="mt-2.5 text-center text-xs leading-relaxed text-ink-muted">
+              <p className="mt-2.5 text-center text-xs leading-relaxed text-ink-soft">
                 Transfers these specifications directly into your quote request.
               </p>
 
               {(hasPhone || hasWhatsApp) && (
-                <div className="mt-4 flex flex-col gap-2 rounded-lg border border-line bg-surface-subtle p-3 text-xs text-ink-soft">
+                <div className="mt-4 flex flex-col gap-2 rounded-lg border border-royal-200 bg-white p-3 text-xs text-ink-soft">
                   <span className="font-semibold text-ink">Prefer to book directly?</span>
                   <div className="flex flex-wrap items-center gap-3">
                     {hasPhone && (

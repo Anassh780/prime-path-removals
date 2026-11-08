@@ -53,7 +53,7 @@ export function InventoryCalculator({
   }
 
   return (
-    <div className="rounded-xl border border-line bg-surface-subtle p-4 sm:p-5">
+    <div className="rounded-xl border border-royal-200/70 bg-royal-50/60 p-4 sm:p-5">
       <div className="flex flex-col gap-2 sm:flex-row sm:items-center sm:justify-between">
         <div>
           <div className="flex items-center gap-2">
@@ -124,7 +124,7 @@ export function InventoryCalculator({
               return (
                 <div
                   key={item.key}
-                  className="flex items-center justify-between rounded-lg border border-line bg-white p-2.5 shadow-xs transition-colors"
+                  className="flex items-center justify-between rounded-lg border border-royal-200/60 bg-white p-2.5 shadow-xs transition-colors"
                 >
                   <div className="min-w-0 pr-2">
                     <span className="block truncate text-xs font-medium text-ink">
@@ -167,7 +167,7 @@ export function InventoryCalculator({
             })}
           </div>
 
-          <div className="mt-4 flex flex-wrap items-center justify-between gap-3 rounded-lg border border-royal-200 bg-royal-50/70 px-3.5 py-2.5 text-xs text-navy-900">
+          <div className="mt-4 flex flex-wrap items-center justify-between gap-3 rounded-lg border border-royal-200 bg-white px-3.5 py-2.5 text-xs text-navy-900">
             <span className="font-medium">
               Calculated moving volume:{" "}
               <strong className="font-semibold tabular-nums text-royal-700">

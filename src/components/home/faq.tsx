@@ -29,7 +29,7 @@ export function Faq() {
                 description="The details people usually want settled before they book a move. If your question is not here, ask us directly."
               />
 
-              <div className="mt-8 rounded-xl border border-line bg-white p-5">
+              <div className="mt-8 rounded-xl border border-navy-100 bg-navy-50 p-5">
                 <span className="flex size-9 items-center justify-center rounded-lg bg-navy-900 text-white">
                   <MessageSquare className="size-4" aria-hidden="true" />
                 </span>

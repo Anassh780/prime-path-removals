@@ -113,7 +113,7 @@ function EmptyState() {
         </p>
       </div>
 
-      <div className="border-t border-line bg-surface-subtle p-7 sm:p-10 lg:border-l lg:border-t-0 lg:p-12">
+      <div className="border-t border-line bg-navy-50 p-7 sm:p-10 lg:border-l lg:border-t-0 lg:p-12">
         <p className="text-xs font-semibold uppercase tracking-[0.08em] text-royal-700">
           How we publish feedback
         </p>

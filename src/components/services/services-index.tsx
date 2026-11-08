@@ -11,7 +11,7 @@ export function ServicesIndex() {
   return (
     <nav
       aria-label="Services on this page"
-      className="rounded-2xl border border-line bg-white shadow-card"
+      className="rounded-2xl border border-line bg-white text-ink shadow-card"
     >
       <div className="border-b border-line px-5 py-4">
         <span className="eyebrow">On this page</span>

@@ -13,14 +13,20 @@ export function ContactFaq() {
 
   return (
     <Reveal delay={0.05}>
-      <Accordion type="single" collapsible className="border-t border-line">
-        {items.map((faq, index) => (
-          <AccordionItem key={faq.question} value={`contact-faq-${index}`}>
-            <AccordionTrigger>{faq.question}</AccordionTrigger>
-            <AccordionContent>{faq.answer}</AccordionContent>
-          </AccordionItem>
-        ))}
-      </Accordion>
+      <div className="rounded-2xl border border-royal-200 bg-royal-50 p-5 sm:p-7">
+        <Accordion type="single" collapsible className="border-t border-royal-200/70">
+          {items.map((faq, index) => (
+            <AccordionItem
+              key={faq.question}
+              value={`contact-faq-${index}`}
+              className="border-royal-200/70"
+            >
+              <AccordionTrigger>{faq.question}</AccordionTrigger>
+              <AccordionContent>{faq.answer}</AccordionContent>
+            </AccordionItem>
+          ))}
+        </Accordion>
+      </div>
     </Reveal>
   );
 }

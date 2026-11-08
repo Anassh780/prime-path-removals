@@ -5,12 +5,21 @@ import { Container, Section, SectionHeading } from "@/components/shared/section"
 
 /**
  * "How we work" band. The four highlights from company.ts are process facts,
- * not trust badges — presented as large numerals with their scope explained.
+ * not trust badges — presented as oversized numerals with their scope
+ * explained, on a navy-950 surface with a faint inverse dot grid.
  */
 export function HowWeWork() {
   return (
-    <Section id="how-we-work" tone="navy">
-      <Container>
+    <Section
+      id="how-we-work"
+      tone="navy"
+      className="relative overflow-hidden"
+    >
+      <div
+        aria-hidden="true"
+        className="pointer-events-none absolute inset-0 bg-grid-inverse opacity-40"
+      />
+      <Container className="relative">
         <Reveal>
           <SectionHeading
             eyebrow="Working with us"
@@ -25,13 +34,13 @@ export function HowWeWork() {
             {highlights.map((item) => (
               <div key={item.label} className="bg-navy-950 p-6 lg:p-7">
                 <StaggerItem>
-                  <p className="font-display text-5xl tracking-[-0.02em] tabular-nums text-white lg:text-6xl">
+                  <p className="font-display text-5xl tracking-[-0.02em] tabular-nums text-white lg:text-6xl xl:text-7xl">
                     {item.value}
                   </p>
                   <h3 className="mt-4 text-[15px] font-semibold text-white">
                     {item.label}
                   </h3>
-                  <p className="mt-2 text-sm leading-relaxed text-white/65">
+                  <p className="mt-2 text-sm leading-relaxed text-navy-300">
                     {item.description}
                   </p>
                 </StaggerItem>
@@ -41,7 +50,7 @@ export function HowWeWork() {
         </Stagger>
 
         <Reveal delay={0.1} className="mt-6">
-          <p className="max-w-3xl text-sm leading-relaxed text-white/55">
+          <p className="max-w-3xl text-sm leading-relaxed text-navy-300/80">
             Turnaround is measured from the point we have complete move details,
             not from your first enquiry — so the figure reflects the job rather
             than the queue.

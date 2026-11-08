@@ -158,7 +158,7 @@ export function ContactForm() {
     <section
       id="contact-form"
       aria-labelledby="contact-form-heading"
-      className="scroll-mt-24 rounded-xl border border-line bg-white p-6 shadow-card sm:p-8"
+      className="scroll-mt-24 rounded-xl border border-line border-t-4 border-t-accent-600 bg-white p-6 shadow-card sm:p-8"
     >
       {success ? (
         <div className="flex animate-fade-up flex-col gap-5">
@@ -167,7 +167,7 @@ export function ContactForm() {
             aria-live="polite"
             className="flex flex-col gap-5"
           >
-            <span className="flex size-12 animate-pop-in items-center justify-center rounded-full border border-royal-100 bg-royal-50 text-royal-700">
+            <span className="flex size-12 animate-pop-in items-center justify-center rounded-full border border-accent-200 bg-accent-50 text-accent-600">
               <Check
                 className="size-6 animate-check-in [stroke-dasharray:24]"
                 strokeWidth={2.5}
@@ -180,7 +180,7 @@ export function ContactForm() {
                 id="contact-form-heading"
                 ref={successHeadingRef}
                 tabIndex={-1}
-                className="text-xl font-semibold text-ink sm:text-2xl"
+                className="text-2xl font-semibold tracking-[-0.01em] text-ink sm:text-3xl"
               >
                 Message received
               </h2>
@@ -190,14 +190,14 @@ export function ContactForm() {
               </p>
             </div>
 
-            <dl className="rounded-lg border border-line bg-surface-subtle p-4 text-sm">
+            <dl className="rounded-lg border border-accent-200 bg-accent-50 p-4 text-sm">
               <div className="flex flex-wrap items-baseline justify-between gap-2">
                 <dt className="text-ink-muted">Reference</dt>
                 <dd className="font-mono text-sm font-medium tracking-wide text-ink">
                   {success.reference}
                 </dd>
               </div>
-              <div className="mt-2 flex flex-wrap items-baseline justify-between gap-2 border-t border-line pt-2">
+              <div className="mt-2 flex flex-wrap items-baseline justify-between gap-2 border-t border-accent-200/70 pt-2">
                 <dt className="text-ink-muted">Reply to</dt>
                 <dd className="break-all text-ink">{success.email}</dd>
               </div>
@@ -232,7 +232,7 @@ export function ContactForm() {
               id="contact-form-heading"
               ref={formHeadingRef}
               tabIndex={-1}
-              className="text-xl font-semibold text-ink sm:text-2xl"
+              className="text-2xl font-semibold tracking-[-0.01em] text-ink sm:text-3xl"
             >
               Send us a message
             </h2>

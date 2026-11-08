@@ -22,7 +22,8 @@ const planningNotes = [
 
 /**
  * About page hero. Illustration-led rather than photographic: a navy planning
- * panel carrying the floor-plan motif, next to an honest introduction.
+ * panel carrying the floor-plan motif and a faint inverse dot grid, next to an
+ * honest introduction.
  */
 export function AboutHero() {
   return (
@@ -70,9 +71,13 @@ export function AboutHero() {
 
           <Reveal immediate delay={0.12} y={16}>
             <div className="relative overflow-hidden rounded-2xl border border-navy-800 bg-navy-950 p-7 sm:p-9">
+              <div
+                className="pointer-events-none absolute inset-0 bg-grid-inverse opacity-30"
+                aria-hidden="true"
+              />
               <FloorPlan className="pointer-events-none absolute -right-20 -bottom-12 w-[26rem] opacity-20" />
               <div className="relative">
-                <p className="text-xs font-semibold uppercase tracking-[0.18em] text-white/50">
+                <p className="text-xs font-semibold uppercase tracking-[0.18em] text-accent-300">
                   Planning notes
                 </p>
                 <h2 className="mt-4 font-display text-2xl tracking-[-0.02em] text-white sm:text-[1.75rem]">

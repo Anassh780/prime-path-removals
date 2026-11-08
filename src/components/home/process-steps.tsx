@@ -15,6 +15,9 @@ import type { ProcessStep } from "@/content/process";
  * steps sit on one row and the rule actually connects them; below that it is
  * not rendered visually at all.
  *
+ * The step numbers are oversized tabular display numerals rather than small
+ * badges, so the sequence carries the section on the dark band.
+ *
  * Reduced motion is handled in CSS, not in the render path: the scroll-driven
  * layer is `motion-reduce:hidden`, leaving the static hairline drawn in full.
  * That keeps the server and client markup identical (no hydration mismatch).
@@ -34,11 +37,11 @@ export function ProcessSteps({ steps }: { steps: ProcessStep[] }) {
       {/* Connector hairline behind the step numbers on wide screens. */}
       <div
         aria-hidden="true"
-        className="pointer-events-none absolute inset-x-0 top-5 hidden h-px lg:block"
+        className="pointer-events-none absolute inset-x-0 top-[30px] hidden h-px lg:block"
       >
-        <div className="absolute inset-0 bg-line-strong/40" />
+        <div className="absolute inset-0 bg-white/10" />
         <motion.div
-          className="absolute inset-0 origin-left bg-navy-800/60 motion-reduce:hidden"
+          className="absolute inset-0 origin-left bg-royal-300/70 motion-reduce:hidden"
           style={{ scaleX: lineScale }}
         />
       </div>
@@ -51,13 +54,13 @@ export function ProcessSteps({ steps }: { steps: ProcessStep[] }) {
               as="li"
               className="relative flex h-full flex-col gap-4"
             >
-              <span className="relative z-10 flex size-10 shrink-0 items-center justify-center rounded-lg bg-navy-900 font-display text-sm font-semibold tracking-wide text-white shadow-xs">
+              <span className="relative z-10 font-display text-5xl font-semibold leading-none tracking-[-0.02em] tabular-nums text-royal-300 sm:text-6xl">
                 {step.step}
               </span>
-              <h3 className="text-lg font-semibold text-ink sm:text-xl">
+              <h3 className="text-lg font-semibold text-white sm:text-xl">
                 {step.title}
               </h3>
-              <p className="text-[15px] leading-relaxed text-ink-soft">
+              <p className="text-[15px] leading-relaxed text-navy-300">
                 {step.description}
               </p>
             </StaggerItem>

@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { ArrowRight, Check, Mail, Phone } from "lucide-react";
 
+import { RouteLine } from "@/components/brand/motifs";
 import { WhatsAppIcon } from "@/components/brand/whatsapp-icon";
 import { Reveal } from "@/components/shared/reveal";
 import { processSteps } from "@/content/process";
@@ -31,43 +32,51 @@ export function QuoteAside({ estimate }: QuoteAsideProps) {
       {/* Live Estimate Card placed prominently at the top */}
       <LiveEstimateCard estimate={activeEstimate} />
 
-      {/* Process Steps */}
+      {/* Process Steps — the page's oversized element: large tabular numerals. */}
       <Reveal delay={0.05}>
-        <div className="rounded-xl bg-navy-950 p-6 text-white sm:p-7">
-          <h2 className="text-lg font-semibold tracking-[-0.01em] text-white sm:text-xl">
-            What happens next
-          </h2>
-          <p className="mt-2 text-sm leading-relaxed text-white/65">
-            Four straightforward steps, from your instant estimate to move day.
-          </p>
+        <div className="relative overflow-hidden rounded-xl border border-navy-800 bg-navy-950 p-6 text-white sm:p-7">
+          <RouteLine className="pointer-events-none absolute -right-20 -bottom-10 w-[22rem] opacity-15" />
+          <div className="relative">
+            <h2 className="text-lg font-semibold tracking-[-0.01em] text-white sm:text-xl">
+              What happens next
+            </h2>
+            <p className="mt-2 text-sm leading-relaxed text-white/65">
+              Four straightforward steps, from your instant estimate to move day.
+            </p>
 
-          <ol className="mt-6 flex flex-col gap-5">
-            {processSteps.map((step) => (
-              <li key={step.step} className="flex gap-3.5">
-                <span
-                  className="flex size-7 shrink-0 items-center justify-center rounded-full border border-white/20 bg-white/5 text-[11px] font-semibold tabular-nums text-white/75"
-                  aria-hidden="true"
+            <ol className="mt-6 flex flex-col gap-4">
+              {processSteps.map((step) => (
+                <li
+                  key={step.step}
+                  className="border-t border-white/10 pt-4 first:border-t-0 first:pt-0"
                 >
-                  {step.step}
-                </span>
-                <div>
-                  <h3 className="text-sm font-semibold text-white">
-                    {step.title}
-                  </h3>
-                  <p className="mt-1 text-sm leading-relaxed text-white/65">
+                  <div className="flex items-baseline justify-between gap-3">
+                    <h3 className="text-sm font-semibold text-white">
+                      {step.title}
+                    </h3>
+                    <span
+                      className="shrink-0 font-display text-[2rem] font-semibold leading-none tracking-[-0.04em] tabular-nums text-royal-300/60 xl:text-4xl"
+                      aria-hidden="true"
+                    >
+                      {step.step}
+                    </span>
+                  </div>
+                  <p className="mt-1.5 text-sm leading-relaxed text-white/65">
                     {step.description}
                   </p>
-                </div>
-              </li>
-            ))}
-          </ol>
+                </li>
+              ))}
+            </ol>
+          </div>
         </div>
       </Reveal>
 
-      {/* Guarantees */}
+      {/* Guarantees — tinted azure panel instead of a flat white callout. */}
       <Reveal delay={0.1}>
-        <div className="rounded-xl border border-line bg-white p-6 shadow-card">
-          <h2 className="text-sm font-semibold text-ink">What you can expect</h2>
+        <div className="rounded-xl border border-royal-200 bg-royal-50 p-6 shadow-card">
+          <h2 className="text-sm font-semibold text-navy-900">
+            What you can expect
+          </h2>
 
           <ul className="mt-4 flex flex-col gap-3">
             {[
@@ -88,8 +97,8 @@ export function QuoteAside({ estimate }: QuoteAsideProps) {
             ))}
           </ul>
 
-          <div className="mt-5 border-t border-line pt-5">
-            <h2 className="text-sm font-semibold text-ink">
+          <div className="mt-5 border-t border-royal-200/70 pt-5">
+            <h2 className="text-sm font-semibold text-navy-900">
               Prefer to talk it through?
             </h2>
 

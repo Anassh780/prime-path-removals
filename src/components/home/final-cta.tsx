@@ -73,7 +73,7 @@ export function FinalCta() {
                     )}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="-my-1 inline-flex items-center gap-1.5 py-1 font-medium text-emerald-400 hover:text-emerald-300"
+                    className="-my-1 inline-flex items-center gap-1.5 py-1 font-medium text-accent-300 hover:text-white"
                   >
                     <WhatsAppIcon className="size-3.5" aria-hidden="true" />
                     WhatsApp chat

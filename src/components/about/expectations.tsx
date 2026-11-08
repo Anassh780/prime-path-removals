@@ -6,7 +6,7 @@ import { Container, Section, SectionHeading } from "@/components/shared/section"
 /**
  * "What you can expect" — the six capability statements from company.ts as a
  * two-column hairline list. Deliberately not cards: these are standards, not
- * features.
+ * features. Azure-tinted icon tiles keep the white section from reading flat.
  */
 export function Expectations() {
   return (
@@ -32,10 +32,9 @@ export function Expectations() {
                   className="border-t border-line pt-6"
                 >
                   <div className="flex gap-4">
-                    <Icon
-                      className="mt-0.5 size-5 shrink-0 text-royal-700"
-                      aria-hidden="true"
-                    />
+                    <span className="inline-flex size-10 shrink-0 items-center justify-center rounded-lg border border-royal-200 bg-royal-50 text-royal-700">
+                      <Icon className="size-5" aria-hidden="true" />
+                    </span>
                     <div>
                       <h3 className="text-base font-semibold text-ink sm:text-lg">
                         {item.title}

@@ -4,7 +4,6 @@ import * as React from "react";
 import { useRouter } from "next/navigation";
 import { ArrowRight, Calculator } from "lucide-react";
 
-import { AnimatedNumber } from "@/components/shared/animated-number";
 import { Button } from "@/components/ui/button";
 import { FieldError } from "@/components/ui/field";
 import { Input } from "@/components/ui/input";
@@ -15,10 +14,8 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/select";
-import { calculateQuoteEstimate, type PropertyType } from "@/lib/quote-pricing";
+import type { PropertyType } from "@/lib/quote-pricing";
 import { PROPERTY_TYPES } from "@/lib/validations/quote";
-
-const formatPounds = (value: number) => `£${Math.round(value)}`;
 
 /** Same address at both ends is almost always a typo — catch it before the quote form. */
 function normaliseAddress(value: string) {
@@ -47,10 +44,6 @@ export function HeroQuickQuote() {
   const [error, setError] = React.useState<QuickQuoteError | null>(null);
   const [isPending, startTransition] = React.useTransition();
   const toRef = React.useRef<HTMLInputElement>(null);
-
-  const previewEstimate = React.useMemo(() => {
-    return calculateQuoteEstimate({ propertyType });
-  }, [propertyType]);
 
   function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
@@ -89,30 +82,29 @@ export function HeroQuickQuote() {
   const errorId = "quick-quote-error";
 
   return (
-    <div className="rounded-xl border border-line bg-surface-subtle p-4 shadow-card transition-[border-color] duration-200 focus-within:border-royal-200 sm:p-5">
+    <div className="rounded-xl border border-line bg-surface-subtle p-4 shadow-overlay transition-[border-color] duration-200 focus-within:border-royal-200 sm:p-5">
       <div className="flex flex-wrap items-center justify-between gap-2 border-b border-line/70 pb-3">
         <div className="flex items-center gap-2">
           <span className="flex size-6 items-center justify-center rounded-md bg-royal-100 text-royal-700">
             <Calculator className="size-3.5" aria-hidden="true" />
           </span>
-          <span className="text-xs font-semibold uppercase tracking-wider text-navy-950">
-            Instant Move Price Estimator
-          </span>
-        </div>
-        <div className="flex items-center gap-1.5 rounded-full border border-royal-200 bg-royal-50 px-2.5 py-0.5 text-xs font-medium text-royal-800">
-          <span>
-            Indicative range:{" "}
-            <AnimatedNumber
-              value={previewEstimate.minPrice}
-              format={formatPounds}
-            />{" "}
-            –{" "}
-            <AnimatedNumber
-              value={previewEstimate.maxPrice}
-              format={formatPounds}
+          {/* The one continuous element in the hero: a slow 7s ping that reads
+              as a live estimate. Purely decorative, and switched off under
+              reduced motion by CSS, never by branching the render tree. */}
+          <span className="relative flex size-2" aria-hidden="true">
+            <span
+              className="absolute inline-flex size-full animate-ping rounded-full bg-royal-500 opacity-60 motion-reduce:hidden"
+              style={{ animationDuration: "7s" }}
             />
+            <span className="relative inline-flex size-2 rounded-full bg-royal-500" />
+          </span>
+          <span className="text-xs font-semibold uppercase tracking-wider text-navy-950">
+            Instant Move Estimate
           </span>
         </div>
+        <span className="text-xs font-medium text-ink-muted">
+          No obligation
+        </span>
       </div>
 
       <form onSubmit={handleSubmit} className="mt-4 grid gap-3 sm:grid-cols-2">

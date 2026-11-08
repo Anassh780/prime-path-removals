@@ -101,9 +101,9 @@ export function Coverage() {
           </Reveal>
 
           <Reveal delay={0.08}>
-            <div className="rounded-2xl border border-line bg-surface-subtle p-6 sm:p-8">
+            <div className="rounded-2xl border border-navy-100 bg-navy-50 p-6 sm:p-8">
               <div className="flex items-start gap-3.5">
-                <span className="flex size-10 shrink-0 items-center justify-center rounded-lg bg-royal-50 text-royal-700">
+                <span className="flex size-10 shrink-0 items-center justify-center rounded-lg bg-white text-royal-700 shadow-xs">
                   <MapPin className="size-5" aria-hidden="true" />
                 </span>
                 <div>
@@ -159,7 +159,7 @@ export function Coverage() {
                 <div
                   role="status"
                   aria-live="polite"
-                  className="mt-6 animate-pop-in rounded-xl border border-royal-100 bg-royal-50 p-4 sm:p-5"
+                  className="mt-6 animate-pop-in rounded-xl border border-royal-100 bg-white p-4 shadow-xs sm:p-5"
                 >
                   <div className="flex gap-3">
                     <CheckCircle2

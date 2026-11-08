@@ -52,29 +52,29 @@ export function BoxStack({ className, animated = false }: MotifProps) {
       focusable="false"
     >
       <g
-        stroke="#c7d7e9"
+        stroke="#b9cee0"
         strokeWidth="1.1"
         strokeLinejoin="round"
         {...entrance(animated, "0s")}
       >
         <polygon points="60,28 96,46 60,64 24,46" fill="#ffffff" />
-        <polygon points="96,46 96,74 60,92 60,64" fill="#eef2f7" />
-        <polygon points="24,46 60,64 60,92 24,74" fill="#dfe7f1" />
+        <polygon points="96,46 96,74 60,92 60,64" fill="#dbe7f1" />
+        <polygon points="24,46 60,64 60,92 24,74" fill="#dbe7f1" />
       </g>
       <g
-        stroke="#c7d7e9"
+        stroke="#b9cee0"
         strokeWidth="1.1"
         strokeLinejoin="round"
         {...entrance(animated, "0.08s")}
       >
         <polygon points="46,20 74,34 46,48 18,34" fill="#ffffff" />
-        <polygon points="74,34 74,54 46,68 46,48" fill="#eef2f7" />
-        <polygon points="18,34 46,48 46,68 18,54" fill="#dfe7f1" />
+        <polygon points="74,34 74,54 46,68 46,48" fill="#dbe7f1" />
+        <polygon points="18,34 46,48 46,68 18,54" fill="#dbe7f1" />
       </g>
       <polygon
         points="46,20 74,34 46,48 18,34"
         fill="none"
-        stroke="#ea7a2f"
+        stroke="#1f6f4d"
         strokeWidth="1.4"
         opacity="0.55"
         {...entrance(animated, "0.16s", "fade")}
@@ -94,7 +94,7 @@ export function RouteLine({ className, animated = false }: MotifProps) {
       <path
         d="M14 132c44 0 48-46 92-46s44 38 88 38 42-30 74-52"
         fill="none"
-        stroke="#c7d7e9"
+        stroke="#b9cee0"
         strokeWidth="2"
         strokeLinecap="round"
         strokeDasharray="3 10"
@@ -104,30 +104,30 @@ export function RouteLine({ className, animated = false }: MotifProps) {
         cx="14"
         cy="132"
         r="5"
-        fill="#0d1a2b"
+        fill="#04101f"
         {...entrance(animated, "0.24s", "fade")}
       />
       <circle
         cx="106"
         cy="86"
         r="4"
-        fill="#93b4fd"
+        fill="#7cc2fb"
         {...entrance(animated, "0.3s", "fade")}
       />
       <circle
         cx="194"
         cy="124"
         r="4"
-        fill="#93b4fd"
+        fill="#7cc2fb"
         {...entrance(animated, "0.36s", "fade")}
       />
       <g {...entrance(animated, "0.42s")}>
         <path
           d="M262 40c0-11 9-20 20-20s20 9 20 20c0 14-20 30-20 30s-20-16-20-30z"
-          fill="#0d1a2b"
+          fill="#04101f"
         />
         <circle cx="282" cy="40" r="7" fill="#ffffff" />
-        <circle cx="282" cy="40" r="2.8" fill="#ea7a2f" />
+        <circle cx="282" cy="40" r="2.8" fill="#1f6f4d" />
       </g>
     </svg>
   );
@@ -143,7 +143,7 @@ export function FloorPlan({ className, animated = false }: MotifProps) {
     >
       <g
         fill="none"
-        stroke="#c7d7e9"
+        stroke="#b9cee0"
         strokeWidth="1.6"
         strokeLinejoin="round"
         {...entrance(animated, "0s", "fade")}
@@ -157,7 +157,7 @@ export function FloorPlan({ className, animated = false }: MotifProps) {
       <path
         d="M60 178c34-16 42-58 86-58s54 26 84-8 22-44 62-52"
         fill="none"
-        stroke="#2559e0"
+        stroke="#1173d4"
         strokeWidth="2"
         strokeLinecap="round"
         strokeDasharray="4 9"
@@ -168,14 +168,14 @@ export function FloorPlan({ className, animated = false }: MotifProps) {
         cx="60"
         cy="178"
         r="4.5"
-        fill="#0d1a2b"
+        fill="#04101f"
         {...entrance(animated, "0.3s", "fade")}
       />
       <circle
         cx="292"
         cy="60"
         r="5.5"
-        fill="#ea7a2f"
+        fill="#1f6f4d"
         {...entrance(animated, "0.36s")}
       />
     </svg>

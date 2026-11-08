@@ -21,23 +21,29 @@ export const metadata: Metadata = buildMetadata({
 export default function ServicesPage() {
   return (
     <>
-      <Section tone="subtle" className="border-b border-line">
-        <Container>
+      {/* Page top reads as a designed band: navy-950 with a faint inverse dot
+          grid, white display heading and the jump-link index as a white card. */}
+      <Section tone="navy" className="relative overflow-hidden">
+        <div
+          aria-hidden="true"
+          className="pointer-events-none absolute inset-0 bg-grid-inverse opacity-60"
+        />
+        <Container className="relative">
           <div className="grid gap-12 lg:grid-cols-12 lg:items-start lg:gap-16">
             <Reveal immediate y={20} className="lg:col-span-7">
-              <span className="eyebrow">
+              <span className="eyebrow text-accent-300">
                 <span
-                  className="h-px w-6 bg-royal-600/40"
+                  className="h-px w-6 bg-accent-300/60"
                   aria-hidden="true"
                 />
                 Our services
               </span>
 
-              <h1 className="mt-5 font-display text-4xl leading-[1.05] tracking-[-0.02em] text-ink sm:text-5xl lg:text-6xl">
+              <h1 className="mt-5 font-display text-4xl leading-[1.05] tracking-[-0.02em] text-white sm:text-5xl lg:text-6xl xl:text-7xl">
                 Removal services
               </h1>
 
-              <p className="mt-6 max-w-xl text-[15px] leading-relaxed text-ink-soft sm:text-base">
+              <p className="mt-6 max-w-xl text-[15px] leading-relaxed text-navy-300 sm:text-base">
                 Seven services covering the whole move — from a single item to a
                 full commercial relocation. Every job is planned around your
                 property, your access and your dates, then quoted in writing
@@ -57,7 +63,7 @@ export default function ServicesPage() {
                 </Button>
               </div>
 
-              <p className="mt-6 text-sm text-ink-muted">
+              <p className="mt-6 text-sm text-navy-300">
                 No obligation — availability and pricing are confirmed in your
                 written quote.
               </p>

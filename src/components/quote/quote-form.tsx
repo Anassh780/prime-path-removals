@@ -348,14 +348,14 @@ export function QuoteForm({ onEstimateChange }: QuoteFormProps) {
   return (
     <section
       aria-labelledby="quote-form-heading"
-      className="rounded-xl border border-line bg-white p-5 shadow-card sm:p-7 lg:p-8"
+      className="rounded-xl border border-line border-t-4 border-t-accent-600 bg-white p-5 shadow-card sm:p-7 lg:p-8"
     >
       <div className="flex flex-col gap-1.5">
         <h2
           id="quote-form-heading"
           ref={formHeadingRef}
           tabIndex={-1}
-          className="text-xl font-semibold tracking-[-0.01em] text-ink outline-none sm:text-2xl"
+          className="text-2xl font-semibold tracking-[-0.02em] text-ink outline-none sm:text-3xl"
         >
           Tell us about your move
         </h2>
@@ -401,9 +401,17 @@ export function QuoteForm({ onEstimateChange }: QuoteFormProps) {
       <form noValidate onSubmit={onSubmit} className="mt-6 flex flex-col gap-6">
         {/* Section 1: Contact Details */}
         <div className={PANEL}>
-          <h3 className="text-xs font-semibold uppercase tracking-[0.08em] text-navy-900">
-            1. Contact details
-          </h3>
+          <div className="flex items-center gap-2.5">
+            <span
+              className="flex size-6 shrink-0 items-center justify-center rounded-md bg-navy-900 font-display text-[11px] font-semibold tabular-nums text-white"
+              aria-hidden="true"
+            >
+              1
+            </span>
+            <h3 className="text-xs font-semibold uppercase tracking-[0.08em] text-navy-900">
+              Contact details
+            </h3>
+          </div>
           <div className="mt-4 grid gap-4 sm:grid-cols-2">
             <Field className={cn(FIELD_GROUP, "sm:col-span-2")}>
               <FieldLabel htmlFor="fullName" required className={LABEL_FOCUS}>
@@ -467,9 +475,17 @@ export function QuoteForm({ onEstimateChange }: QuoteFormProps) {
 
         {/* Section 2: Move Locations & Timeline */}
         <div className={PANEL} style={{ animationDelay: "40ms" }}>
-          <h3 className="text-xs font-semibold uppercase tracking-[0.08em] text-navy-900">
-            2. Locations &amp; date
-          </h3>
+          <div className="flex items-center gap-2.5">
+            <span
+              className="flex size-6 shrink-0 items-center justify-center rounded-md bg-navy-900 font-display text-[11px] font-semibold tabular-nums text-white"
+              aria-hidden="true"
+            >
+              2
+            </span>
+            <h3 className="text-xs font-semibold uppercase tracking-[0.08em] text-navy-900">
+              Locations &amp; date
+            </h3>
+          </div>
           <div className="mt-4 grid gap-4 sm:grid-cols-2">
             <Field className={FIELD_GROUP}>
               <FieldLabel htmlFor="movingFrom" required className={LABEL_FOCUS}>
@@ -576,9 +592,17 @@ export function QuoteForm({ onEstimateChange }: QuoteFormProps) {
 
         {/* Section 3: Property Type & Access Specifications */}
         <div className={PANEL} style={{ animationDelay: "80ms" }}>
-          <h3 className="text-xs font-semibold uppercase tracking-[0.08em] text-navy-900">
-            3. Property &amp; access details
-          </h3>
+          <div className="flex items-center gap-2.5">
+            <span
+              className="flex size-6 shrink-0 items-center justify-center rounded-md bg-navy-900 font-display text-[11px] font-semibold tabular-nums text-white"
+              aria-hidden="true"
+            >
+              3
+            </span>
+            <h3 className="text-xs font-semibold uppercase tracking-[0.08em] text-navy-900">
+              Property &amp; access details
+            </h3>
+          </div>
           <div className="mt-4 grid gap-4 sm:grid-cols-2">
             <Field className={cn(FIELD_GROUP, "sm:col-span-2")}>
               <FieldLabel htmlFor="propertyType" required className={LABEL_FOCUS}>

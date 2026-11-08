@@ -41,7 +41,7 @@ export default function OpengraphImage() {
           flexDirection: "column",
           justifyContent: "space-between",
           position: "relative",
-          backgroundColor: "#070f1a",
+          backgroundColor: "#04101f",
           padding: "64px 80px",
         }}
       >
@@ -53,7 +53,7 @@ export default function OpengraphImage() {
             left: 0,
             right: 0,
             height: 6,
-            backgroundColor: "#ea7a2f",
+            backgroundColor: "#11543b",
           }}
         />
 
@@ -75,7 +75,7 @@ export default function OpengraphImage() {
               height: 132,
               marginRight: 14,
               borderRadius: 10,
-              backgroundColor: "#1a2c42",
+              backgroundColor: "#0d2547",
               border: "1px solid rgba(255,255,255,0.08)",
             }}
           />
@@ -86,7 +86,7 @@ export default function OpengraphImage() {
               height: 96,
               marginRight: 14,
               borderRadius: 10,
-              backgroundColor: "#27405c",
+              backgroundColor: "#163559",
               border: "1px solid rgba(255,255,255,0.08)",
             }}
           />
@@ -96,7 +96,7 @@ export default function OpengraphImage() {
               width: 52,
               height: 52,
               borderRadius: 10,
-              backgroundColor: "#ea7a2f",
+              backgroundColor: "#11543b",
             }}
           />
         </div>
@@ -110,7 +110,7 @@ export default function OpengraphImage() {
               height: 10,
               marginRight: 14,
               borderRadius: 2,
-              backgroundColor: "#ea7a2f",
+              backgroundColor: "#11543b",
             }}
           />
           <div
@@ -118,7 +118,7 @@ export default function OpengraphImage() {
               display: "flex",
               fontSize: 18,
               letterSpacing: "0.28em",
-              color: "#9fb6d1",
+              color: "#8aa9c6",
             }}
           >
             PRIME HOUSE REMOVALS
@@ -150,7 +150,7 @@ export default function OpengraphImage() {
               marginTop: 28,
               fontSize: 24,
               lineHeight: 1.5,
-              color: "#9fb6d1",
+              color: "#8aa9c6",
               maxWidth: 680,
             }}
           >
@@ -172,7 +172,7 @@ export default function OpengraphImage() {
             style={{
               display: "flex",
               fontSize: 20,
-              color: "#c7d7e9",
+              color: "#b9cee0",
             }}
           >
             {siteHost()}
@@ -182,7 +182,7 @@ export default function OpengraphImage() {
               display: "flex",
               fontSize: 18,
               letterSpacing: "0.12em",
-              color: "#667085",
+              color: "#64748b",
             }}
           >
             HOUSE / OFFICE / COMMERCIAL

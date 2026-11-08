@@ -76,7 +76,17 @@ const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
     return (
       <Comp
         ref={ref}
-        className={cn(buttonVariants({ variant, size }), className)}
+        className={cn(
+          buttonVariants({ variant, size }),
+          /*
+           * A loading button is disabled, but it must not fade into the
+           * background: the spinner is the only thing still moving, so it keeps
+           * near-full contrast. It inherits `currentColor`, which is white on
+           * primary/accent and ink on the light variants.
+           */
+          loading && "disabled:opacity-90",
+          className,
+        )}
         disabled={asChild ? undefined : disabled || loading}
         aria-busy={loading || undefined}
         {...props}

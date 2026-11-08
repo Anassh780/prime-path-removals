@@ -24,11 +24,11 @@ const FALLBACK_CSS = `
     background-color 150ms cubic-bezier(0.22, 1, 0.36, 1),
     transform 150ms cubic-bezier(0.22, 1, 0.36, 1);
 }
-.gerr-btn:hover { background-color: #16283f !important; }
+.gerr-btn:hover { background-color: #0d2547 !important; }
 .gerr-btn:active { transform: translateY(1px); }
 .gerr-btn:focus-visible,
 .gerr-link:focus-visible {
-  outline: 2px solid #2559e0;
+  outline: 2px solid #1173d4;
   outline-offset: 2px;
   border-radius: 2px;
 }
@@ -51,8 +51,8 @@ export default function GlobalError({
         style={{
           margin: 0,
           minHeight: "100vh",
-          backgroundColor: "#f7f8fa",
-          color: "#0f1729",
+          backgroundColor: "#f7f9fb",
+          color: "#0a1526",
           fontFamily:
             "ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif",
           WebkitFontSmoothing: "antialiased",
@@ -74,7 +74,7 @@ export default function GlobalError({
               width: "100%",
               maxWidth: "520px",
               backgroundColor: "#ffffff",
-              border: "1px solid #e4e7ec",
+              border: "1px solid #e3e8ef",
               borderRadius: "16px",
               padding: "40px",
             }}
@@ -86,7 +86,7 @@ export default function GlobalError({
               role="img"
               aria-label="Prime House Removals"
             >
-              <rect width="40" height="40" rx="10" fill="#0d1a2b" />
+              <rect width="40" height="40" rx="10" fill="#04101f" />
               <path
                 d="M10.5 20.4 20 12.6l9.5 7.8"
                 fill="none"
@@ -106,14 +106,14 @@ export default function GlobalError({
               <path
                 d="M17.6 27.6v-4.8h4.8v4.8"
                 fill="none"
-                stroke="#ea7a2f"
+                stroke="#11543b"
                 strokeWidth="2.4"
                 strokeLinecap="round"
                 strokeLinejoin="round"
               />
               <path
                 d="M26.4 10.4h4.2"
-                stroke="#ea7a2f"
+                stroke="#11543b"
                 strokeWidth="2.4"
                 strokeLinecap="round"
               />
@@ -136,7 +136,7 @@ export default function GlobalError({
                 margin: "12px 0 0",
                 fontSize: "15px",
                 lineHeight: 1.65,
-                color: "#475467",
+                color: "#44546a",
               }}
             >
               An unexpected error stopped the page from starting. Reload to try
@@ -156,7 +156,7 @@ export default function GlobalError({
                 padding: "0 20px",
                 border: "none",
                 borderRadius: "8px",
-                backgroundColor: "#0d1a2b",
+                backgroundColor: "#04101f",
                 color: "#ffffff",
                 fontSize: "14px",
                 fontWeight: 500,
@@ -172,7 +172,7 @@ export default function GlobalError({
                 margin: "20px 0 0",
                 fontSize: "13px",
                 lineHeight: 1.6,
-                color: "#667085",
+                color: "#64748b",
               }}
             >
               Prime House Removals —{" "}
@@ -182,7 +182,7 @@ export default function GlobalError({
               <a
                 href="/"
                 className="gerr-link"
-                style={{ color: "#1d47c4", textDecoration: "underline" }}
+                style={{ color: "#0b5aa8", textDecoration: "underline" }}
               >
                 return to the home page
               </a>

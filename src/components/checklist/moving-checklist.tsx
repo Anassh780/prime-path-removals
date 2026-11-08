@@ -1,9 +1,7 @@
 "use client";
 
 import * as React from "react";
-import Link from "next/link";
 import {
-  ArrowRight,
   CheckCircle2,
   Circle,
   ClipboardList,
@@ -211,30 +209,43 @@ export function MovingChecklist() {
 
   return (
     <div className="flex flex-col gap-8">
-      {/* Progress tracker bar */}
+      {/* Progress tracker — the page's visual anchor. */}
       <Reveal
         className={cn(
-          "rounded-xl border border-line bg-white p-5 shadow-card sm:p-6",
+          "rounded-2xl border border-royal-200 bg-royal-50 p-6 shadow-card sm:p-7",
           PRINT_SAFE_REVEAL,
         )}
       >
-        <div className="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
+        <div className="flex flex-col gap-5 sm:flex-row sm:items-start sm:justify-between">
           <div>
             <div className="flex items-center gap-2">
               <ClipboardList className="size-4 text-royal-700" aria-hidden="true" />
-              <h2 className="text-base font-semibold text-ink">
+              <h2 className="text-[11px] font-semibold uppercase tracking-[0.16em] text-royal-700">
                 Your Moving Progress
               </h2>
             </div>
+
             <p
-              className="mt-1 text-xs text-ink-muted"
+              className="mt-4 flex flex-wrap items-baseline gap-x-2 gap-y-1"
               aria-live="polite"
               aria-atomic="true"
             >
               {mounted ? (
-                <span>
-                  <strong>{completedCount}</strong> of <strong>{totalCount}</strong> tasks completed ({percent}% ready)
-                </span>
+                <>
+                  <span className="font-display text-5xl font-semibold leading-none tracking-[-0.03em] text-navy-950 tabular-nums">
+                    {completedCount}
+                  </span>
+                  <span className="text-sm font-medium text-ink-soft">of</span>
+                  <span className="font-display text-2xl font-semibold leading-none tracking-[-0.02em] text-navy-950 tabular-nums">
+                    {totalCount}
+                  </span>
+                  <span className="text-sm font-medium text-ink-soft">
+                    tasks completed
+                  </span>
+                  <span className="rounded-md border border-royal-200 bg-white px-2 py-0.5 text-xs font-semibold text-royal-700 tabular-nums">
+                    {percent}% ready
+                  </span>
+                </>
               ) : (
                 "Interactive moving progress tracker"
               )}
@@ -248,7 +259,7 @@ export function MovingChecklist() {
                 variant="ghost"
                 size="sm"
                 onClick={handleReset}
-                className="h-8 gap-1.5 px-2.5 text-xs text-ink-muted hover:text-red-700"
+                className="h-8 gap-1.5 px-2.5 text-xs text-ink-soft hover:text-red-700"
               >
                 <RotateCcw className="size-3" aria-hidden="true" />
                 Reset checklist
@@ -270,7 +281,7 @@ export function MovingChecklist() {
 
         {/* Progress track — scaleX only, so no layout is thrashed per toggle */}
         <div
-          className="mt-4 h-2 w-full overflow-hidden rounded-full bg-surface-muted"
+          className="mt-6 h-2.5 w-full overflow-hidden rounded-full border border-royal-200 bg-white"
           role="progressbar"
           aria-label="Moving checklist progress"
           aria-valuemin={0}
@@ -299,7 +310,7 @@ export function MovingChecklist() {
               key={phase.phase}
               className={cn(
                 "u-card rounded-xl border border-line bg-white p-5 shadow-card sm:p-6",
-                phaseCompleted && "border-emerald-200 bg-emerald-50/20",
+                phaseCompleted && "border-accent-200 bg-accent-50/40",
               )}
             >
               <div className="flex items-center justify-between border-b border-line pb-3">
@@ -313,7 +324,7 @@ export function MovingChecklist() {
                 </div>
 
                 {phaseCompleted && (
-                  <span className="animate-pop-in inline-flex items-center gap-1 text-xs font-medium text-emerald-700">
+                  <span className="animate-pop-in inline-flex items-center gap-1 text-xs font-medium text-accent-700">
                     <CheckCircle2 className="size-3.5" aria-hidden="true" />
                     Phase complete
                   </span>
@@ -333,14 +344,14 @@ export function MovingChecklist() {
                       className={cn(
                         "u-card flex items-start gap-3 rounded-lg border p-3.5 text-left active:translate-y-px",
                         isChecked
-                          ? "border-emerald-200 bg-emerald-50/50"
+                          ? "border-accent-200 bg-accent-50/60"
                           : "border-line bg-surface-subtle hover:border-line-strong hover:bg-white",
                       )}
                     >
                       <span className="mt-0.5 shrink-0">
                         {isChecked ? (
                           <CheckCircle2
-                            className="animate-pop-in size-4 text-emerald-600"
+                            className="animate-pop-in size-4 text-accent-600"
                             aria-hidden="true"
                           />
                         ) : (
@@ -355,7 +366,7 @@ export function MovingChecklist() {
                         <span
                           className={cn(
                             "block text-xs font-semibold",
-                            isChecked ? "text-emerald-950 line-through opacity-80" : "text-ink",
+                            isChecked ? "text-accent-900 line-through opacity-80" : "text-ink",
                           )}
                         >
                           {item.task}
@@ -371,32 +382,6 @@ export function MovingChecklist() {
             </div>
           );
         })}
-      </Reveal>
-
-      {/* Bottom CTA to get live quote */}
-      <Reveal className={cn("rounded-xl bg-navy-950 p-6 text-white sm:p-8", PRINT_SAFE_REVEAL)}>
-        <div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
-          <div className="max-w-xl">
-            <h3 className="font-display text-xl font-semibold text-white sm:text-2xl">
-              Ready to secure your removal date?
-            </h3>
-            <p className="mt-2 text-xs leading-relaxed text-white/70 sm:text-sm">
-              Use our live price calculator to see instant pricing, or submit a
-              written quote request with your addresses and date.
-            </p>
-          </div>
-          <div className="flex flex-col gap-2.5 sm:flex-row sm:items-center shrink-0">
-            <Button asChild variant="accent" size="lg">
-              <Link href="/quote">
-                Get a live quote
-                <ArrowRight className="size-4" aria-hidden="true" />
-              </Link>
-            </Button>
-            <Button asChild variant="secondary" size="lg">
-              <Link href="/calculator">Cost calculator</Link>
-            </Button>
-          </div>
-        </div>
       </Reveal>
     </div>
   );

@@ -32,7 +32,7 @@ export function ServiceRow({ service, index }: ServiceRowProps) {
             )}
           >
             <span
-              className="font-display text-4xl leading-none tracking-[-0.04em] tabular-nums text-navy-300 transition-colors duration-200 group-hover:text-royal-700 lg:text-[3rem]"
+              className="font-display text-4xl leading-none tracking-[-0.04em] tabular-nums text-navy-300 transition-colors duration-200 group-hover:text-royal-700 lg:text-[3.5rem]"
               aria-hidden="true"
             >
               {number}

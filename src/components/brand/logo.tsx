@@ -1,49 +1,37 @@
+import Image from "next/image";
 import { cn } from "@/lib/utils";
 
 /**
- * Brand mark: a navy tile with a white roofline and a warm orange door —
- * "home" plus a sense of forward movement. Drawn to sit crisply at 20–40px.
+ * Prime Path House Removals — Brand Mark:
+ * High-definition brand emblem badge framed cleanly for light and dark surfaces
+ * without visual distortion or dullness.
  */
-export function LogoMark({ className }: { className?: string }) {
+export function LogoMark({
+  className,
+  tone = "default",
+}: {
+  className?: string;
+  tone?: "default" | "inverse";
+}) {
   return (
-    <svg
-      viewBox="0 0 40 40"
-      className={cn("size-10", className)}
-      role="img"
-      aria-label="Prime House Removals"
+    <span
+      className={cn(
+        "relative flex shrink-0 items-center justify-center overflow-hidden rounded-xl border transition-all duration-150",
+        tone === "inverse"
+          ? "border-white/25 bg-white shadow-sm ring-1 ring-white/20"
+          : "border-navy-950/15 bg-white shadow-xs",
+        className ?? "size-10",
+      )}
     >
-      <rect width="40" height="40" rx="10" fill="#0d1a2b" />
-      <path
-        d="M10.5 20.4 20 12.6l9.5 7.8"
-        fill="none"
-        stroke="#ffffff"
-        strokeWidth="2.4"
-        strokeLinecap="round"
-        strokeLinejoin="round"
+      <Image
+        src="/brand/logo.png"
+        alt="Prime Path House Removals Logo"
+        width={96}
+        height={96}
+        className="size-full object-cover object-center"
+        priority
       />
-      <path
-        d="M13.2 19v8.6h13.6V19"
-        fill="none"
-        stroke="#ffffff"
-        strokeWidth="2.4"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-      />
-      <path
-        d="M17.6 27.6v-4.8h4.8v4.8"
-        fill="none"
-        stroke="#ea7a2f"
-        strokeWidth="2.4"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-      />
-      <path
-        d="M26.4 10.4h4.2"
-        stroke="#ea7a2f"
-        strokeWidth="2.4"
-        strokeLinecap="round"
-      />
-    </svg>
+    </span>
   );
 }
 
@@ -58,24 +46,27 @@ export function Logo({
 }) {
   return (
     <span className={cn("inline-flex items-center gap-2.5", className)}>
-      <LogoMark className={compact ? "size-8" : "size-9"} />
+      <LogoMark
+        tone={tone}
+        className={compact ? "size-9 rounded-lg" : "size-10 rounded-xl"}
+      />
       <span className="flex flex-col leading-none">
         <span
           className={cn(
-            "font-display font-semibold tracking-[-0.02em]",
-            compact ? "text-[15px]" : "text-[17px]",
-            tone === "inverse" ? "text-white" : "text-ink",
+            "font-display font-bold tracking-[-0.02em]",
+            compact ? "text-[15.5px]" : "text-[18px]",
+            tone === "inverse" ? "text-white" : "text-navy-950",
           )}
         >
-          Prime House
+          Prime Path
         </span>
         <span
           className={cn(
-            "mt-1 font-sans text-[9px] font-semibold uppercase tracking-[0.26em]",
-            tone === "inverse" ? "text-white/55" : "text-ink-muted",
+            "mt-1 font-sans text-[8.5px] font-bold uppercase tracking-[0.24em]",
+            tone === "inverse" ? "text-emerald-400" : "text-emerald-700",
           )}
         >
-          Removals
+          House Removals
         </span>
       </span>
     </span>

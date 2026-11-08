@@ -91,9 +91,9 @@ export default function NotFound() {
                   aria-hidden="true"
                 />
                 <div className="relative flex items-center gap-3">
-                  <LogoMark className="size-9" />
+                  <LogoMark className="size-9" tone="inverse" />
                   <span className="text-xs font-semibold uppercase tracking-[0.24em] text-white/55">
-                    Prime House Removals
+                    Prime Path House Removals
                   </span>
                 </div>
                 <div className="relative">

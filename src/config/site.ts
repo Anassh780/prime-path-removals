@@ -19,12 +19,12 @@ const env = {
 };
 
 export const siteConfig = {
-  name: "Prime House Removals",
-  shortName: "Prime House",
-  legalName: "Prime House Removals",
+  name: "Prime Path House Removals",
+  shortName: "Prime Path",
+  legalName: "Prime Path House Removals",
   tagline: "Moving Made Simple. Removals You Can Rely On.",
   description:
-    "Prime House Removals provides house, office and commercial removals, packing, furniture transport and property clearance. Request a free, no-obligation quote for your move.",
+    "Prime Path House Removals provides house, office and commercial removals, packing, furniture transport and property clearance. Request a free, no-obligation quote for your move.",
   url: env.siteUrl,
   locale: "en_GB",
   contact: {

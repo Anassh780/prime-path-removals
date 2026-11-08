@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 40 40" width="40" height="40" role="img" aria-label="Prime House Removals">
+  <rect width="40" height="40" rx="10" fill="#0d1a2b"/>
+  <path d="M10.5 20.4 20 12.6l9.5 7.8" fill="none" stroke="#ffffff" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M13.2 19v8.6h13.6V19" fill="none" stroke="#ffffff" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M17.6 27.6v-4.8h4.8v4.8" fill="none" stroke="#ea7a2f" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M26.4 10.4h4.2" stroke="#ea7a2f" stroke-width="2.4" stroke-linecap="round"/>
+</svg>

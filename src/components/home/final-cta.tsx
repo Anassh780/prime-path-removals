@@ -61,7 +61,7 @@ export function FinalCta() {
                     href={formatPhoneHref(siteConfig.contact.phone)}
                     className="-my-1 inline-flex items-center gap-1.5 py-1 font-medium text-white hover:text-accent-300"
                   >
-                    <Phone className="size-3.5 text-royal-300" aria-hidden="true" />
+                    <Phone className="size-3.5 text-accent-300" aria-hidden="true" />
                     {siteConfig.contact.phone}
                   </a>
                 ) : null}

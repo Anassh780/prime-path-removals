@@ -21,7 +21,7 @@ export function ContactChannels() {
     <Reveal>
       <section
         aria-labelledby="contact-details-heading"
-        className="rounded-xl border border-royal-200 bg-royal-50 p-6 shadow-card sm:p-7"
+        className="rounded-xl border border-line bg-white p-6 shadow-card sm:p-7"
       >
         <h2
           id="contact-details-heading"
@@ -71,7 +71,7 @@ export function ContactChannels() {
 
               const content = (
                 <>
-                  <span className="u-icon-tile flex size-10 shrink-0 items-center justify-center rounded-lg border border-royal-200 bg-white text-royal-700 group-hover:border-royal-300 group-hover:bg-royal-50 group-hover:text-royal-800">
+                  <span className="u-icon-tile flex size-10 shrink-0 items-center justify-center rounded-lg border border-line bg-surface-subtle text-navy-900 group-hover:border-navy-200 group-hover:bg-navy-50 group-hover:text-navy-950">
                     <Icon className="size-[18px]" aria-hidden="true" />
                   </span>
                   <span className="min-w-0 flex-1">
@@ -81,8 +81,8 @@ export function ContactChannels() {
                     <span
                       className={
                         channel.key === "hours"
-                          ? "mt-0.5 block whitespace-pre-line break-words text-sm font-medium leading-relaxed text-ink group-hover:text-royal-700"
-                          : "mt-0.5 block break-words text-sm font-medium leading-relaxed text-ink group-hover:text-royal-700"
+                          ? "mt-0.5 block whitespace-pre-line break-words text-sm font-medium leading-relaxed text-ink group-hover:text-accent-600"
+                          : "mt-0.5 block break-words text-sm font-medium leading-relaxed text-ink group-hover:text-accent-600"
                       }
                     >
                       {channel.value}
@@ -90,7 +90,7 @@ export function ContactChannels() {
                   </span>
                   {channel.href ? (
                     <ArrowUpRight
-                      className="mt-1 size-4 shrink-0 text-ink-muted transition-colors group-hover:text-royal-700"
+                      className="mt-1 size-4 shrink-0 text-ink-muted transition-colors group-hover:text-accent-600"
                       aria-hidden="true"
                     />
                   ) : null}
@@ -100,7 +100,7 @@ export function ContactChannels() {
               return (
                 <li
                   key={channel.key}
-                  className="border-b border-royal-200/70 last:border-b-0"
+                  className="border-b border-line last:border-b-0"
                 >
                   {channel.href ? (
                     <a
@@ -108,7 +108,7 @@ export function ContactChannels() {
                       {...(channel.external
                         ? { target: "_blank", rel: "noopener noreferrer" }
                         : {})}
-                      className="group u-card -mx-2 flex items-start gap-3 rounded-lg px-2 py-3 hover:bg-white/70"
+                      className="group u-card -mx-2 flex items-start gap-3 rounded-lg px-2 py-3 hover:bg-surface-subtle"
                     >
                       {content}
                     </a>
@@ -121,12 +121,12 @@ export function ContactChannels() {
           </ul>
         ) : null}
 
-        <div className="mt-6 border-t border-royal-200/70 pt-4">
+        <div className="mt-6 border-t border-line pt-4">
           <p className="text-sm leading-relaxed text-ink-soft">
             Need a written price?{" "}
             <Link
               href="/quote"
-              className="font-medium text-royal-700 link-underline transition-colors hover:text-royal-800"
+              className="font-medium text-navy-900 link-underline transition-colors hover:text-accent-600"
             >
               Use the quote form
             </Link>

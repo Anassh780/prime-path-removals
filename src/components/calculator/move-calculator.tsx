@@ -133,7 +133,7 @@ export function MoveCalculator() {
           <div className="flex flex-col gap-4 border-b border-line pb-4 sm:flex-row sm:items-center sm:justify-between">
             <div className="flex items-start gap-3">
               <span
-                className="flex size-10 shrink-0 items-center justify-center rounded-lg border border-royal-200 bg-royal-50 text-royal-700"
+                className="flex size-10 shrink-0 items-center justify-center rounded-lg border border-line bg-surface-subtle text-navy-900 shadow-xs"
                 aria-hidden="true"
               >
                 <Boxes className="size-5" />
@@ -202,13 +202,13 @@ export function MoveCalculator() {
                         className={cn(
                           "u-card flex items-center justify-between rounded-lg border p-3 text-left active:translate-y-px",
                           isSelected
-                            ? "border-royal-600 bg-royal-50/70 text-navy-950 ring-1 ring-royal-600"
+                            ? "border-navy-900 bg-navy-50/80 text-navy-950 ring-1 ring-navy-900"
                             : "border-line bg-surface-subtle text-ink-soft hover:border-line-strong hover:bg-white",
                         )}
                       >
                         <span className="text-xs font-medium">{type.label}</span>
                         {isSelected && (
-                          <span className="animate-pop-in flex size-4 shrink-0 items-center justify-center rounded-full bg-royal-700 text-white">
+                          <span className="animate-pop-in flex size-4 shrink-0 items-center justify-center rounded-full bg-navy-900 text-white">
                             <Check className="size-2.5" aria-hidden="true" />
                           </span>
                         )}
@@ -279,7 +279,7 @@ export function MoveCalculator() {
         <div className="rounded-xl border border-line bg-white p-5 shadow-card sm:p-6">
           <div className="flex items-start gap-3">
             <span
-              className="flex size-10 shrink-0 items-center justify-center rounded-lg border border-royal-200 bg-royal-50 text-royal-700"
+              className="flex size-10 shrink-0 items-center justify-center rounded-lg border border-line bg-surface-subtle text-navy-900 shadow-xs"
               aria-hidden="true"
             >
               <Route className="size-5" />
@@ -306,7 +306,7 @@ export function MoveCalculator() {
                   className={cn(
                     "u-card flex flex-col rounded-lg border p-3 text-left active:translate-y-px",
                     isSelected
-                      ? "border-royal-600 bg-royal-50/70 text-navy-950 ring-1 ring-royal-600"
+                      ? "border-navy-900 bg-navy-50/80 text-navy-950 ring-1 ring-navy-900"
                       : "border-line bg-surface-subtle text-ink-soft hover:border-line-strong hover:bg-white",
                   )}
                 >
@@ -328,7 +328,7 @@ export function MoveCalculator() {
         <div className="rounded-xl border border-line bg-white p-5 shadow-card sm:p-6">
           <div className="flex items-start gap-3">
             <span
-              className="flex size-10 shrink-0 items-center justify-center rounded-lg border border-royal-200 bg-royal-50 text-royal-700"
+              className="flex size-10 shrink-0 items-center justify-center rounded-lg border border-line bg-surface-subtle text-navy-900 shadow-xs"
               aria-hidden="true"
             >
               <Building className="size-5" />
@@ -410,7 +410,7 @@ export function MoveCalculator() {
         <div className="rounded-xl border border-line bg-white p-5 shadow-card sm:p-6">
           <div className="flex items-start gap-3">
             <span
-              className="flex size-10 shrink-0 items-center justify-center rounded-lg border border-royal-200 bg-royal-50 text-royal-700"
+              className="flex size-10 shrink-0 items-center justify-center rounded-lg border border-line bg-surface-subtle text-navy-900 shadow-xs"
               aria-hidden="true"
             >
               <PackagePlus className="size-5" />
@@ -430,7 +430,7 @@ export function MoveCalculator() {
               className={cn(
                 "u-card flex cursor-pointer items-start gap-3 rounded-lg border p-3",
                 includePacking
-                  ? "border-royal-600 bg-royal-50/70"
+                  ? "border-navy-900/30 bg-navy-50/70"
                   : "border-line bg-surface-subtle hover:bg-white",
               )}
             >
@@ -444,7 +444,7 @@ export function MoveCalculator() {
                   Full packing service &amp; protective materials
                 </span>
                 <span className="text-[11px] text-ink-muted">
-                  Double-walled cartons, bubble wrap, wardrobe boxes, packing tape &amp; professional packing crew.
+                  Double walled cartons, bubble wrap, wardrobe boxes, packing tape &amp; professional packing crew.
                 </span>
               </div>
             </label>
@@ -453,7 +453,7 @@ export function MoveCalculator() {
               className={cn(
                 "u-card flex cursor-pointer items-start gap-3 rounded-lg border p-3",
                 includeDismantling
-                  ? "border-royal-600 bg-royal-50/70"
+                  ? "border-navy-900/30 bg-navy-50/70"
                   : "border-line bg-surface-subtle hover:bg-white",
               )}
             >
@@ -476,7 +476,7 @@ export function MoveCalculator() {
               className={cn(
                 "u-card flex cursor-pointer items-start gap-3 rounded-lg border p-3",
                 includeClearance
-                  ? "border-royal-600 bg-royal-50/70"
+                  ? "border-navy-900/30 bg-navy-50/70"
                   : "border-line bg-surface-subtle hover:bg-white",
               )}
             >
@@ -490,7 +490,7 @@ export function MoveCalculator() {
                   Property clearance / unwanted item removal
                 </span>
                 <span className="text-[11px] text-ink-muted">
-                  Responsible eco-disposal, recycling sorting and licensed clearance.
+                  Responsible eco disposal, recycling sorting and licensed clearance.
                 </span>
               </div>
             </label>
@@ -501,12 +501,12 @@ export function MoveCalculator() {
       {/* Live Quote Summary Column */}
       <div className="lg:col-span-5">
         <div className="lg:sticky lg:top-24 flex flex-col gap-5">
-          <div className="overflow-hidden rounded-2xl border border-royal-200 bg-royal-50 p-5 shadow-card sm:p-6">
+          <div className="overflow-hidden rounded-2xl border border-line bg-white p-5 shadow-card sm:p-6">
             {/* Dark rail header — this panel is the page's focal point. */}
             <div className="-mx-5 -mt-5 mb-5 flex items-center justify-between gap-3 bg-navy-950 px-5 py-4 sm:-mx-6 sm:-mt-6 sm:px-6">
               <div className="flex items-center gap-2">
                 <span
-                  className="size-2 rounded-full bg-accent-300"
+                  className="size-2 rounded-full bg-accent-400"
                   aria-hidden="true"
                 />
                 <span className="text-[11px] font-semibold uppercase tracking-[0.16em] text-white">
@@ -546,10 +546,10 @@ export function MoveCalculator() {
             </div>
 
             {/* Spec tags */}
-            <div className="mt-5 grid grid-cols-2 gap-2 border-t border-royal-200 pt-4 text-xs">
-              <div className="rounded-lg border border-royal-100 bg-white p-2.5">
-                <div className="flex items-center gap-1.5 text-royal-700 font-semibold">
-                  <Truck className="size-3.5" />
+            <div className="mt-5 grid grid-cols-2 gap-2 border-t border-line pt-4 text-xs">
+              <div className="rounded-lg border border-line bg-surface-subtle p-2.5">
+                <div className="flex items-center gap-1.5 text-navy-900 font-semibold">
+                  <Truck className="size-3.5 text-accent-600" />
                   Vehicle
                 </div>
                 <span className="mt-1 block text-[11px] font-medium text-ink truncate" title={estimate.recommendedVehicle}>
@@ -557,9 +557,9 @@ export function MoveCalculator() {
                 </span>
               </div>
 
-              <div className="rounded-lg border border-royal-100 bg-white p-2.5">
-                <div className="flex items-center gap-1.5 text-royal-700 font-semibold">
-                  <Users className="size-3.5" />
+              <div className="rounded-lg border border-line bg-surface-subtle p-2.5">
+                <div className="flex items-center gap-1.5 text-navy-900 font-semibold">
+                  <Users className="size-3.5 text-accent-600" />
                   Moving crew
                 </div>
                 <span className="mt-1 block text-[11px] font-medium text-ink truncate" title={estimate.recommendedCrew}>
@@ -567,9 +567,9 @@ export function MoveCalculator() {
                 </span>
               </div>
 
-              <div className="rounded-lg border border-royal-100 bg-white p-2.5">
-                <div className="flex items-center gap-1.5 text-royal-700 font-semibold">
-                  <Clock className="size-3.5" />
+              <div className="rounded-lg border border-line bg-surface-subtle p-2.5">
+                <div className="flex items-center gap-1.5 text-navy-900 font-semibold">
+                  <Clock className="size-3.5 text-accent-600" />
                   Est. duration
                 </div>
                 <span className="mt-1 block text-[11px] font-medium text-ink">
@@ -577,9 +577,9 @@ export function MoveCalculator() {
                 </span>
               </div>
 
-              <div className="rounded-lg border border-royal-100 bg-white p-2.5">
-                <div className="flex items-center gap-1.5 text-royal-700 font-semibold">
-                  <Boxes className="size-3.5" />
+              <div className="rounded-lg border border-line bg-surface-subtle p-2.5">
+                <div className="flex items-center gap-1.5 text-navy-900 font-semibold">
+                  <Boxes className="size-3.5 text-accent-600" />
                   Est. volume
                 </div>
                 <span className="mt-1 block text-[11px] font-medium text-ink tabular-nums">
@@ -593,11 +593,11 @@ export function MoveCalculator() {
             </div>
 
             {/* Itemised Breakdown */}
-            <div className="mt-5 border-t border-royal-200 pt-4">
-              <h3 className="text-xs font-semibold uppercase tracking-wider text-royal-700">
+            <div className="mt-5 border-t border-line pt-4">
+              <h3 className="text-xs font-semibold uppercase tracking-wider text-navy-900">
                 Itemised estimate breakdown
               </h3>
-              <ul className="mt-2.5 flex flex-col gap-2 rounded-lg border border-royal-100 bg-white p-3">
+              <ul className="mt-2.5 flex flex-col gap-2 rounded-lg border border-line bg-surface-subtle p-3">
                 {estimate.breakdown.map((item) => (
                   <li key={item.label} className="flex flex-col gap-0.5 border-b border-line/40 pb-2 last:border-0 last:pb-0">
                     <div className="flex items-center justify-between text-xs">
@@ -617,7 +617,7 @@ export function MoveCalculator() {
             </div>
 
             {/* CTA to lock in quote */}
-            <div className="mt-6 border-t border-royal-200 pt-5">
+            <div className="mt-6 border-t border-line pt-5">
               <Button asChild variant="accent" size="lg" className="w-full">
                 <Link href={quoteHref}>
                   Lock in this quote &amp; choose date
@@ -629,15 +629,15 @@ export function MoveCalculator() {
               </p>
 
               {(hasPhone || hasWhatsApp) && (
-                <div className="mt-4 flex flex-col gap-2 rounded-lg border border-royal-200 bg-white p-3 text-xs text-ink-soft">
+                <div className="mt-4 flex flex-col gap-2 rounded-lg border border-line bg-surface-subtle p-3 text-xs text-ink-soft">
                   <span className="font-semibold text-ink">Prefer to book directly?</span>
                   <div className="flex flex-wrap items-center gap-3">
                     {hasPhone && (
                       <a
                         href={formatPhoneHref(siteConfig.contact.phone)}
-                        className="-my-1 inline-flex items-center gap-1.5 py-1 font-medium text-royal-700 hover:underline"
+                        className="-my-1 inline-flex items-center gap-1.5 py-1 font-medium text-navy-900 hover:text-accent-600 hover:underline"
                       >
-                        <Phone className="size-3.5 text-royal-700" aria-hidden="true" />
+                        <Phone className="size-3.5 text-accent-600" aria-hidden="true" />
                         Call {siteConfig.contact.phone}
                       </a>
                     )}
@@ -649,9 +649,9 @@ export function MoveCalculator() {
                         )}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="-my-1 inline-flex items-center gap-1.5 py-1 font-medium text-emerald-700 hover:underline"
+                        className="-my-1 inline-flex items-center gap-1.5 py-1 font-medium text-accent-700 hover:text-accent-800 hover:underline"
                       >
-                        <WhatsAppIcon className="size-3.5 text-emerald-600" aria-hidden="true" />
+                        <WhatsAppIcon className="size-3.5 text-accent-600" />
                         WhatsApp
                       </a>
                     )}

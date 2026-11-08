@@ -73,7 +73,7 @@ export function QuoteAside({ estimate }: QuoteAsideProps) {
 
       {/* Guarantees — tinted azure panel instead of a flat white callout. */}
       <Reveal delay={0.1}>
-        <div className="rounded-xl border border-royal-200 bg-royal-50 p-6 shadow-card">
+        <div className="rounded-xl border border-line bg-white p-6 shadow-card">
           <h2 className="text-sm font-semibold text-navy-900">
             What you can expect
           </h2>
@@ -89,7 +89,7 @@ export function QuoteAside({ estimate }: QuoteAsideProps) {
                 className="flex gap-2.5 text-sm leading-relaxed text-ink-soft"
               >
                 <Check
-                  className="mt-0.5 size-4 shrink-0 text-royal-600"
+                  className="mt-0.5 size-4 shrink-0 text-accent-600"
                   aria-hidden="true"
                 />
                 {point}
@@ -97,7 +97,7 @@ export function QuoteAside({ estimate }: QuoteAsideProps) {
             ))}
           </ul>
 
-          <div className="mt-5 border-t border-royal-200/70 pt-5">
+          <div className="mt-5 border-t border-line pt-5">
             <h2 className="text-sm font-semibold text-navy-900">
               Prefer to talk it through?
             </h2>
@@ -107,7 +107,7 @@ export function QuoteAside({ estimate }: QuoteAsideProps) {
                 {hasPhone ? (
                   <a
                     href={formatPhoneHref(siteConfig.contact.phone)}
-                    className="group inline-flex items-center gap-2 text-sm font-medium text-royal-700 underline-offset-4 transition-colors duration-150 hover:text-royal-800 hover:underline"
+                    className="group inline-flex items-center gap-2 text-sm font-medium text-navy-900 underline-offset-4 transition-colors duration-150 hover:text-accent-600 hover:underline"
                   >
                     <Phone
                       className="size-4 transition-colors duration-150"

@@ -26,7 +26,7 @@ export function ContactNextSteps() {
     <Reveal delay={0.08}>
       <section
         aria-labelledby="contact-next-heading"
-        className="rounded-xl border border-accent-200 bg-accent-50 p-6 shadow-card sm:p-7"
+        className="rounded-xl border border-line bg-white p-6 shadow-card sm:p-7"
       >
         <h2
           id="contact-next-heading"
@@ -43,10 +43,10 @@ export function ContactNextSteps() {
           {STEPS.map((step, index) => (
             <li
               key={step.title}
-              className="flex items-start gap-3 border-t border-accent-200/70 pt-4 first:border-t-0 first:pt-0"
+              className="flex items-start gap-3 border-t border-line pt-4 first:border-t-0 first:pt-0"
             >
               <span
-                className="w-9 shrink-0 font-display text-[1.75rem] font-semibold leading-none tracking-[-0.02em] tabular-nums text-accent-700/30"
+                className="w-9 shrink-0 font-display text-[1.75rem] font-semibold leading-none tracking-[-0.02em] tabular-nums text-navy-300"
                 aria-hidden="true"
               >
                 {String(index + 1).padStart(2, "0")}
@@ -63,11 +63,11 @@ export function ContactNextSteps() {
           ))}
         </ol>
 
-        <p className="mt-5 border-t border-accent-200/70 pt-4 text-sm leading-relaxed text-ink-soft">
+        <p className="mt-5 border-t border-line pt-4 text-sm leading-relaxed text-ink-soft">
           Ready to price the move?{" "}
           <Link
             href="/quote"
-            className="font-medium text-accent-700 link-underline transition-colors hover:text-accent-800"
+            className="font-medium text-navy-900 link-underline transition-colors hover:text-accent-600"
           >
             Start with the quote form
           </Link>

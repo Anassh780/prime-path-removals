@@ -52,7 +52,7 @@ export default function NotFound() {
               <div className="px-6 py-12 sm:px-10 lg:px-12 lg:py-16">
                 <span className="eyebrow">
                   <span
-                    className="h-px w-6 bg-royal-600/40"
+                    className="h-px w-6 bg-accent-600/50"
                     aria-hidden="true"
                   />
                   Error 404

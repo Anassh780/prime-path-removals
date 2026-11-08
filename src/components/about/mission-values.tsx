@@ -36,8 +36,8 @@ export function MissionValues() {
               return (
                 <StaggerItem key={value.title} className="h-full">
                   <div className="group u-card u-lift h-full rounded-xl border border-line bg-white p-6 shadow-card hover:border-royal-200 hover:shadow-lift">
-                    <span className="u-icon-tile inline-flex size-10 items-center justify-center rounded-lg border border-royal-200 bg-royal-50 text-royal-700 group-hover:border-royal-300 group-hover:bg-royal-100">
-                      <Icon className="size-5" aria-hidden="true" />
+                    <span className="u-icon-tile inline-flex size-10 items-center justify-center rounded-lg border border-line bg-surface-subtle text-navy-900 group-hover:border-navy-200 group-hover:bg-navy-50">
+                      <Icon className="size-5 text-accent-600" aria-hidden="true" />
                     </span>
                     <h3 className="mt-4 text-lg font-semibold text-ink">
                       {value.title}

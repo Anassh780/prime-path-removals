@@ -9,56 +9,51 @@
 
 @theme {
   /* --- Brand: deep navy (logo #021e40) ---------------------------------- */
-  --color-navy-50: #eff5fa;
-  --color-navy-100: #dbe7f1;
-  --color-navy-200: #b9cee0;
-  --color-navy-300: #8aa9c6;
+  --color-navy-50: #f1f5f9;
+  --color-navy-100: #dce6f0;
+  --color-navy-200: #bfd1e2;
+  --color-navy-300: #8ba8c4;
   --color-navy-400: #5b82a8;
   --color-navy-500: #36628c;
   --color-navy-600: #234a72;
   --color-navy-700: #163559;
   --color-navy-800: #0d2547;
   --color-navy-900: #071a33;
-  --color-navy-950: #04101f;
+  --color-navy-950: #030f1e;
 
   /* --- Brand: azure blue (logo #2b95f5) --------------------------------- */
-  --color-royal-50: #eef7ff;
-  --color-royal-100: #d9edfe;
-  --color-royal-200: #b6dcfd;
+  --color-royal-50: #f0f7ff;
+  --color-royal-100: #e0effe;
+  --color-royal-200: #bae0fd;
   --color-royal-300: #7cc2fb;
-  --color-royal-400: #45a6f7;
-  --color-royal-500: #2b95f5;
-  --color-royal-600: #1173d4;
-  --color-royal-700: #0b5aa8;
-  --color-royal-800: #0a4a8a;
-  --color-royal-900: #0c3f73;
+  --color-royal-400: #38bdf8;
+  --color-royal-500: #0ea5e9;
+  --color-royal-600: #0284c7;
+  --color-royal-700: #0369a1;
+  --color-royal-800: #075985;
+  --color-royal-900: #0c4a6e;
 
-  /* --- Accent: forest green (logo #11543b) ------------------------------ */
-  --color-accent-50: #eef6f1;
-  --color-accent-100: #d7ebe0;
-  --color-accent-200: #b0d7c3;
-  --color-accent-300: #7fb99b;
-  --color-accent-400: #4d9873;
-  /* 500 is the decorative green; 600/700 are the accessible CTA shades
-     (white text on 600 clears WCAG AA at 8.9:1). */
-  --color-accent-500: #1f6f4d;
-  --color-accent-600: #11543b;
-  --color-accent-700: #0d4430;
-  --color-accent-800: #0a3626;
-  --color-accent-900: #072a1e;
+  /* --- Accent: British Emerald Green (logo #11543b / #12734a) ----------- */
+  --color-accent-50: #f0fdf4;
+  --color-accent-100: #dcfce7;
+  --color-accent-200: #bbf7d0;
+  --color-accent-300: #34d399;
+  --color-accent-400: #22c55e;
+  --color-accent-500: #168e5b;
+  --color-accent-600: #12734a;
+  --color-accent-700: #0e5e3c;
+  --color-accent-800: #0a4c30;
+  --color-accent-900: #073824;
 
   /* --- Neutrals -------------------------------------------------------- */
-  --color-ink: #0a1526;
-  --color-ink-soft: #44546a;
-  /* Muted meta text. Dark enough to clear 4.5:1 on every surface this site
-     actually pairs it with — white, surface-subtle, surface-muted, navy-50,
-     royal-50 and accent-50 — not just on white. */
-  --color-ink-muted: #5d6c81;
+  --color-ink: #091322;
+  --color-ink-soft: #3e4d63;
+  --color-ink-muted: #64748b;
   --color-surface: #ffffff;
-  --color-surface-subtle: #f7f9fb;
-  --color-surface-muted: #eef2f6;
-  --color-line: #e3e8ef;
-  --color-line-strong: #cfd7e3;
+  --color-surface-subtle: #f8fafc;
+  --color-surface-muted: #f1f5f9;
+  --color-line: #e2e8f0;
+  --color-line-strong: #cbd5e1;
 
   /* --- Semantic aliases ------------------------------------------------- */
   --color-brand: var(--color-navy-900);
@@ -402,7 +397,7 @@
     font-weight: 600;
     letter-spacing: 0.08em;
     text-transform: uppercase;
-    color: var(--color-royal-700);
+    color: var(--color-accent-600);
   }
 
   /* Underline that grows on hover — used for text links */

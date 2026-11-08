@@ -29,8 +29,8 @@ export function HeroEstimateSection() {
           {/* Left Column: Context, Value Proposition & Trust */}
           <div>
             <Reveal>
-              <div className="inline-flex items-center gap-2 rounded-full border border-royal-600/15 bg-royal-50/70 px-3.5 py-1 text-xs font-semibold text-royal-700">
-                <ShieldCheck className="size-3.5 text-royal-600" />
+              <div className="inline-flex items-center gap-2 rounded-full border border-accent-600/20 bg-accent-50 px-3.5 py-1 text-xs font-semibold text-accent-700">
+                <ShieldCheck className="size-3.5 text-accent-600" />
                 <span>Instant Removals Estimator</span>
               </div>
             </Reveal>

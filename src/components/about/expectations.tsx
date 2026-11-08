@@ -32,8 +32,8 @@ export function Expectations() {
                   className="border-t border-line pt-6"
                 >
                   <div className="flex gap-4">
-                    <span className="inline-flex size-10 shrink-0 items-center justify-center rounded-lg border border-royal-200 bg-royal-50 text-royal-700">
-                      <Icon className="size-5" aria-hidden="true" />
+                    <span className="inline-flex size-10 shrink-0 items-center justify-center rounded-lg border border-line bg-surface-subtle text-navy-900 shadow-xs">
+                      <Icon className="size-5 text-accent-600" aria-hidden="true" />
                     </span>
                     <div>
                       <h3 className="text-base font-semibold text-ink sm:text-lg">

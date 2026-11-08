@@ -86,13 +86,13 @@ export function SectionHeading({
           <span
             className={cn(
               "eyebrow",
-              inverse ? "text-accent-300" : "text-royal-700",
+              inverse ? "text-accent-300" : "text-accent-600",
             )}
           >
             <span
               className={cn(
                 "h-px w-6",
-                inverse ? "bg-accent-300/60" : "bg-royal-600/40",
+                inverse ? "bg-accent-300/60" : "bg-accent-600/50",
               )}
               aria-hidden="true"
             />

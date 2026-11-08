@@ -83,7 +83,7 @@ export function Coverage() {
             <ul className="mt-8 flex flex-col gap-3.5">
               {siteConfig.coverage.notes.map((note) => (
                 <li key={note} className="flex items-start gap-3">
-                  <span className="mt-0.5 flex size-5 shrink-0 items-center justify-center rounded-full bg-royal-50 text-royal-700">
+                  <span className="mt-0.5 flex size-5 shrink-0 items-center justify-center rounded-full bg-accent-50 text-accent-700">
                     <Check className="size-3" aria-hidden="true" />
                   </span>
                   <span className="text-[15px] leading-relaxed text-ink-soft">
@@ -103,8 +103,8 @@ export function Coverage() {
           <Reveal delay={0.08}>
             <div className="rounded-2xl border border-navy-100 bg-navy-50 p-6 sm:p-8">
               <div className="flex items-start gap-3.5">
-                <span className="flex size-10 shrink-0 items-center justify-center rounded-lg bg-white text-royal-700 shadow-xs">
-                  <MapPin className="size-5" aria-hidden="true" />
+                <span className="flex size-10 shrink-0 items-center justify-center rounded-lg bg-navy-900 text-white shadow-xs">
+                  <MapPin className="size-5 text-accent-300" aria-hidden="true" />
                 </span>
                 <div>
                   <h3 className="text-lg font-semibold text-ink">
@@ -163,7 +163,7 @@ export function Coverage() {
                 >
                   <div className="flex gap-3">
                     <CheckCircle2
-                      className="mt-0.5 size-5 shrink-0 text-royal-700"
+                      className="mt-0.5 size-5 shrink-0 text-accent-600"
                       aria-hidden="true"
                     />
                     <div className="flex flex-col gap-2">

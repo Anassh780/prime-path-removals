@@ -33,8 +33,8 @@ export default function QuotePage() {
         <RouteLine className="pointer-events-none absolute -right-24 top-1/2 hidden w-[30rem] -translate-y-1/2 opacity-40 lg:block" />
         <Container className="relative">
           <Reveal immediate y={20} duration={0.6} className="max-w-3xl">
-            <span className="eyebrow text-royal-300">
-              <span className="h-px w-6 bg-royal-300/60" aria-hidden="true" />
+            <span className="eyebrow text-accent-300">
+              <span className="h-px w-6 bg-accent-300/60" aria-hidden="true" />
               Live Quote &amp; Booking
             </span>
             <h1 className="mt-5 max-w-[20ch] font-display text-4xl leading-[1.05] tracking-[-0.02em] text-white sm:text-5xl lg:text-6xl">

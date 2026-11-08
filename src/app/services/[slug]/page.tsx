@@ -120,12 +120,12 @@ export default async function ServicePage({ params }: ServicePageProps) {
                 </div>
               </Reveal>
 
-              <div className="mt-10 rounded-xl border border-royal-200 bg-royal-50 p-5 sm:p-6">
+              <div className="mt-10 rounded-xl border border-line bg-surface-subtle p-5 sm:p-6">
                 <p className="text-sm leading-relaxed text-ink-soft">
                   Not sure this is the right service?{" "}
                   <Link
                     href="/contact"
-                    className="rounded-sm font-medium text-royal-700 underline-offset-4 hover:underline"
+                    className="rounded-sm font-semibold text-navy-900 underline-offset-4 hover:text-accent-600 hover:underline"
                   >
                     Tell us about your move
                   </Link>{" "}

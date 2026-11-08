@@ -24,7 +24,7 @@ export function Intro() {
         <div className="grid gap-10 lg:grid-cols-[minmax(0,0.9fr)_minmax(0,1.1fr)] lg:gap-16">
           <Reveal>
             <span className="eyebrow">
-              <span className="h-px w-6 bg-royal-600/40" aria-hidden="true" />
+              <span className="h-px w-6 bg-accent-600/50" aria-hidden="true" />
               Who we are
             </span>
 

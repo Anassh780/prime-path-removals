@@ -82,10 +82,10 @@ export function HeroQuickQuote() {
   const errorId = "quick-quote-error";
 
   return (
-    <div className="rounded-xl border border-line bg-surface-subtle p-4 shadow-overlay transition-[border-color] duration-200 focus-within:border-royal-200 sm:p-5">
+    <div className="rounded-xl border border-line bg-surface-subtle p-4 shadow-overlay transition-[border-color] duration-200 focus-within:border-accent-600/30 sm:p-5">
       <div className="flex flex-wrap items-center justify-between gap-2 border-b border-line/70 pb-3">
         <div className="flex items-center gap-2">
-          <span className="flex size-6 items-center justify-center rounded-md bg-royal-100 text-royal-700">
+          <span className="flex size-6 items-center justify-center rounded-md bg-accent-50 text-accent-700">
             <Calculator className="size-3.5" aria-hidden="true" />
           </span>
           {/* The one continuous element in the hero: a slow 7s ping that reads
@@ -93,10 +93,10 @@ export function HeroQuickQuote() {
               reduced motion by CSS, never by branching the render tree. */}
           <span className="relative flex size-2" aria-hidden="true">
             <span
-              className="absolute inline-flex size-full animate-ping rounded-full bg-royal-500 opacity-60 motion-reduce:hidden"
+              className="absolute inline-flex size-full animate-ping rounded-full bg-accent-500 opacity-60 motion-reduce:hidden"
               style={{ animationDuration: "7s" }}
             />
-            <span className="relative inline-flex size-2 rounded-full bg-royal-500" />
+            <span className="relative inline-flex size-2 rounded-full bg-accent-500" />
           </span>
           <span className="text-xs font-semibold uppercase tracking-wider text-navy-950">
             Instant Move Estimate

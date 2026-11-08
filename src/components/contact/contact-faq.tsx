@@ -13,13 +13,13 @@ export function ContactFaq() {
 
   return (
     <Reveal delay={0.05}>
-      <div className="rounded-2xl border border-royal-200 bg-royal-50 p-5 sm:p-7">
-        <Accordion type="single" collapsible className="border-t border-royal-200/70">
+      <div className="rounded-2xl border border-line bg-white p-5 shadow-card sm:p-7">
+        <Accordion type="single" collapsible className="border-t border-line">
           {items.map((faq, index) => (
             <AccordionItem
               key={faq.question}
               value={`contact-faq-${index}`}
-              className="border-royal-200/70"
+              className="border-line"
             >
               <AccordionTrigger>{faq.question}</AccordionTrigger>
               <AccordionContent>{faq.answer}</AccordionContent>

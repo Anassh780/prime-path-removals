@@ -41,7 +41,7 @@ export function ProcessSteps({ steps }: { steps: ProcessStep[] }) {
       >
         <div className="absolute inset-0 bg-white/10" />
         <motion.div
-          className="absolute inset-0 origin-left bg-royal-300/70 motion-reduce:hidden"
+          className="absolute inset-0 origin-left bg-accent-400/80 motion-reduce:hidden"
           style={{ scaleX: lineScale }}
         />
       </div>
@@ -54,7 +54,7 @@ export function ProcessSteps({ steps }: { steps: ProcessStep[] }) {
               as="li"
               className="relative flex h-full flex-col gap-4"
             >
-              <span className="relative z-10 font-display text-5xl font-semibold leading-none tracking-[-0.02em] tabular-nums text-royal-300 sm:text-6xl">
+              <span className="relative z-10 font-display text-5xl font-semibold leading-none tracking-[-0.02em] tabular-nums text-accent-300 sm:text-6xl">
                 {step.step}
               </span>
               <h3 className="text-lg font-semibold text-white sm:text-xl">

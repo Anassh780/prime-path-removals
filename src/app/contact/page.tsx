@@ -34,7 +34,7 @@ export default function ContactPage() {
               <Reveal immediate y={20} duration={0.6}>
                 <span className="eyebrow">
                   <span
-                    className="h-px w-6 bg-royal-600/40"
+                    className="h-px w-6 bg-accent-600/50"
                     aria-hidden="true"
                   />
                   Contact

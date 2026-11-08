@@ -53,11 +53,11 @@ export function InventoryCalculator({
   }
 
   return (
-    <div className="rounded-xl border border-royal-200/70 bg-royal-50/60 p-4 sm:p-5">
+    <div className="rounded-xl border border-line bg-surface-subtle p-4 sm:p-5">
       <div className="flex flex-col gap-2 sm:flex-row sm:items-center sm:justify-between">
         <div>
           <div className="flex items-center gap-2">
-            <Package className="size-4 text-royal-700" aria-hidden="true" />
+            <Package className="size-4 text-accent-600" aria-hidden="true" />
             <h3 className="text-sm font-semibold text-ink">
               Move inventory & volume calculator (optional)
             </h3>
@@ -124,7 +124,7 @@ export function InventoryCalculator({
               return (
                 <div
                   key={item.key}
-                  className="flex items-center justify-between rounded-lg border border-royal-200/60 bg-white p-2.5 shadow-xs transition-colors"
+                  className="flex items-center justify-between rounded-lg border border-line bg-white p-2.5 shadow-xs transition-colors"
                 >
                   <div className="min-w-0 pr-2">
                     <span className="block truncate text-xs font-medium text-ink">

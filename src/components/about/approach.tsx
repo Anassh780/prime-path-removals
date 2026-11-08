@@ -47,8 +47,8 @@ export function Approach() {
             />
           </Reveal>
           <Reveal delay={0.1} className="mt-8">
-            <div className="rounded-xl border border-royal-200 bg-royal-50 p-6">
-              <p className="text-xs font-semibold uppercase tracking-[0.18em] text-royal-700">
+            <div className="rounded-xl border border-line bg-white p-6 shadow-card">
+              <p className="text-xs font-semibold uppercase tracking-[0.18em] text-accent-600">
                 Working principle
               </p>
               <p className="mt-3 text-[15px] leading-relaxed text-ink-soft">

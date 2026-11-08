@@ -47,7 +47,7 @@ export function Process() {
               variant="link"
               size="md"
               asChild
-              className="self-start text-royal-300 hover:text-white sm:self-auto"
+              className="self-start text-accent-300 hover:text-white sm:self-auto"
             >
               <Link href="/quote">
                 Start a quote

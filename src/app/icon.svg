@@ -1,50 +1,46 @@
-<svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Prime House Removals">
+<svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Prime House Removals">
   <defs>
-    <linearGradient id="phr-bg" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#0b2447" />
-      <stop offset="100%" stop-color="#04101f" />
+    <linearGradient id="phr-green" x1="0%" y1="100%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#12734a" />
+      <stop offset="60%" stop-color="#16a34a" />
+      <stop offset="100%" stop-color="#22c55e" />
     </linearGradient>
-    <linearGradient id="phr-green" x1="0%" y1="0%" x2="100%" y2="0%">
-      <stop offset="0%" stop-color="#10b981" />
-      <stop offset="100%" stop-color="#11543b" />
-    </linearGradient>
-    <linearGradient id="phr-blue" x1="0%" y1="0%" x2="0%" y2="100%">
-      <stop offset="0%" stop-color="#38bdf8" />
-      <stop offset="100%" stop-color="#1173d4" />
+    <linearGradient id="phr-accent" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#2b95f5" />
+      <stop offset="100%" stop-color="#12734a" />
     </linearGradient>
   </defs>
 
-  <rect width="48" height="48" rx="12" fill="url(#phr-bg)" />
-  <rect x="0.75" y="0.75" width="46.5" height="46.5" rx="11.25" stroke="#2b95f5" stroke-opacity="0.35" stroke-width="1.5" />
+  <!-- Container / Background tile for favicon -->
+  <rect width="64" height="64" rx="14" fill="#04101f" />
+  <rect x="0.75" y="0.75" width="62.5" height="62.5" rx="13.25" stroke="#ffffff" stroke-opacity="0.12" stroke-width="1.5" />
 
-  <!-- House roofline in background -->
-  <path d="M10 21L24 9.5L38 21" stroke="#ffffff" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" />
-  <path d="M31 11.5V7H34.5V14.5" stroke="#ffffff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
-  <rect x="22" y="12.5" width="4" height="3" rx="0.75" fill="#facc15" fill-opacity="0.9" />
+  <!-- Chimney -->
+  <rect x="17" y="16" width="5" height="8" rx="0.5" fill="#ffffff" />
 
-  <!-- Removals Truck cab -->
-  <path d="M16 20C16 18.3 17.3 17 19 17H29C30.7 17 32 18.3 32 20V32H16V20Z" fill="#0d2547" stroke="#ffffff" stroke-width="1.4" stroke-linejoin="round" />
-  <path d="M18 19C18 18.4 18.4 18 19 18H29C29.6 18 30 18.4 30 19V24H18V19Z" fill="url(#phr-blue)" />
-  <path d="M20 18.5L18.5 23.5H20.5L22 18.5H20Z" fill="#ffffff" fill-opacity="0.45" />
+  <!-- House Gable Roof & 'P' Stem -->
+  <path
+    d="M10 30L29 14L41 24V28L29 18.5L15 30H10Z"
+    fill="#ffffff"
+  />
+  <path
+    d="M17 28H23V50H17V28Z"
+    fill="#ffffff"
+  />
+  <!-- Inner P arch -->
+  <path
+    d="M23 28H33C37.4 28 41 31.6 41 36C41 40.4 37.4 44 33 44H23V39H33C34.7 39 36 37.7 36 36C36 34.3 34.7 33 33 33H23V28Z"
+    fill="#ffffff"
+    fill-opacity="0.95"
+  />
 
-  <!-- Grille -->
-  <rect x="20" y="26" width="8" height="4" rx="1" fill="#071a33" stroke="#2b95f5" stroke-width="0.8" />
-  <line x1="21.5" y1="27.3" x2="26.5" y2="27.3" stroke="#2b95f5" stroke-width="0.6" stroke-opacity="0.8" />
-  <line x1="21.5" y1="28.7" x2="26.5" y2="28.7" stroke="#2b95f5" stroke-width="0.6" stroke-opacity="0.8" />
-
-  <!-- Headlights -->
-  <circle cx="17.5" cy="27.5" r="1.5" fill="#38bdf8" />
-  <circle cx="30.5" cy="27.5" r="1.5" fill="#38bdf8" />
-
-  <!-- Side mirrors -->
-  <rect x="13.8" y="20.5" width="1.6" height="3.5" rx="0.8" fill="#ffffff" />
-  <rect x="32.6" y="20.5" width="1.6" height="3.5" rx="0.8" fill="#ffffff" />
-
-  <!-- Wheels -->
-  <rect x="16.5" y="32" width="4" height="2" rx="1" fill="#04101f" stroke="#ffffff" stroke-width="0.8" />
-  <rect x="27.5" y="32" width="4" height="2" rx="1" fill="#04101f" stroke="#ffffff" stroke-width="0.8" />
-
-  <!-- Green aerodynamic swooshes -->
-  <path d="M4 38C12 36 21 34.2 28 31.8C35 29.5 40 27.8 44 26C39.5 29.5 32.5 33 24 35.5C16.5 37.8 9.5 39.5 4 38Z" fill="url(#phr-green)" />
-  <path d="M8 41.5C15 40.5 23 39 30 37C37 35 41 33.5 44 32C40 34 33 36.5 26 38.5C18 40.5 12 41.7 8 41.5Z" fill="#10b981" fill-opacity="0.85" />
+  <!-- Dynamic Upward Transit Arrow (Emerald & Azure) -->
+  <path
+    d="M21 48C21 48 26 36 39 30L37 25L54 22L47 39L42 34C31 38 27 48 27 48H21Z"
+    fill="url(#phr-green)"
+  />
+  <path
+    d="M39 30L54 22L47 39L42 34L39 30Z"
+    fill="url(#phr-accent)"
+  />
 </svg>

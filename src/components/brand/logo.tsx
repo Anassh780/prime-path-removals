@@ -19,17 +19,17 @@ export function LogoMark({
       className={cn(
         "relative flex shrink-0 items-center justify-center overflow-hidden rounded-xl transition-all duration-200",
         tone === "inverse"
-          ? "bg-navy-900/90 ring-1 ring-white/20 shadow-sm"
+          ? "bg-navy-900/90 ring-1 ring-white/15 shadow-sm"
           : "bg-white ring-1 ring-navy-950/10 shadow-xs",
         className ?? "size-10",
       )}
     >
       <Image
-        src="/brand/logo.png"
+        src={tone === "inverse" ? "/brand/logo-inverse.png" : "/brand/logo-mark.png"}
         alt="Prime House Removals Logo"
         width={96}
         height={96}
-        className="size-full object-cover object-center"
+        className="size-full object-contain p-1"
         priority
       />
     </span>

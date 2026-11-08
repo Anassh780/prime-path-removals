@@ -71,7 +71,7 @@ export function QuoteSuccess({
         tabIndex={-1}
         className="mt-5 text-2xl font-semibold tracking-[-0.02em] text-ink outline-none sm:text-3xl"
       >
-        {firstName ? `Thank you, ${firstName} — your request is in.` : "Thank you — your request is in."}
+        {firstName ? `Thank you, ${firstName}, your request is in.` : "Thank you, your request is in."}
       </h2>
 
       <p className="mt-3 text-[15px] leading-relaxed text-ink-soft sm:text-base">

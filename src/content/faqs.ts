@@ -12,12 +12,12 @@ export const faqs: Faq[] = [
   {
     question: "What information helps you quote accurately?",
     answer:
-      "The two addresses, the number of bedrooms or the size of the space, the move date, whether there is lift or parking access, and anything that needs special handling — pianos, safes, large white goods or a loft. Photos or a video walkthrough are also useful if the property is unusual.",
+      "The two addresses, the number of bedrooms or the size of the space, the move date, whether there is lift or parking access, and anything that needs special handling: pianos, safes, large white goods or a loft. Photos or a video walkthrough are also useful if the property is unusual.",
   },
   {
     question: "How far in advance should I book?",
     answer:
-      "For a straightforward home move, a few weeks is usually enough. End-of-month dates, weekends and summer are busier, so earlier is better. If you are working to a fixed completion date, tell us and we will confirm availability before you exchange contracts where possible.",
+      "For a straightforward home move, a few weeks is usually enough. End of month dates, weekends and summer are busier, so earlier is better. If you are working to a fixed completion date, tell us and we will confirm availability before you exchange contracts where possible.",
   },
   {
     question: "Do you provide boxes and packing materials?",
@@ -37,12 +37,12 @@ export const faqs: Faq[] = [
   {
     question: "Are my belongings protected during the move?",
     answer:
-      "Our crews use blankets, straps, floor protection and the right handling technique for each item, and we agree the level of cover with you in writing before the move. If you have high-value or fragile items, mention them in your enquiry so we can plan for them.",
+      "Our crews use blankets, straps, floor protection and the right handling technique for each item, and we agree the level of cover with you in writing before the move. If you have high value or fragile items, mention them in your enquiry so we can plan for them.",
   },
   {
     question: "Can you move me at short notice?",
     answer:
-      "Often, yes. Availability depends on the date and crew size, so send the details through and we will confirm what we can do. Same-day and next-day requests are handled as quickly as possible.",
+      "Often, yes. Availability depends on the date and crew size, so send the details through and we will confirm what we can do. Same day and next day requests are handled as quickly as possible.",
   },
   {
     question: "Do you clear waste and unwanted items as part of a move?",

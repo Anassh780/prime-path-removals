@@ -48,12 +48,12 @@ export function AboutHero() {
             <p className="mt-6 max-w-xl text-[15px] leading-relaxed text-ink-soft sm:text-base">
               Prime House Removals is a moving company for house moves, office
               relocations, packing, furniture transport and property clearance.
-              We keep the operation deliberately joined-up: the person who works
+              We keep the operation deliberately joined up: the person who works
               out your quote is the person who plans the crew, the vehicle and
               the running order of the day.
             </p>
             <p className="mt-4 max-w-xl text-[15px] leading-relaxed text-ink-soft sm:text-base">
-              Most of a good move is decided before the front door opens —
+              Most of a good move is decided before the front door opens:
               access and parking, what fits in one load, which items need
               protecting, and when the keys are handed over. We settle those
               details in advance, so move day follows a schedule rather than a

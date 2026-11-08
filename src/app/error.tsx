@@ -36,7 +36,7 @@ export default function ErrorPage({
             </h1>
 
             <p className="mt-3 text-[15px] leading-relaxed text-ink-soft sm:text-base">
-              This page stopped before it could finish loading. Try again — if
+              This page stopped before it could finish loading. Try again. If
               the problem continues, contact us directly and we will pick it up
               from there.
             </p>

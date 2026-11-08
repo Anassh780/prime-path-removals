@@ -54,7 +54,7 @@ export function Testimonials() {
           <SectionHeading
             eyebrow="Testimonials"
             title="Customer feedback"
-            description="We only publish feedback from real customers, with their permission — never invented quotes or ratings."
+            description="We only publish feedback from real customers, with their permission, never invented quotes or ratings."
           />
         </Reveal>
 

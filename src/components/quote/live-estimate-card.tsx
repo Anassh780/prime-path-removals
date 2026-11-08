@@ -63,7 +63,7 @@ export function LiveEstimateCard({
             <span className="font-display text-3xl font-semibold leading-none tabular-nums tracking-[-0.04em] text-ink sm:text-4xl xl:text-[2.5rem]">
               £
               <AnimatedNumber value={estimate.minPrice} format={formatAmount} />{" "}
-              – £
+              to £
               <AnimatedNumber value={estimate.maxPrice} format={formatAmount} />
             </span>
             <span className="text-xs font-medium text-ink-muted">inc. VAT</span>

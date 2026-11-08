@@ -150,7 +150,7 @@ export function SiteHeader() {
       <Container className="grid h-[72px] grid-cols-[auto_1fr_auto] items-center gap-4 lg:h-16 lg:gap-6">
         <Link
           href="/"
-          aria-label={`${siteConfig.name} — home`}
+          aria-label={`${siteConfig.name} home`}
           className="inline-flex rounded-md focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-royal-600/20"
         >
           <span

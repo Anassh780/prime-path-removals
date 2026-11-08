@@ -93,7 +93,7 @@ export function Hero() {
           <Reveal immediate delay={0.16} y={12} duration={0.45}>
             <p className="mt-6 max-w-xl text-[16px] sm:text-lg leading-relaxed text-navy-100/90 drop-shadow-xs">
               From careful packing to safe transportation and secure storage, we
-              make every move straightforward and stress-free.
+              make every move straightforward and stress free.
             </p>
           </Reveal>
 

@@ -70,7 +70,7 @@ export function MobileNav({ open, onOpenChange }: MobileNavProps) {
             <SheetClose asChild>
               <Link
                 href="/"
-                aria-label={`${siteConfig.name} — home`}
+                aria-label={`${siteConfig.name} home`}
                 className="inline-flex rounded-md focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-royal-600/20"
               >
                 <Logo compact />
@@ -200,7 +200,7 @@ export function MobileNav({ open, onOpenChange }: MobileNavProps) {
               </Link>
             </SheetClose>
             <p className="mt-3 text-center text-[11px] leading-relaxed text-ink-muted">
-              Written, itemised quotes — no obligation.
+              Written, itemised quotes with no obligation.
             </p>
           </motion.div>
         </div>

@@ -11,7 +11,7 @@ import { siteConfig } from "@/config/site";
  * because Satori renders outside the Tailwind pipeline.
  */
 
-export const alt = `${siteConfig.name} — ${siteConfig.tagline}`;
+export const alt = `${siteConfig.name} | ${siteConfig.tagline}`;
 export const size = { width: 1200, height: 630 };
 export const contentType = "image/png";
 

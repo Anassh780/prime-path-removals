@@ -22,7 +22,7 @@ export function FinalCta() {
             <SectionHeading
               eyebrow="Get a quote"
               title="Tell us about the move. We will put it in writing."
-              description="Share the addresses, your date and what needs moving. We will review the details, confirm availability and send an itemised quotation with the crew and vehicle plan — no obligation to book."
+              description="Share the addresses, your date and what needs moving. We will review the details, confirm availability and send an itemised quotation with the crew and vehicle plan with no obligation to book."
               tone="inverse"
             />
 

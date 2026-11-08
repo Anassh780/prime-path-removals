@@ -44,7 +44,7 @@ export function HeroEstimateSection() {
             <Reveal delay={0.12}>
               <p className="mt-4 text-[15px] leading-relaxed text-ink-soft sm:text-base">
                 Get an immediate price guide and recommended vehicle size for your
-                move in seconds. No obligation, no sales calls — just a
+                move in seconds. No obligation, no sales calls, just a
                 transparent estimate tailored to your properties.
               </p>
             </Reveal>
@@ -68,7 +68,7 @@ export function HeroEstimateSection() {
                 <Button asChild variant="outline" size="sm">
                   <Link href="/calculator">
                     <Calculator className="mr-2 size-4 text-royal-600" />
-                    Try Room-by-Room Calculator
+                    Try Room by Room Calculator
                     <ArrowRight className="ml-1.5 size-3.5" />
                   </Link>
                 </Button>

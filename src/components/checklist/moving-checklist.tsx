@@ -65,7 +65,7 @@ const PHASES: ChecklistPhase[] = [
       {
         id: "p2-1",
         task: "Lock in your moving date",
-        detail: "Confirm your date with Prime House Removals and request packing materials if self-packing.",
+        detail: "Confirm your date with Prime House Removals and request packing materials if packing yourself.",
       },
       {
         id: "p2-2",
@@ -79,7 +79,7 @@ const PHASES: ChecklistPhase[] = [
       },
       {
         id: "p2-4",
-        task: "Begin packing non-essential items",
+        task: "Begin packing non essential items",
         detail: "Pack books, seasonal clothes, spare linen and decorative items into clearly labelled boxes.",
       },
     ],
@@ -112,12 +112,12 @@ const PHASES: ChecklistPhase[] = [
   },
   {
     phase: "Phase 4",
-    timeframe: "Moving Week (1–3 Days Before)",
+    timeframe: "Moving Week (1 to 3 Days Before)",
     items: [
       {
         id: "p4-1",
-        task: "Defrost and drain fridge-freezer",
-        detail: "Empty, defrost and dry appliances 24–48 hours before transit to prevent leaks.",
+        task: "Defrost and drain fridge freezer",
+        detail: "Empty, defrost and dry appliances 24 to 48 hours before transit to prevent leaks.",
       },
       {
         id: "p4-2",

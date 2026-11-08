@@ -63,20 +63,11 @@ export function Logo({
         </span>
         <span
           className={cn(
-            "mt-0.5 font-sans text-[8.5px] sm:text-[9px] font-bold uppercase tracking-[0.24em] flex items-center gap-1",
+            "mt-0.5 font-sans text-[8.5px] sm:text-[9px] font-bold uppercase tracking-[0.24em]",
             tone === "inverse" ? "text-accent-300" : "text-accent-600",
           )}
         >
-          <span>Removals</span>
-          <span
-            aria-hidden="true"
-            className={cn(
-              "text-[7px] font-black tracking-normal transition-transform duration-150 group-hover:translate-x-0.5",
-              tone === "inverse" ? "text-royal-300" : "text-royal-600",
-            )}
-          >
-            &raquo;
-          </span>
+          Removals
         </span>
       </span>
     </span>

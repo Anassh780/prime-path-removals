@@ -74,7 +74,7 @@ export function ServicesCta({
             </div>
 
             <p className="mt-4 text-xs leading-relaxed text-white/50 lg:text-right">
-              Written, itemised quotes — no obligation.
+              Written, itemised quotes with no obligation.
             </p>
           </Reveal>
         </div>

@@ -316,7 +316,7 @@ export function MoveCalculator() {
                   <span className="mt-0.5 text-[11px] text-ink-muted">
                     {tier.extraMin === 0
                       ? "Included in base price"
-                      : `+£${tier.extraMin} – £${tier.extraMax} transit allowance`}
+                      : `+£${tier.extraMin} to £${tier.extraMax} transit allowance`}
                   </span>
                 </button>
               );
@@ -533,7 +533,7 @@ export function MoveCalculator() {
                   value={estimate.minPrice}
                   format={formatWholeNumber}
                 />{" "}
-                – £<AnimatedNumber value={estimate.maxPrice} format={formatWholeNumber} />
+                to £<AnimatedNumber value={estimate.maxPrice} format={formatWholeNumber} />
               </span>
               {/* The animated figure is decorative; the exact value is announced
                   here so assistive tech never hears intermediate numbers. */}

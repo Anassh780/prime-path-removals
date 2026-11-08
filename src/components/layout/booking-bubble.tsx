@@ -93,7 +93,7 @@ export function BookingBubble() {
                   Book your move
                 </h2>
                 <p className="mt-0.5 text-[11px] leading-relaxed text-white/60">
-                  Call or message — we reply personally.
+                  Call or message, we reply personally.
                 </p>
               </div>
 
@@ -182,7 +182,7 @@ export function BookingBubble() {
         onClick={() => setOpen((value) => !value)}
         aria-expanded={open}
         aria-controls={PANEL_ID}
-        aria-label={open ? "Close booking options" : "Book now — call or WhatsApp"}
+        aria-label={open ? "Close booking options" : "Book now: call or WhatsApp"}
         className="group inline-flex h-14 items-center gap-3 rounded-full border border-white/10 bg-navy-950 pl-2 pr-5 text-white shadow-lift transition duration-150 hover:bg-navy-900 active:translate-y-px focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-royal-600/30 focus-visible:ring-offset-2"
       >
         <span className="flex size-10 items-center justify-center rounded-full bg-accent-600 text-white">

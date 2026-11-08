@@ -80,7 +80,7 @@ export function QuoteAside({ estimate }: QuoteAsideProps) {
 
           <ul className="mt-4 flex flex-col gap-3">
             {[
-              "A written, itemised quote — no obligation to book.",
+              "A written, itemised quote with no obligation to book.",
               "Your details used only to prepare and discuss your quotation.",
               "One point of contact from first enquiry through to move day.",
             ].map((point) => (

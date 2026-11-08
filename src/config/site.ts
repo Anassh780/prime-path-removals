@@ -24,7 +24,7 @@ export const siteConfig = {
   legalName: "Prime House Removals",
   tagline: "Moving Made Simple. Removals You Can Rely On.",
   description:
-    "Prime House Removals provides house, office and commercial removals, packing, furniture transport and property clearance. Request a free, no-obligation quote for your move.",
+    "Prime House Removals provides house, office and commercial removals, packing, furniture transport and property clearance. Request a free, no obligation quote for your move.",
   url: env.siteUrl,
   locale: "en_GB",
   contact: {
@@ -38,10 +38,10 @@ export const siteConfig = {
   coverage: {
     headline: "Coverage confirmed before you book",
     description:
-      "Tell us the postcodes at each end of your move and we will confirm availability, crew size and timing in your written quote. Local moves, long-distance moves and moves with storage in between are all quoted individually.",
+      "Tell us the postcodes at each end of your move and we will confirm availability, crew size and timing in your written quote. Local moves, long distance moves and moves with storage in between are all quoted individually.",
     notes: [
       "Local and regional moves quoted individually",
-      "Long-distance and single-item moves available on request",
+      "Long distance and single item moves available on request",
       "Timing confirmed in writing before you commit",
     ],
   },

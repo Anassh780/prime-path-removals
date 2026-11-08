@@ -18,7 +18,7 @@ export const whyChoose = [
     icon: MessageSquare,
     title: "Straight answers",
     description:
-      "One point of contact who knows your move. You get clear answers on availability, pricing and timing — not a call centre script.",
+      "One point of contact who knows your move. You get clear answers on availability, pricing and timing, not a call centre script.",
   },
   {
     icon: ClipboardCheck,
@@ -30,7 +30,7 @@ export const whyChoose = [
     icon: ShieldCheck,
     title: "Careful handling as standard",
     description:
-      "Floor protection, blankets and straps come with the job. Fragile and high-value items are planned for before the crew arrives.",
+      "Floor protection, blankets and straps come with the job. Fragile and high value items are planned for before the crew arrives.",
   },
   {
     icon: Clock,
@@ -48,7 +48,7 @@ export const whyChoose = [
     icon: HandshakeIcon,
     title: "Respectful, discreet crews",
     description:
-      "Our teams work cleanly and quietly in your home or office, including probate, end-of-tenancy and commercial clearances.",
+      "Our teams work cleanly and quietly in your home or office, including probate, end of tenancy and commercial clearances.",
   },
 ];
 
@@ -57,7 +57,7 @@ export const values = [
     icon: BadgeCheck,
     title: "Do what we said",
     description:
-      "Agreed dates, agreed scope, agreed price. If something has to change, you hear it from us first — not on move day.",
+      "Agreed dates, agreed scope, agreed price. If something has to change, you hear it from us first, not on move day.",
   },
   {
     icon: Sparkles,
@@ -84,7 +84,7 @@ export const highlights = [
     value: "7",
     label: "Removal services",
     description:
-      "House, office, warehouse, furniture, packing, waste and property clearance — handled by one team.",
+      "House, office, warehouse, furniture, packing, waste and property clearance, handled by one team.",
   },
   {
     value: "1",

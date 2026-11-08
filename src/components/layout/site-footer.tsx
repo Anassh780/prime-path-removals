@@ -31,7 +31,7 @@ export function SiteFooter() {
           <StaggerItem className="max-w-sm sm:col-span-2 lg:col-span-1">
             <Link
               href="/"
-              aria-label={`${siteConfig.name} — home`}
+              aria-label={`${siteConfig.name} home`}
               className="inline-flex rounded-md focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent-300 focus-visible:ring-offset-4 focus-visible:ring-offset-navy-950"
             >
               <Logo tone="inverse" />
@@ -142,7 +142,7 @@ export function SiteFooter() {
             ) : (
               <p className="mt-4 text-sm leading-relaxed text-white/60">
                 Direct contact details are being finalised. The contact form is
-                the fastest way to reach us —{" "}
+                the fastest way to reach us:{" "}
                 <Link
                   href="/contact"
                   className="font-medium text-white underline decoration-white/30 underline-offset-4 transition-colors duration-150 hover:decoration-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent-300 focus-visible:ring-offset-2 focus-visible:ring-offset-navy-950"
@@ -162,12 +162,12 @@ export function SiteFooter() {
             © {year} {siteConfig.legalName}. All rights reserved.
           </p>
           <p>
-            Privacy policy available on request —{" "}
+            Privacy policy available on request.{" "}
             <Link
               href="/contact"
               className="rounded-sm font-medium text-white/70 underline-offset-4 transition-colors duration-150 hover:text-white hover:underline focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent-300 focus-visible:ring-offset-2 focus-visible:ring-offset-navy-950"
             >
-              contact us
+              Contact us
             </Link>
             .
           </p>

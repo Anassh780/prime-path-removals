@@ -46,7 +46,7 @@ export function ContactChannels() {
                   here, so nothing shown is out of date.
                 </p>
                 <p className="mt-2 text-sm leading-relaxed text-ink-soft">
-                  Until then, the contact form is the fastest route — send your
+                  Until then, the contact form is the fastest route. Send your
                   details and we will reply by email.
                 </p>
                 <a

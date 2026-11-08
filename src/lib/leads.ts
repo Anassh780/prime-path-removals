@@ -35,7 +35,7 @@ export async function storeLead(
       ok: false,
       status: 503,
       error:
-        "Online submissions are not connected yet, so this request has not been sent. Please try again shortly — or reach us through the contact page and we will pick it up from there.",
+        "Online submissions are not connected yet, so this request has not been sent. Please try again shortly or reach us through the contact page and we will pick it up from there.",
     };
   }
 
@@ -78,8 +78,8 @@ async function notifyByEmail(
 
   const subject =
     kind === "quote"
-      ? `New quote request — ${record.reference}`
-      : `New contact message — ${record.reference}`;
+      ? `New quote request: ${record.reference}`
+      : `New contact message: ${record.reference}`;
 
   const body = Object.entries(record)
     .filter(([, value]) => value !== undefined && value !== null && value !== "")

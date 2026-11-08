@@ -54,7 +54,7 @@ export function Coverage() {
     if (!UK_POSTCODE_PATTERN.test(value)) {
       setConfirmed(null);
       setError(
-        "That does not look like a UK postcode. Check it and try again — for example, M1 4BT.",
+        "That does not look like a UK postcode. Check it and try again, for example M1 4BT.",
       );
       return;
     }
@@ -168,7 +168,7 @@ export function Coverage() {
                     />
                     <div className="flex flex-col gap-2">
                       <p className="text-sm font-medium leading-relaxed text-navy-900">
-                        Thanks — we will confirm availability for{" "}
+                        Thanks, we will confirm availability for{" "}
                         <span className="whitespace-nowrap">{confirmed}</span> in
                         your written quote.
                       </p>

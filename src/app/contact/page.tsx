@@ -66,7 +66,7 @@ export default function ContactPage() {
                     >
                       Use the quote form
                     </Link>{" "}
-                    — it captures the addresses, dates and access details we
+                    to share the addresses, dates and access details we
                     need in one go.
                   </p>
                 </div>

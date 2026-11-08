@@ -7,7 +7,7 @@ import { Container, Section } from "@/components/shared/section";
 import { buildMetadata } from "@/lib/seo";
 
 export const metadata: Metadata = buildMetadata({
-  title: "Removal Cost Calculator — Live Price Estimator",
+  title: "Removal Cost Calculator | Live Price Estimator",
   description:
     "Calculate your house removal cost instantly. Select your property size, moving distance, access and services to see a transparent live price estimate and recommended crew plan.",
   path: "/calculator",

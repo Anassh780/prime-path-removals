@@ -65,7 +65,7 @@ export default function NotFound() {
                 <p className="mt-4 max-w-lg text-[15px] leading-relaxed text-ink-soft sm:text-base">
                   The page you asked for does not exist, or it has been renamed
                   since the link was created. Nothing has gone wrong with any
-                  enquiry you have already sent — use one of the links below to
+                  enquiry you have already sent. Use one of the links below to
                   pick up where you left off.
                 </p>
 

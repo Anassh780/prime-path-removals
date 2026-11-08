@@ -52,13 +52,13 @@ export function Intro() {
               Prime House Removals handles house moves, office relocations,
               packing, furniture transport and property clearance. Every job
               begins with a conversation about your property, your dates and
-              what needs moving — then a written quote that sets out the crew,
+              what needs moving, then a written quote that sets out the crew,
               vehicle and materials involved.
             </p>
             <p className="text-[15px] leading-relaxed text-ink-soft sm:text-base">
               On the day, a trained crew protects floors and doorways, works
               room by room and places everything where it belongs at the other
-              end. No call-centre handovers, no vague hourly estimates and no
+              end. No call centre handovers, no vague hourly estimates and no
               extras added after the fact.
             </p>
           </Reveal>

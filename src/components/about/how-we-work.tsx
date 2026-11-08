@@ -52,7 +52,7 @@ export function HowWeWork() {
         <Reveal delay={0.1} className="mt-6">
           <p className="max-w-3xl text-sm leading-relaxed text-navy-300/80">
             Turnaround is measured from the point we have complete move details,
-            not from your first enquiry — so the figure reflects the job rather
+            not from your first enquiry, so the figure reflects the job rather
             than the queue.
           </p>
         </Reveal>

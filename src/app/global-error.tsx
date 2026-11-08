@@ -140,7 +140,7 @@ export default function GlobalError({
               }}
             >
               An unexpected error stopped the page from starting. Reload to try
-              again — if it keeps happening, come back in a few minutes.
+              again. If it keeps happening, come back in a few minutes.
             </p>
 
             <button
@@ -175,7 +175,7 @@ export default function GlobalError({
                 color: "#64748b",
               }}
             >
-              Prime House Removals —{" "}
+              Prime House Removals:{" "}
               {/* A plain anchor is intentional here: global-error replaces the
                   root layout, so it must not depend on router context. */}
               {/* eslint-disable-next-line @next/next/no-html-link-for-pages */}

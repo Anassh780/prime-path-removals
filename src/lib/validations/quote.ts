@@ -14,8 +14,8 @@ import { services } from "@/content/services";
 
 export const PROPERTY_TYPES = [
   { value: "studio-flat", label: "Studio or flat" },
-  { value: "house-1-2", label: "1–2 bedroom house" },
-  { value: "house-3-4", label: "3–4 bedroom house" },
+  { value: "house-1-2", label: "1 to 2 bedroom house" },
+  { value: "house-3-4", label: "3 to 4 bedroom house" },
   { value: "house-5-plus", label: "5+ bedroom house" },
   { value: "office-commercial", label: "Office or commercial premises" },
   { value: "warehouse-industrial", label: "Warehouse or industrial unit" },

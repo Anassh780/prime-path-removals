@@ -48,24 +48,24 @@ export const services: Service[] = [
     navLabel: "House removals",
     icon: "home",
     summary:
-      "Full-service home moves handled by a trained crew, from the first box to the last piece of furniture.",
+      "Full service home moves handled by a trained crew, from the first box to the last piece of furniture.",
     description:
-      "Whether you are moving a one-bedroom flat or a family home, we plan the day around your property, your access and your timeline. Your crew arrives with the right vehicle, protective materials and equipment, then works room by room so nothing is rushed and nothing is left behind.",
+      "Whether you are moving a one bedroom flat or a family home, we plan the day around your property, your access and your timeline. Your crew arrives with the right vehicle, protective materials and equipment, then works room by room so nothing is rushed and nothing is left behind.",
     benefits: [
       "A written, itemised quote before you commit",
       "Protective wrapping and floor coverings as standard",
-      "Room-by-room loading so items arrive where they belong",
-      "Flexible dates, including weekends and end-of-month moves",
+      "Room by room loading so items arrive where they belong",
+      "Flexible dates, including weekends and end of month moves",
     ],
     includes: [
-      "Pre-move planning call and access check",
+      "Pre move planning call and access check",
       "Dismantling and reassembling standard furniture",
       "Careful loading, transit and unloading",
       "Optional packing and unpacking service",
     ],
     metaTitle: "House & Residential Removals",
     metaDescription:
-      "Full-service house removals with a trained crew, protective materials and an itemised written quote. Plan your residential move with Prime House Removals.",
+      "Full service house removals with a trained crew, protective materials and an itemised written quote. Plan your residential move with Prime House Removals.",
   },
   {
     slug: "office-relocations",
@@ -73,12 +73,12 @@ export const services: Service[] = [
     navLabel: "Office relocations",
     icon: "building",
     summary:
-      "Planned commercial moves that keep your business running, with out-of-hours options to protect trading time.",
+      "Planned commercial moves that keep your business running, with out of hours options to protect trading time.",
     description:
       "Office moves succeed on planning, not on the day. We map your floor plans, agree a sequence for desks, IT and storage, and work around your operating hours so teams can get back to work quickly. Everything is labelled by department and destination before it leaves the building.",
     benefits: [
-      "Out-of-hours and weekend relocations available",
-      "Department and desk-level labelling",
+      "Out of hours and weekend relocations available",
+      "Department and desk level labelling",
       "Coordinated with your IT and facilities contacts",
       "Single point of contact throughout the project",
     ],
@@ -90,7 +90,7 @@ export const services: Service[] = [
     ],
     metaTitle: "Office & Commercial Relocations",
     metaDescription:
-      "Planned office and commercial relocations with out-of-hours options, department labelling and a dedicated move coordinator. Request a commercial moving quote.",
+      "Planned office and commercial relocations with out of hours options, department labelling and a dedicated move coordinator. Request a commercial moving quote.",
   },
   {
     slug: "warehouse-moving",
@@ -102,20 +102,20 @@ export const services: Service[] = [
     description:
       "Warehouse moves involve volume, access and timing. We plan pallet flow and racking dismantling around your shutdown window, provide the crew and vehicles to match the scale of the site, and keep stock labelled by bay so it can be reinstated in the right place.",
     benefits: [
-      "Scaled crews and vehicles for large-volume moves",
+      "Scaled crews and vehicles for large volume moves",
       "Palletised handling and racking dismantling",
-      "Bay-by-bay labelling for a clean reinstatement",
-      "Shutdown-window scheduling to limit downtime",
+      "Bay by bay labelling for a clean reinstatement",
+      "Shutdown window scheduling to limit downtime",
     ],
     includes: [
       "Volume survey and access assessment",
-      "Racking dismantling and re-erection",
+      "Racking dismantling and re erection",
       "Pallet wrapping, loading and transport",
       "Site clearance of packaging and waste",
     ],
     metaTitle: "Warehouse Moving & Clearance",
     metaDescription:
-      "Warehouse relocations and clearances with palletised handling, racking dismantling and bay-level labelling. Plan a low-downtime warehouse move.",
+      "Warehouse relocations and clearances with palletised handling, racking dismantling and bay level labelling. Plan a low downtime warehouse move.",
   },
   {
     slug: "furniture-moving",
@@ -123,13 +123,13 @@ export const services: Service[] = [
     navLabel: "Furniture moving",
     icon: "armchair",
     summary:
-      "Single items or full suites moved carefully — ideal for marketplace purchases, deliveries and part-loads.",
+      "Single items or full suites moved carefully, ideal for marketplace purchases, deliveries and part loads.",
     description:
-      "Not every move needs a full removal. We transport individual pieces and part-loads with the same care as a complete home move: wrapped, strapped and protected in transit. Useful for buying second-hand furniture, moving a piano or sofa, or shifting a few items between addresses.",
+      "Not every move needs a full removal. We transport individual pieces and part loads with the same care as a complete home move: wrapped, strapped and protected in transit. Useful for buying second hand furniture, moving a piano or sofa, or shifting a few items between addresses.",
     benefits: [
-      "Single-item and part-load pricing",
+      "Single item and part load pricing",
       "Blankets, straps and edge protection provided",
-      "Two-person handling for heavy or awkward pieces",
+      "Two person handling for heavy or awkward pieces",
       "Collection and delivery windows agreed in advance",
     ],
     includes: [
@@ -140,7 +140,7 @@ export const services: Service[] = [
     ],
     metaTitle: "Furniture Moving & Transportation",
     metaDescription:
-      "Careful furniture moving and transport for single items, suites and part-loads. Wrapped, strapped and handled by a two-person crew.",
+      "Careful furniture moving and transport for single items, suites and part loads. Wrapped, strapped and handled by a two person crew.",
   },
   {
     slug: "packing-and-loading",
@@ -155,7 +155,7 @@ export const services: Service[] = [
       "Correct materials for fragile, heavy and awkward items",
       "Boxes labelled by room and contents",
       "Loading sequence planned for easy unloading",
-      "Packing-only or full-service options",
+      "Packing only or full service options",
     ],
     includes: [
       "Cartons, tape, bubble wrap and wardrobe boxes",
@@ -165,7 +165,7 @@ export const services: Service[] = [
     ],
     metaTitle: "Professional Packing & Loading",
     metaDescription:
-      "Professional packing and loading services with the right materials, room-by-room labelling and a planned loading sequence.",
+      "Professional packing and loading services with the right materials, room by room labelling and a planned loading sequence.",
   },
   {
     slug: "waste-removal",
@@ -179,7 +179,7 @@ export const services: Service[] = [
     benefits: [
       "Clear pricing based on load volume",
       "Sorting for recycling and responsible disposal",
-      "Same-week collections where availability allows",
+      "Same week collections where availability allows",
       "No need to hire a skip or arrange transport",
     ],
     includes: [
@@ -198,11 +198,11 @@ export const services: Service[] = [
     navLabel: "Property clearance",
     icon: "box",
     summary:
-      "Complete property clearances for sales, lettings, probate and end-of-tenancy — handled with discretion.",
+      "Complete property clearances for sales, lettings, probate and end of tenancy, handled with discretion.",
     description:
       "Clearing a property is often emotional as well as practical. We work methodically through each room, set aside anything that should be kept or donated, and clear the rest so the property is ready to hand over. Discretion and care are part of the service.",
     benefits: [
-      "Room-by-room clearance to an agreed scope",
+      "Room by room clearance to an agreed scope",
       "Items set aside for keeping or donation",
       "Discreet, respectful handling throughout",
       "Property left clean and ready to hand over",
@@ -215,7 +215,7 @@ export const services: Service[] = [
     ],
     metaTitle: "Property Clearance & Disposal",
     metaDescription:
-      "Complete property clearances for sales, lettings, probate and end-of-tenancy, with discreet handling and responsible disposal.",
+      "Complete property clearances for sales, lettings, probate and end of tenancy, with discreet handling and responsible disposal.",
   },
 ];
 

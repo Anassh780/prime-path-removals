@@ -35,7 +35,7 @@ export function ContactNextSteps() {
           What happens next
         </h2>
         <p className="mt-2 text-sm leading-relaxed text-ink-soft">
-          No scripts and no automated replies — just a short, clear outline of
+          No scripts and no automated replies, just a short, clear outline of
           how we handle an enquiry.
         </p>
 

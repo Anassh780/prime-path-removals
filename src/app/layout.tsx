@@ -26,7 +26,7 @@ const plusJakarta = Plus_Jakarta_Sans({
 });
 
 const baseUrl = siteConfig.url.replace(/\/$/, "");
-const homeTitle = `${siteConfig.name} — ${siteConfig.tagline}`;
+const homeTitle = `${siteConfig.name} | ${siteConfig.tagline}`;
 
 export const metadata: Metadata = {
   metadataBase: new URL(baseUrl),

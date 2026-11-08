@@ -14,7 +14,7 @@ import { buildMetadata } from "@/lib/seo";
 export const metadata: Metadata = buildMetadata({
   title: "Removal Services",
   description:
-    "House, office and commercial removals, packing, furniture transport, waste removal and property clearance — explore the full range of Prime House Removals services.",
+    "House, office and commercial removals, packing, furniture transport, waste removal and property clearance. Explore the full range of Prime House Removals services.",
   path: "/services",
 });
 
@@ -44,7 +44,7 @@ export default function ServicesPage() {
               </h1>
 
               <p className="mt-6 max-w-xl text-[15px] leading-relaxed text-navy-300 sm:text-base">
-                Seven services covering the whole move — from a single item to a
+                Seven services covering the whole move, from a single item to a
                 full commercial relocation. Every job is planned around your
                 property, your access and your dates, then quoted in writing
                 before you commit.
@@ -64,7 +64,7 @@ export default function ServicesPage() {
               </div>
 
               <p className="mt-6 text-sm text-navy-300">
-                No obligation — availability and pricing are confirmed in your
+                No obligation. Availability and pricing are confirmed in your
                 written quote.
               </p>
             </Reveal>
@@ -88,7 +88,7 @@ export default function ServicesPage() {
 
       <ServicesCta
         title="Ready to plan your move?"
-        description="Tell us the addresses, your dates and anything that needs special care. We will confirm what is possible and send a written, itemised quote — no obligation."
+        description="Tell us the addresses, your dates and anything that needs special care. We will confirm what is possible and send a written, itemised quote with no obligation."
       />
     </>
   );

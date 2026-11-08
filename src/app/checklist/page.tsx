@@ -12,7 +12,7 @@ import { buildMetadata } from "@/lib/seo";
 export const metadata: Metadata = buildMetadata({
   title: "Moving House Checklist & Moving Day Planner",
   description:
-    "Interactive moving house checklist from 8 weeks before move day to unpacking in your new home. Keep your move organised with step-by-step task tracking.",
+    "Interactive moving house checklist from 8 weeks before move day to unpacking in your new home. Keep your move organised with step by step task tracking.",
   path: "/checklist",
 });
 

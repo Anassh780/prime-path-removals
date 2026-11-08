@@ -770,7 +770,7 @@ export function QuoteForm({ onEstimateChange }: QuoteFormProps) {
                               : service.slug === "furniture-moving"
                               ? "Heavy items & dismantling/reassembly"
                               : service.slug === "property-clearance"
-                              ? "Sorting & responsible eco-disposal"
+                              ? "Sorting & responsible eco disposal"
                               : service.summary.slice(0, 50) + "…"}
                           </span>
                         </div>
@@ -885,7 +885,7 @@ export function QuoteForm({ onEstimateChange }: QuoteFormProps) {
                 format={formatAmount}
                 duration={0.45}
               />{" "}
-              – £
+              to £
               <AnimatedNumber
                 value={currentEstimate.maxPrice}
                 format={formatAmount}

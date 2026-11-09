@@ -277,6 +277,28 @@
   }
 }
 
+/* --- 3D Carousel Marquee (Left to Right) ---------------------------------- */
+
+@keyframes marquee-ltr {
+  0% {
+    transform: translate3d(-50%, 0, 0);
+  }
+  100% {
+    transform: translate3d(0%, 0, 0);
+  }
+}
+
+.animate-marquee-ltr {
+  animation: marquee-ltr 45s linear infinite;
+  will-change: transform;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-marquee-ltr {
+    animation: none !important;
+  }
+}
+
 /* ==========================================================================
    Base
    ========================================================================== */

@@ -5,16 +5,15 @@ import {
   MessageSquareQuote,
   PenLine,
   ShieldCheck,
-  Star,
 } from "lucide-react";
 
 import { Reveal } from "@/components/shared/reveal";
 import { Container, Section, SectionHeading } from "@/components/shared/section";
 import { Button } from "@/components/ui/button";
+import { FeedbackCarousel } from "@/components/home/feedback-carousel";
 import {
   testimonials,
   testimonialsEnabled,
-  type Testimonial,
 } from "@/content/testimonials";
 
 const publishingPrinciples = [
@@ -64,8 +63,8 @@ export function Testimonials() {
 
         <Reveal delay={0.06} className="mt-10 lg:mt-12">
           {testimonialsEnabled ? (
-            <div className="flex flex-col gap-8">
-              <TestimonialGrid testimonials={testimonials} />
+            <div className="flex flex-col gap-10">
+              <FeedbackCarousel testimonials={testimonials} />
               <div className="flex flex-col items-center justify-between gap-4 rounded-xl border border-line bg-white p-6 shadow-card sm:flex-row">
                 <div>
                   <p className="text-sm font-semibold text-ink sm:text-base">
@@ -155,44 +154,6 @@ function EmptyState() {
           ))}
         </ul>
       </div>
-    </div>
-  );
-}
-
-function TestimonialGrid({ testimonials }: { testimonials: Testimonial[] }) {
-  return (
-    <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
-      {testimonials.map((testimonial) => (
-        <figure
-          key={`${testimonial.name}-${testimonial.quote}`}
-          className="flex h-full flex-col gap-5 rounded-xl border border-line bg-white p-6 shadow-card"
-        >
-          <div
-            className="flex items-center gap-0.5"
-            role="img"
-            aria-label={`Rated ${testimonial.rating} out of 5`}
-          >
-            {Array.from({ length: testimonial.rating }).map((_, index) => (
-              <Star
-                key={index}
-                className="size-4 fill-amber-400 text-amber-400"
-                aria-hidden="true"
-              />
-            ))}
-          </div>
-
-          <blockquote className="flex-1 text-[15px] leading-relaxed text-ink-soft">
-            <p>{`\u201c${testimonial.quote}\u201d`}</p>
-          </blockquote>
-
-          <figcaption className="border-t border-line pt-4">
-            <p className="text-sm font-medium text-ink">{testimonial.name}</p>
-            <p className="mt-1 text-sm text-ink-muted">
-              {testimonial.location} · {testimonial.service}
-            </p>
-          </figcaption>
-        </figure>
-      ))}
     </div>
   );
 }

@@ -7,80 +7,77 @@ import {
   ArrowRight,
   Boxes,
   Check,
-  ChevronLeft,
-  ChevronRight,
   Maximize2,
   Truck,
   Wrench,
   X,
 } from "lucide-react";
-import { AnimatePresence, motion } from "motion/react";
+import {
+  motion,
+  useMotionValueEvent,
+  useScroll,
+  useTransform,
+} from "motion/react";
 
-import { Reveal } from "@/components/shared/reveal";
-import { Container, Section, SectionHeading } from "@/components/shared/section";
+import { Container } from "@/components/shared/section";
 import { Button } from "@/components/ui/button";
 import { Dialog, DialogContent, DialogTitle } from "@/components/ui/dialog";
 
-export const showcaseItems = [
+export const showcaseStages = [
   {
     id: "packing",
     step: "01",
-    tabLabel: "Fragile Packing",
-    eyebrow: "Stage 01 · Pre-Move Preparation",
-    service: "Fragile Packing & Protection",
-    title: "Room by room fragile protection.",
-    tagline: "China, glassware, artwork and delicate furniture protected before transit.",
-    narrative:
-      "Trained packers wrap delicate china, crystal and porcelain in multi-layer bubble wrap, cushion with acid-free tissue paper, and pack into reinforced double-walled cartons with colour-coded room and inventory labelling.",
-    deliverables: [
+    label: "01 / PROTECTION",
+    tabTitle: "01. Packing",
+    stageName: "Fragile Packing & Protection",
+    headline: "Every item deserves careful handling.",
+    description:
+      "Our experienced team prepares, wraps, and protects your belongings before transportation. Using high-density bubble wrap, acid-free tissue paper, and heavy-duty double-walled cartons, every fragile piece is secured and catalogued room by room.",
+    highlights: [
+      "Quilted furniture blankets & stretch wrap",
+      "High-density bubble wrap & tissue paper",
       "Double-walled reinforced removal cartons",
-      "Quilted furniture blankets & bubble wrap",
       "Room-by-room colour-coded inventory labelling",
-      "Custom padding for mirrors, artwork & glassware",
     ],
     image: "/images/service-packing.jpg",
     alt: "Prime House Removals team in liveried navy polo shirts packing fragile china and porcelain into branded cartons with bubble wrap",
     icon: Boxes,
     href: "/services/packing-and-loading",
-    badge: "Specialist Packing",
     equipment: "Double-walled cartons · High-density bubble wrap",
   },
   {
     id: "loading",
     step: "02",
-    tabLabel: "Fleet Loading",
-    eyebrow: "Stage 02 · Fleet & Transit",
-    service: "Fleet Loading & Transportation",
-    title: "Hydraulic tail-lift van transport.",
-    tagline: "Dedicated Luton vans with hydraulic tail-lifts and internal load securing.",
-    narrative:
-      "Heavy furniture and boxed inventory are loaded via heavy-duty hydraulic tail-lifts, avoiding manual strain and accidental drops. Items are systematically secured to internal steel ratchet rails using calibrated straps, with neoprene floor runners protecting your property entrance throughout.",
-    deliverables: [
+    label: "02 / TRANSPORTATION",
+    tabTitle: "02. Transit",
+    stageName: "Fleet Loading & Transportation",
+    headline: "Every move, professionally managed.",
+    description:
+      "Our fully equipped fleet and trained crew ensure secure handling throughout the journey. Heavy items are loaded via 500kg hydraulic tail-lifts and anchored to internal steel ratchet rails, with neoprene runners guarding your flooring.",
+    highlights: [
       "500kg hydraulic tail-lift Luton van fleet",
-      "Calibrated internal ratchet tie-down straps",
-      "Neoprene hallway and doorway protection",
-      "Trained 2 to 3-person crew in liveried uniform",
+      "Internal steel ratchet tie-down rails",
+      "Neoprene floor runners & doorway protectors",
+      "Trained 2 to 3-person removals crew in liveried uniform",
     ],
     image: "/images/service-loading.jpg",
     alt: "Prime House Removals 3-person removals crew in liveried navy polo shirts loading boxes into a Luton van with hydraulic tail-lift",
     icon: Truck,
     href: "/services/house-removals",
-    badge: "Hydraulic Tail-Lift",
-    equipment: "Luton body · 500kg tail-lift · Ratchet rails",
+    equipment: "Luton body · 500kg tail-lift · Calibrated ratchet rails",
   },
   {
     id: "assembly",
     step: "03",
-    tabLabel: "Furniture Assembly",
-    eyebrow: "Stage 03 · Set-Up & Placement",
-    service: "Furniture Dismantling & Assembly",
-    title: "Precision furniture reconstruction.",
-    tagline: "Bed frames, wardrobes, and modular units dismantled calmly and rebuilt on-site.",
-    narrative:
-      "Awkward furniture is carefully dismantled prior to transit, with all screws, bolts and brackets bagged, tagged and taped to their pieces. At your new property, our technicians rebuild each item in your chosen room, level them accurately, and position them exactly according to your floor plan.",
-    deliverables: [
+    label: "03 / REASSEMBLY",
+    tabTitle: "03. Reassembly",
+    stageName: "Furniture Dismantling & Assembly",
+    headline: "Your new space, ready to feel like home.",
+    description:
+      "Our technicians carefully reconstruct and position furniture according to your requirements. Fixings are systematically tagged and taped to their pieces, then reassembled calmly with cordless power tools in your designated rooms.",
+    highlights: [
       "Hardware bagged, tagged and secured to pieces",
-      "Cordless power tools and precision assembly hand kits",
+      "Cordless power tools & precision hand kits",
       "Protective felt floor pads applied upon request",
       "Final positioning check against your floor plan",
     ],
@@ -88,471 +85,518 @@ export const showcaseItems = [
     alt: "Prime House Removals technicians in branded navy polo shirts assembling wooden bed frame and wardrobe with cordless power drill",
     icon: Wrench,
     href: "/services/furniture-moving",
-    badge: "Assembly Included",
     equipment: "Cordless power tools · Hardware tagged · Levelling kit",
   },
 ];
 
 export function MovingShowcase() {
-  const [activeIndex, setActiveIndex] = React.useState(0);
-  const [tilt, setTilt] = React.useState({ x: 0, y: 0 });
-  const [isHovered, setIsHovered] = React.useState(false);
-  const [isLightboxOpen, setIsLightboxOpen] = React.useState(false);
+  const containerRef = React.useRef<HTMLDivElement>(null);
+  const [activeStage, setActiveStage] = React.useState(0);
+  const [lightboxIndex, setLightboxIndex] = React.useState<number | null>(null);
 
-  // Touch swipe support for mobile
-  const [touchStart, setTouchStart] = React.useState<number | null>(null);
-  const [touchEnd, setTouchEnd] = React.useState<number | null>(null);
+  // Track scroll through the 350vh pinned storytelling section
+  const { scrollYProgress } = useScroll({
+    target: containerRef,
+    offset: ["start start", "end end"],
+  });
 
-  const activeItem = showcaseItems[activeIndex];
-
-  // Auto-advance showcase every 8 seconds when user is not hovering or in lightbox
-  React.useEffect(() => {
-    if (isHovered || isLightboxOpen) return;
-    const timer = setInterval(() => {
-      setActiveIndex((prev) => (prev + 1) % showcaseItems.length);
-    }, 8000);
-    return () => clearInterval(timer);
-  }, [isHovered, isLightboxOpen]);
-
-  const handlePrev = () => {
-    setActiveIndex((prev) => (prev - 1 + showcaseItems.length) % showcaseItems.length);
-  };
-
-  const handleNext = () => {
-    setActiveIndex((prev) => (prev + 1) % showcaseItems.length);
-  };
-
-  const handleMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
-    const rect = e.currentTarget.getBoundingClientRect();
-    const x = (e.clientX - rect.left) / rect.width - 0.5;
-    const y = (e.clientY - rect.top) / rect.height - 0.5;
-    setTilt({ x: -(y * 5), y: x * 5 });
-  };
-
-  const handleMouseLeave = () => {
-    setTilt({ x: 0, y: 0 });
-    setIsHovered(false);
-  };
-
-  const handleTouchStart = (e: React.TouchEvent) => {
-    setTouchStart(e.targetTouches[0].clientX);
-  };
-
-  const handleTouchMove = (e: React.TouchEvent) => {
-    setTouchEnd(e.targetTouches[0].clientX);
-  };
-
-  const handleTouchEnd = () => {
-    if (!touchStart || !touchEnd) return;
-    const distance = touchStart - touchEnd;
-    if (distance > 50) {
-      handleNext();
-    } else if (distance < -50) {
-      handlePrev();
+  // Update active stage indicator based on scroll progress
+  useMotionValueEvent(scrollYProgress, "change", (latest) => {
+    if (latest < 0.33) {
+      setActiveStage(0);
+    } else if (latest < 0.66) {
+      setActiveStage(1);
+    } else {
+      setActiveStage(2);
     }
-    setTouchStart(null);
-    setTouchEnd(null);
+  });
+
+  // Smooth scroll progress bar width (0% to 100%)
+  const progressWidth = useTransform(scrollYProgress, [0, 1], ["0%", "100%"]);
+
+  // ===================== DESKTOP STAGE 1 TRANSFORMS =====================
+  // Stage 1 is fully visible from 0 to 0.28, exits between 0.28 and 0.38
+  const photo1Opacity = useTransform(scrollYProgress, [0, 0.28, 0.38], [1, 1, 0]);
+  const photo1Scale = useTransform(scrollYProgress, [0, 0.28, 0.38], [1, 1, 0.96]);
+  const text1Opacity = useTransform(scrollYProgress, [0, 0.26, 0.34], [1, 1, 0]);
+  const text1Y = useTransform(scrollYProgress, [0, 0.26, 0.34], [0, 0, -32]);
+
+  // ===================== DESKTOP STAGE 2 TRANSFORMS =====================
+  // Stage 2 enters between 0.28 and 0.38, stays until 0.62, exits by 0.72
+  const photo2Opacity = useTransform(
+    scrollYProgress,
+    [0.28, 0.38, 0.62, 0.72],
+    [0, 1, 1, 0]
+  );
+  const photo2Scale = useTransform(
+    scrollYProgress,
+    [0.28, 0.38, 0.62, 0.72],
+    [1.04, 1, 1, 0.96]
+  );
+  const text2Opacity = useTransform(
+    scrollYProgress,
+    [0.30, 0.38, 0.60, 0.68],
+    [0, 1, 1, 0]
+  );
+  const text2Y = useTransform(
+    scrollYProgress,
+    [0.30, 0.38, 0.60, 0.68],
+    [32, 0, 0, -32]
+  );
+
+  // ===================== DESKTOP STAGE 3 TRANSFORMS =====================
+  // Stage 3 enters between 0.62 and 0.72, stays through 1.0
+  const photo3Opacity = useTransform(scrollYProgress, [0.62, 0.72, 1], [0, 1, 1]);
+  const photo3Scale = useTransform(scrollYProgress, [0.62, 0.72, 1], [1.04, 1, 1]);
+  const text3Opacity = useTransform(scrollYProgress, [0.64, 0.72, 1], [0, 1, 1]);
+  const text3Y = useTransform(scrollYProgress, [0.64, 0.72, 1], [32, 0, 0]);
+
+  // Jump to specific stage via desktop tab click
+  const scrollToStage = (stageIndex: number) => {
+    if (!containerRef.current) return;
+    const containerTop =
+      containerRef.current.getBoundingClientRect().top + window.scrollY;
+    const containerHeight = containerRef.current.scrollHeight;
+    const targetTargets = [0.08, 0.48, 0.88];
+    const targetY = containerTop + containerHeight * targetTargets[stageIndex];
+    window.scrollTo({ top: targetY, behavior: "smooth" });
   };
 
   return (
-    <Section id="moving-standards" tone="subtle" className="overflow-hidden">
-      <Container>
-        <Reveal>
-          <div className="flex flex-col gap-4 md:flex-row md:items-end md:justify-between">
-            <SectionHeading
-              eyebrow="Operational Standards"
-              title="Moving day precision, captured on site."
-              description="See how our trained crews prepare, load and rebuild your home. Every photograph shows our real team, liveried vans and protective equipment in action."
-            />
-
-            {/* Stage Counter & Controls for Desktop */}
-            <div className="hidden items-center gap-3 lg:flex">
-              <span className="font-mono text-xs font-semibold uppercase tracking-wider text-ink-muted">
-                Stage {activeItem.step} / 03
-              </span>
-              <div className="flex items-center gap-1.5">
-                <button
-                  type="button"
-                  onClick={handlePrev}
-                  aria-label="Previous operational stage"
-                  className="flex size-9 items-center justify-center rounded-lg border border-line bg-surface text-ink transition-colors hover:border-line-strong hover:bg-surface-muted focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-royal-500"
-                >
-                  <ChevronLeft className="size-4" aria-hidden="true" />
-                </button>
-                <button
-                  type="button"
-                  onClick={handleNext}
-                  aria-label="Next operational stage"
-                  className="flex size-9 items-center justify-center rounded-lg border border-line bg-surface text-ink transition-colors hover:border-line-strong hover:bg-surface-muted focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-royal-500"
-                >
-                  <ChevronRight className="size-4" aria-hidden="true" />
-                </button>
-              </div>
-            </div>
-          </div>
-        </Reveal>
-
-        {/* Mobile Horizontal Stage Selector Chips (< 1024px) */}
-        <div className="mt-8 flex gap-2 overflow-x-auto pb-1 lg:hidden">
-          {showcaseItems.map((item, idx) => {
-            const isActive = idx === activeIndex;
-            return (
-              <button
-                key={item.id}
-                type="button"
-                onClick={() => setActiveIndex(idx)}
-                className={`inline-flex shrink-0 items-center gap-2 rounded-full px-4 py-2 text-xs font-semibold transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-royal-500 ${
-                  isActive
-                    ? "bg-navy-950 text-white shadow-xs"
-                    : "border border-line bg-surface text-ink hover:bg-surface-muted"
-                }`}
-                aria-pressed={isActive}
-              >
-                <span
-                  className={`size-1.5 rounded-full ${
-                    isActive ? "bg-accent-400" : "bg-neutral-400"
-                  }`}
-                />
-                <span className="font-mono">{item.step}</span>
-                <span>{item.tabLabel}</span>
-              </button>
-            );
-          })}
-        </div>
-
-        {/* Main Editorial Showcase Stage */}
-        <div className="mt-6 grid gap-8 lg:mt-12 lg:grid-cols-12 lg:items-center lg:gap-12 xl:gap-16">
-          {/* Left Column: Narrative & Service Selector (5 cols) */}
-          <div className="flex flex-col gap-6 lg:col-span-5">
-            {/* Desktop Vertical Service Selector */}
-            <div className="hidden flex-col gap-2 lg:flex">
-              {showcaseItems.map((item, idx) => {
-                const ItemIcon = item.icon;
-                const isActive = idx === activeIndex;
-
-                return (
-                  <button
-                    key={item.id}
-                    type="button"
-                    onClick={() => setActiveIndex(idx)}
-                    className={`group relative flex items-start gap-4 rounded-xl p-4 text-left transition-all duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-royal-500 ${
-                      isActive
-                        ? "border border-line-strong bg-surface shadow-card ring-1 ring-accent-600/20"
-                        : "border border-transparent bg-transparent hover:border-line hover:bg-surface/60"
-                    }`}
-                    aria-pressed={isActive}
-                  >
-                    <span
-                      className={`flex size-10 shrink-0 items-center justify-center rounded-lg border transition-colors ${
-                        isActive
-                          ? "border-accent-600/30 bg-accent-50 text-accent-600"
-                          : "border-line bg-surface text-ink-soft group-hover:text-ink"
-                      }`}
-                    >
-                      <ItemIcon className="size-5" aria-hidden="true" />
-                    </span>
-
-                    <div className="flex-1">
-                      <div className="flex items-center gap-2">
-                        <span
-                          className={`font-mono text-xs font-semibold ${
-                            isActive ? "text-accent-600" : "text-ink-muted"
-                          }`}
-                        >
-                          {item.step}
-                        </span>
-                        <span className="text-ink-muted">·</span>
-                        <span
-                          className={`text-sm font-semibold tracking-tight ${
-                            isActive ? "text-ink" : "text-ink-soft"
-                          }`}
-                        >
-                          {item.service}
-                        </span>
-                      </div>
-                      <p className="mt-1 line-clamp-1 text-xs text-ink-muted">
-                        {item.tagline}
-                      </p>
-                    </div>
-
-                    {isActive && (
-                      <span
-                        className="absolute right-4 top-1/2 size-2 -translate-y-1/2 rounded-full bg-accent-600"
-                        aria-hidden="true"
-                      />
-                    )}
-                  </button>
-                );
-              })}
-            </div>
-
-            {/* Editorial Story Box */}
-            <div className="flex flex-col gap-4 rounded-2xl border border-line bg-surface p-6 shadow-card sm:p-8">
-              <div className="inline-flex items-center gap-2">
-                <span className="size-2 rounded-full bg-accent-600" />
-                <span className="font-mono text-xs font-semibold uppercase tracking-wider text-accent-600">
-                  {activeItem.eyebrow}
+    <>
+      {/* =========================================================================
+          1. DESKTOP / LAPTOP PINNED CINEMATIC EXPERIENCE (lg:block, hidden on mobile)
+          Takes 350vh scroll distance, pinned smoothly while the story unfolds.
+         ========================================================================= */}
+      <section
+        ref={containerRef}
+        id="moving-standards"
+        className="relative hidden lg:block h-[350vh] bg-navy-950 text-white"
+        aria-label="Prime House Removals Operational Standards"
+      >
+        {/* Sticky Viewport Stage (100vh) */}
+        <div className="sticky top-0 h-screen w-full overflow-hidden flex flex-col justify-between py-10 xl:py-14">
+          <Container className="relative flex flex-col justify-between h-full">
+            {/* Top Navigation & Timeline Progress Header */}
+            <header className="flex items-center justify-between border-b border-white/10 pb-5">
+              <div className="flex items-center gap-3">
+                <span className="size-2 rounded-full bg-accent-400" />
+                <span className="font-mono text-xs font-semibold uppercase tracking-[0.22em] text-accent-300">
+                  Operational Standards · End-to-End Move Journey
                 </span>
               </div>
 
-              <div>
-                <h3 className="font-display text-2xl font-bold tracking-tight text-ink sm:text-3xl">
-                  {activeItem.title}
-                </h3>
-                <p className="mt-3 text-sm leading-relaxed text-ink-soft sm:text-[15px]">
-                  {activeItem.narrative}
-                </p>
-              </div>
+              {/* Interactive Stage Jump Controls & Continuous Progress Bar */}
+              <div className="flex flex-col items-end gap-2">
+                <nav aria-label="Operational stages" className="flex items-center gap-1 sm:gap-2">
+                  {showcaseStages.map((stage, idx) => {
+                    const isActive = activeStage === idx;
+                    return (
+                      <button
+                        key={stage.id}
+                        type="button"
+                        onClick={() => scrollToStage(idx)}
+                        className={`flex items-center gap-2 rounded-full px-3.5 py-1 text-xs font-semibold transition-all duration-300 ${
+                          isActive
+                            ? "bg-white/15 text-white ring-1 ring-white/20"
+                            : "text-white/50 hover:text-white/80"
+                        }`}
+                        aria-pressed={isActive}
+                      >
+                        <span
+                          className={`size-1.5 rounded-full ${
+                            isActive ? "bg-accent-400" : "bg-white/30"
+                          }`}
+                        />
+                        <span>{stage.tabTitle}</span>
+                      </button>
+                    );
+                  })}
+                </nav>
 
-              {/* Verified Deliverables List */}
-              <div className="mt-2 border-t border-line pt-4">
-                <p className="text-xs font-semibold uppercase tracking-wider text-ink-muted">
-                  Standards &amp; Equipment
-                </p>
-                <ul className="mt-3 grid gap-2.5">
-                  {activeItem.deliverables.map((deliverable) => (
-                    <li
-                      key={deliverable}
-                      className="flex items-start gap-2.5 text-xs text-ink-soft sm:text-[13.5px]"
-                    >
-                      <Check
-                        className="mt-0.5 size-4 shrink-0 text-accent-600"
-                        strokeWidth={2.5}
-                        aria-hidden="true"
-                      />
-                      <span>{deliverable}</span>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-
-              {/* Conversion CTA Link */}
-              <div className="mt-4 flex flex-col gap-3 pt-2 sm:flex-row sm:items-center sm:justify-between">
-                <Button asChild variant="accent" size="md" className="group shadow-xs">
-                  <Link href={activeItem.href}>
-                    Explore service details
-                    <ArrowRight
-                      className="u-arrow size-4 transition-transform duration-200 group-hover:translate-x-1"
-                      aria-hidden="true"
-                    />
-                  </Link>
-                </Button>
-
-                <span className="text-xs text-ink-muted">
-                  Quoted in writing · Fixed price
-                </span>
-              </div>
-            </div>
-          </div>
-
-          {/* Right Column: High-Resolution Photographic Hero Stage (7 cols) */}
-          <div className="flex flex-col gap-4 lg:col-span-7">
-            {/* Main Stage with 3D Parallax Tilt */}
-            <div
-              className="relative w-full"
-              style={{ perspective: "1000px" }}
-              onMouseMove={handleMouseMove}
-              onMouseEnter={() => setIsHovered(true)}
-              onMouseLeave={handleMouseLeave}
-              onTouchStart={handleTouchStart}
-              onTouchMove={handleTouchMove}
-              onTouchEnd={handleTouchEnd}
-            >
-              <div
-                className="group relative aspect-[16/9] w-full overflow-hidden rounded-2xl border border-line bg-surface-subtle shadow-lift transition-transform duration-300 ease-out will-change-transform hover:border-line-strong"
-                style={{
-                  transform: `rotateX(${tilt.x}deg) rotateY(${tilt.y}deg)`,
-                  transformStyle: "preserve-3d",
-                }}
-              >
-                {/* Natural, Bright High-Resolution Photograph */}
-                <AnimatePresence mode="wait">
+                {/* Micro Progress Bar */}
+                <div className="h-0.5 w-44 overflow-hidden rounded-full bg-white/10">
                   <motion.div
-                    key={activeItem.id}
-                    initial={{ opacity: 0, scale: 1.02 }}
-                    animate={{ opacity: 1, scale: 1 }}
-                    exit={{ opacity: 0, scale: 0.98 }}
-                    transition={{ duration: 0.4, ease: [0.22, 1, 0.36, 1] }}
+                    className="h-full bg-accent-400"
+                    style={{ width: progressWidth }}
+                  />
+                </div>
+              </div>
+            </header>
+
+            {/* Central Pinned Storytelling Canvas (Asymmetric 2-Column Grid) */}
+            <div className="my-auto grid grid-cols-12 gap-10 xl:gap-16 items-center">
+              {/* Left Column: Progressive Text Narrative (5 Cols) */}
+              <div className="relative col-span-5 min-h-[420px] flex items-center">
+                {/* ----------------- Stage 01 Typography ----------------- */}
+                <motion.div
+                  className="absolute inset-0 flex flex-col justify-center"
+                  style={{ opacity: text1Opacity, y: text1Y }}
+                >
+                  <div className="inline-flex items-center gap-2 text-accent-300">
+                    <span className="font-mono text-xs font-bold tracking-widest uppercase">
+                      {showcaseStages[0].label}
+                    </span>
+                  </div>
+
+                  <h2 className="mt-3 font-display text-4xl xl:text-5xl font-bold tracking-tight text-white leading-[1.08]">
+                    {showcaseStages[0].headline}
+                  </h2>
+
+                  <p className="mt-4 text-base xl:text-lg text-navy-200 leading-relaxed font-normal">
+                    {showcaseStages[0].description}
+                  </p>
+
+                  <div className="mt-6 border-t border-white/10 pt-5">
+                    <ul className="grid gap-2.5">
+                      {showcaseStages[0].highlights.map((item) => (
+                        <li key={item} className="flex items-center gap-3 text-sm text-navy-100">
+                          <Check className="size-4 shrink-0 text-accent-400" strokeWidth={2.5} />
+                          <span>{item}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+
+                  <div className="mt-7 flex items-center gap-4">
+                    <Button asChild variant="accent" size="lg" className="group shadow-sm">
+                      <Link href={showcaseStages[0].href}>
+                        Explore fragile packing
+                        <ArrowRight className="size-4 transition-transform group-hover:translate-x-1" />
+                      </Link>
+                    </Button>
+                  </div>
+                </motion.div>
+
+                {/* ----------------- Stage 02 Typography ----------------- */}
+                <motion.div
+                  className="absolute inset-0 flex flex-col justify-center pointer-events-auto"
+                  style={{ opacity: text2Opacity, y: text2Y }}
+                >
+                  <div className="inline-flex items-center gap-2 text-accent-300">
+                    <span className="font-mono text-xs font-bold tracking-widest uppercase">
+                      {showcaseStages[1].label}
+                    </span>
+                  </div>
+
+                  <h2 className="mt-3 font-display text-4xl xl:text-5xl font-bold tracking-tight text-white leading-[1.08]">
+                    {showcaseStages[1].headline}
+                  </h2>
+
+                  <p className="mt-4 text-base xl:text-lg text-navy-200 leading-relaxed font-normal">
+                    {showcaseStages[1].description}
+                  </p>
+
+                  <div className="mt-6 border-t border-white/10 pt-5">
+                    <ul className="grid gap-2.5">
+                      {showcaseStages[1].highlights.map((item) => (
+                        <li key={item} className="flex items-center gap-3 text-sm text-navy-100">
+                          <Check className="size-4 shrink-0 text-accent-400" strokeWidth={2.5} />
+                          <span>{item}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+
+                  <div className="mt-7 flex items-center gap-4">
+                    <Button asChild variant="accent" size="lg" className="group shadow-sm">
+                      <Link href={showcaseStages[1].href}>
+                        Explore fleet &amp; transit
+                        <ArrowRight className="size-4 transition-transform group-hover:translate-x-1" />
+                      </Link>
+                    </Button>
+                  </div>
+                </motion.div>
+
+                {/* ----------------- Stage 03 Typography ----------------- */}
+                <motion.div
+                  className="absolute inset-0 flex flex-col justify-center pointer-events-auto"
+                  style={{ opacity: text3Opacity, y: text3Y }}
+                >
+                  <div className="inline-flex items-center gap-2 text-accent-300">
+                    <span className="font-mono text-xs font-bold tracking-widest uppercase">
+                      {showcaseStages[2].label}
+                    </span>
+                  </div>
+
+                  <h2 className="mt-3 font-display text-4xl xl:text-5xl font-bold tracking-tight text-white leading-[1.08]">
+                    {showcaseStages[2].headline}
+                  </h2>
+
+                  <p className="mt-4 text-base xl:text-lg text-navy-200 leading-relaxed font-normal">
+                    {showcaseStages[2].description}
+                  </p>
+
+                  <div className="mt-6 border-t border-white/10 pt-5">
+                    <ul className="grid gap-2.5">
+                      {showcaseStages[2].highlights.map((item) => (
+                        <li key={item} className="flex items-center gap-3 text-sm text-navy-100">
+                          <Check className="size-4 shrink-0 text-accent-400" strokeWidth={2.5} />
+                          <span>{item}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+
+                  <div className="mt-7 flex items-center gap-4">
+                    <Button asChild variant="accent" size="lg" className="group shadow-sm">
+                      <Link href={showcaseStages[2].href}>
+                        Explore furniture assembly
+                        <ArrowRight className="size-4 transition-transform group-hover:translate-x-1" />
+                      </Link>
+                    </Button>
+                  </div>
+                </motion.div>
+              </div>
+
+              {/* Right Column: High-Resolution Photographic Canvas (7 Cols) */}
+              <div className="col-span-7">
+                <div className="relative aspect-[16/9] w-full overflow-hidden rounded-2xl border border-white/15 bg-black shadow-2xl">
+                  {/* Photo 1: Fragile Packing */}
+                  <motion.div
                     className="absolute inset-0 size-full"
+                    style={{ opacity: photo1Opacity, scale: photo1Scale }}
                   >
                     <Image
-                      src={activeItem.image}
-                      alt={activeItem.alt}
+                      src={showcaseStages[0].image}
+                      alt={showcaseStages[0].alt}
                       fill
-                      sizes="(min-width: 1280px) 760px, (min-width: 1024px) 60vw, 100vw"
-                      className="size-full object-cover object-center transition-transform duration-700 ease-out group-hover:scale-103"
+                      sizes="(min-width: 1280px) 760px, 60vw"
+                      className="size-full object-cover object-center"
                       priority
                     />
                   </motion.div>
-                </AnimatePresence>
 
-                {/* Top Subtle Floating Badge */}
-                <div className="absolute left-4 top-4 z-10 flex items-center gap-2 rounded-full border border-line/80 bg-white/90 px-3 py-1 text-xs font-semibold text-ink shadow-xs backdrop-blur-md">
-                  <span className="size-1.5 rounded-full bg-accent-600" />
-                  <span>{activeItem.badge}</span>
-                </div>
+                  {/* Photo 2: Fleet Loading */}
+                  <motion.div
+                    className="absolute inset-0 size-full"
+                    style={{ opacity: photo2Opacity, scale: photo2Scale }}
+                  >
+                    <Image
+                      src={showcaseStages[1].image}
+                      alt={showcaseStages[1].alt}
+                      fill
+                      sizes="(min-width: 1280px) 760px, 60vw"
+                      className="size-full object-cover object-center"
+                    />
+                  </motion.div>
 
-                {/* Top Right Lightbox Expand Button */}
-                <button
-                  type="button"
-                  onClick={() => setIsLightboxOpen(true)}
-                  aria-label="View photograph in full resolution"
-                  className="absolute right-4 top-4 z-10 flex size-9 items-center justify-center rounded-full border border-line/80 bg-white/90 text-ink shadow-xs backdrop-blur-md transition-colors hover:bg-white hover:text-royal-600 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-royal-500"
-                >
-                  <Maximize2 className="size-4" aria-hidden="true" />
-                </button>
+                  {/* Photo 3: Furniture Assembly */}
+                  <motion.div
+                    className="absolute inset-0 size-full"
+                    style={{ opacity: photo3Opacity, scale: photo3Scale }}
+                  >
+                    <Image
+                      src={showcaseStages[2].image}
+                      alt={showcaseStages[2].alt}
+                      fill
+                      sizes="(min-width: 1280px) 760px, 60vw"
+                      className="size-full object-cover object-center"
+                    />
+                  </motion.div>
 
-                {/* Bottom Clean Equipment Caption Pill */}
-                <div className="absolute inset-x-4 bottom-4 z-10 flex items-center justify-between rounded-xl border border-white/60 bg-white/95 px-4 py-2.5 text-xs shadow-xs backdrop-blur-md">
-                  <div className="flex items-center gap-2 text-ink">
-                    <span className="font-semibold text-accent-600">Equipment:</span>
-                    <span className="truncate text-ink-soft">{activeItem.equipment}</span>
+                  {/* Top-Right Lightbox Inspection Button */}
+                  <button
+                    type="button"
+                    onClick={() => setLightboxIndex(activeStage)}
+                    aria-label="View photograph in full resolution"
+                    className="absolute right-4 top-4 z-20 flex size-9 items-center justify-center rounded-full border border-white/20 bg-navy-950/70 text-white backdrop-blur-md transition-colors hover:bg-navy-950 hover:text-accent-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-royal-500"
+                  >
+                    <Maximize2 className="size-4" aria-hidden="true" />
+                  </button>
+
+                  {/* Bottom Micro Equipment Pill */}
+                  <div className="absolute inset-x-4 bottom-4 z-20 flex items-center justify-between rounded-xl border border-white/15 bg-navy-950/80 px-4 py-2.5 text-xs text-white backdrop-blur-md">
+                    <div className="flex items-center gap-2">
+                      <span className="font-semibold text-accent-300">Procedure:</span>
+                      <span className="text-navy-100">{showcaseStages[activeStage].equipment}</span>
+                    </div>
+                    <span className="font-mono text-[11px] text-white/50">
+                      Standard Procedure · Liveried Crew
+                    </span>
                   </div>
-                  <span className="hidden font-mono text-[11px] text-ink-muted sm:inline-block">
-                    Prime House Removals
-                  </span>
                 </div>
               </div>
             </div>
 
-            {/* 3-Thumbnail Gallery Bar in Clean Natural Colors */}
-            <div className="grid grid-cols-3 gap-3 sm:gap-4">
-              {showcaseItems.map((item, idx) => {
-                const isActive = idx === activeIndex;
-
-                return (
-                  <button
-                    key={item.id}
-                    type="button"
-                    onClick={() => setActiveIndex(idx)}
-                    className={`group relative aspect-[16/9] overflow-hidden rounded-xl border text-left transition-all duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-royal-500 ${
-                      isActive
-                        ? "border-accent-600 ring-2 ring-accent-600/40 shadow-card"
-                        : "border-line opacity-80 hover:opacity-100 hover:border-line-strong hover:shadow-xs"
-                    }`}
-                    aria-pressed={isActive}
-                    aria-label={`View stage ${item.step}: ${item.service}`}
-                  >
-                    <Image
-                      src={item.image}
-                      alt={item.alt}
-                      fill
-                      sizes="(min-width: 1024px) 250px, 33vw"
-                      className="size-full object-cover object-center transition-transform duration-500 group-hover:scale-105"
-                    />
-
-                    {/* Active Border Overlay */}
-                    <div
-                      className={`absolute inset-0 transition-colors ${
-                        isActive
-                          ? "bg-accent-600/10 ring-1 ring-inset ring-accent-600"
-                          : "bg-navy-950/5 group-hover:bg-transparent"
-                      }`}
-                    />
-
-                    {/* Bottom Label Tag */}
-                    <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-navy-950/70 to-transparent p-2 text-white">
-                      <div className="flex items-center gap-1.5">
-                        <span className="font-mono text-[10px] font-bold text-accent-300">
-                          {item.step}
-                        </span>
-                        <span className="truncate text-[11px] font-medium">
-                          {item.tabLabel}
-                        </span>
-                      </div>
-                    </div>
-                  </button>
-                );
-              })}
-            </div>
-          </div>
+            {/* Bottom Footer Indicator */}
+            <footer className="flex items-center justify-between border-t border-white/10 pt-4 text-xs text-white/60">
+              <span className="font-mono">
+                Scroll to explore the moving sequence
+              </span>
+              <span className="font-mono">
+                Prime House Removals · Certified Operations
+              </span>
+            </footer>
+          </Container>
         </div>
+      </section>
 
-        {/* Fullscreen High-Resolution Lightbox Modal */}
-        <Dialog open={isLightboxOpen} onOpenChange={setIsLightboxOpen}>
-          <DialogContent
-            hideClose
-            className="max-w-5xl overflow-hidden border-none bg-navy-950/95 p-0 text-white backdrop-blur-xl sm:rounded-2xl"
-          >
-            <DialogTitle className="sr-only">
-              {activeItem.service} — Operational Photograph
-            </DialogTitle>
+      {/* =========================================================================
+          2. MOBILE & TABLET VERTICALLY FLOWING EXPERIENCE (<lg:block, hidden on desktop)
+          Touch-friendly, continuous progressive reveals without scroll trapping.
+         ========================================================================= */}
+      <section
+        className="block lg:hidden bg-navy-950 py-16 text-white"
+        aria-label="Prime House Removals Operational Standards"
+      >
+        <Container>
+          {/* Section Header */}
+          <div className="border-b border-white/10 pb-6">
+            <span className="font-mono text-xs font-semibold uppercase tracking-widest text-accent-300">
+              Operational Standards
+            </span>
+            <h2 className="mt-2 font-display text-3xl font-bold tracking-tight text-white leading-tight">
+              Moving day precision, captured on site.
+            </h2>
+            <p className="mt-3 text-sm text-navy-200 leading-relaxed">
+              From packing to transit and complete reassembly, see our real crew and liveried fleet in action.
+            </p>
+          </div>
 
-            <div className="relative flex flex-col">
-              {/* Modal Top Bar */}
-              <div className="flex items-center justify-between border-b border-white/10 px-6 py-4">
-                <div className="flex items-center gap-3">
-                  <span className="font-mono text-xs font-semibold text-accent-300">
-                    Stage {activeItem.step}
-                  </span>
-                  <span className="text-white/40">·</span>
-                  <span className="text-sm font-semibold text-white">
-                    {activeItem.service}
-                  </span>
-                </div>
+          {/* Sequential Mobile Stages with Natural Scroll Flow */}
+          <div className="mt-10 flex flex-col gap-12 sm:gap-16">
+            {showcaseStages.map((stage, idx) => {
+              return (
+                <article
+                  key={stage.id}
+                  className="flex flex-col gap-5 border-b border-white/10 pb-12 last:border-b-0 last:pb-0"
+                >
+                  {/* Stage Identifier & Headline */}
+                  <div>
+                    <span className="font-mono text-xs font-bold tracking-widest text-accent-300">
+                      {stage.label}
+                    </span>
+                    <h3 className="mt-1.5 font-display text-2xl font-bold text-white tracking-tight leading-snug">
+                      {stage.headline}
+                    </h3>
+                    <p className="mt-2.5 text-sm text-navy-200 leading-relaxed">
+                      {stage.description}
+                    </p>
+                  </div>
 
-                <div className="flex items-center gap-2">
+                  {/* Full 16:9 Bright Natural Photograph */}
+                  <div className="relative aspect-[16/9] w-full overflow-hidden rounded-xl border border-white/15 bg-black shadow-card">
+                    <Image
+                      src={stage.image}
+                      alt={stage.alt}
+                      fill
+                      sizes="(min-width: 640px) 600px, 100vw"
+                      className="size-full object-cover object-center"
+                    />
+
+                    {/* Lightbox button on mobile */}
+                    <button
+                      type="button"
+                      onClick={() => setLightboxIndex(idx)}
+                      aria-label={`View full resolution image for ${stage.stageName}`}
+                      className="absolute right-3 top-3 z-10 flex size-8 items-center justify-center rounded-full border border-white/20 bg-navy-950/70 text-white backdrop-blur-md"
+                    >
+                      <Maximize2 className="size-3.5" aria-hidden="true" />
+                    </button>
+                  </div>
+
+                  {/* Highlights Checklist */}
+                  <ul className="grid gap-2 pt-1">
+                    {stage.highlights.map((item) => (
+                      <li key={item} className="flex items-start gap-2.5 text-xs text-navy-100">
+                        <Check className="mt-0.5 size-3.5 shrink-0 text-accent-400" strokeWidth={2.5} />
+                        <span>{item}</span>
+                      </li>
+                    ))}
+                  </ul>
+
+                  {/* Action Link */}
+                  <div className="pt-2">
+                    <Button asChild variant="accent" size="md" className="w-full sm:w-auto">
+                      <Link href={stage.href}>
+                        Explore service details
+                        <ArrowRight className="size-4" aria-hidden="true" />
+                      </Link>
+                    </Button>
+                  </div>
+                </article>
+              );
+            })}
+          </div>
+        </Container>
+      </section>
+
+      {/* =========================================================================
+          3. FULLSCREEN HIGH-RESOLUTION LIGHTBOX MODAL
+         ========================================================================= */}
+      <Dialog
+        open={lightboxIndex !== null}
+        onOpenChange={(open) => !open && setLightboxIndex(null)}
+      >
+        <DialogContent
+          hideClose
+          className="max-w-5xl overflow-hidden border-none bg-navy-950/95 p-0 text-white backdrop-blur-xl sm:rounded-2xl"
+        >
+          {lightboxIndex !== null && (
+            <>
+              <DialogTitle className="sr-only">
+                {showcaseStages[lightboxIndex].stageName} — High Resolution
+              </DialogTitle>
+
+              <div className="relative flex flex-col">
+                {/* Modal Header */}
+                <div className="flex items-center justify-between border-b border-white/10 px-6 py-4">
+                  <div className="flex items-center gap-3">
+                    <span className="font-mono text-xs font-semibold text-accent-300">
+                      {showcaseStages[lightboxIndex].step}
+                    </span>
+                    <span className="text-white/40">·</span>
+                    <span className="text-sm font-semibold text-white">
+                      {showcaseStages[lightboxIndex].stageName}
+                    </span>
+                  </div>
+
                   <button
                     type="button"
-                    onClick={handlePrev}
-                    aria-label="Previous photograph"
-                    className="flex size-8 items-center justify-center rounded-lg border border-white/20 bg-white/10 text-white transition-colors hover:bg-white/20 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-royal-500"
-                  >
-                    <ChevronLeft className="size-4" aria-hidden="true" />
-                  </button>
-                  <button
-                    type="button"
-                    onClick={handleNext}
-                    aria-label="Next photograph"
-                    className="flex size-8 items-center justify-center rounded-lg border border-white/20 bg-white/10 text-white transition-colors hover:bg-white/20 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-royal-500"
-                  >
-                    <ChevronRight className="size-4" aria-hidden="true" />
-                  </button>
-                  <button
-                    type="button"
-                    onClick={() => setIsLightboxOpen(false)}
+                    onClick={() => setLightboxIndex(null)}
                     aria-label="Close dialog"
                     className="flex size-8 items-center justify-center rounded-lg border border-white/20 bg-white/10 text-white transition-colors hover:bg-white/20 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-royal-500"
                   >
                     <X className="size-4" aria-hidden="true" />
                   </button>
                 </div>
-              </div>
 
-              {/* Natural High-Res Photograph in Full 16:9 Display */}
-              <div className="relative aspect-[16/9] w-full bg-black">
-                <Image
-                  src={activeItem.image}
-                  alt={activeItem.alt}
-                  fill
-                  sizes="100vw"
-                  className="size-full object-contain object-center"
-                  priority
-                />
-              </div>
-
-              {/* Modal Bottom Bar */}
-              <div className="flex flex-col gap-2 border-t border-white/10 px-6 py-4 sm:flex-row sm:items-center sm:justify-between">
-                <div>
-                  <p className="text-sm font-semibold text-white">
-                    {activeItem.tagline}
-                  </p>
-                  <p className="text-xs text-white/70">
-                    {activeItem.equipment}
-                  </p>
+                {/* Natural Image Canvas */}
+                <div className="relative aspect-[16/9] w-full bg-black">
+                  <Image
+                    src={showcaseStages[lightboxIndex].image}
+                    alt={showcaseStages[lightboxIndex].alt}
+                    fill
+                    sizes="100vw"
+                    className="size-full object-contain object-center"
+                    priority
+                  />
                 </div>
 
-                <Button asChild variant="accent" size="sm" className="self-start sm:self-auto">
-                  <Link href={activeItem.href}>
-                    View full service specifications
-                    <ArrowRight className="size-3.5" aria-hidden="true" />
-                  </Link>
-                </Button>
+                {/* Modal Footer */}
+                <div className="flex flex-col gap-2 border-t border-white/10 px-6 py-4 sm:flex-row sm:items-center sm:justify-between">
+                  <div>
+                    <p className="text-sm font-semibold text-white">
+                      {showcaseStages[lightboxIndex].headline}
+                    </p>
+                    <p className="text-xs text-white/70">
+                      {showcaseStages[lightboxIndex].equipment}
+                    </p>
+                  </div>
+
+                  <Button asChild variant="accent" size="sm" className="self-start sm:self-auto">
+                    <Link href={showcaseStages[lightboxIndex].href}>
+                      Explore full service
+                      <ArrowRight className="size-3.5" aria-hidden="true" />
+                    </Link>
+                  </Button>
+                </div>
               </div>
-            </div>
-          </DialogContent>
-        </Dialog>
-      </Container>
-    </Section>
+            </>
+          )}
+        </DialogContent>
+      </Dialog>
+    </>
   );
 }

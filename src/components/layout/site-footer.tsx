@@ -18,7 +18,7 @@ const columnHeadingClass =
   "text-[11px] font-semibold uppercase tracking-[0.14em] text-white/55";
 
 export function SiteFooter() {
-  const year = new Date().getFullYear();
+  const year = 2018;
 
   return (
     <footer className="bg-navy-950 text-white">

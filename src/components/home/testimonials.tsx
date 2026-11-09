@@ -54,13 +54,35 @@ export function Testimonials() {
           <SectionHeading
             eyebrow="Testimonials"
             title="Customer feedback"
-            description="We only publish feedback from real customers, with their permission, never invented quotes or ratings."
+            description={
+              testimonialsEnabled
+                ? "Verified reviews from homeowners, renters and businesses who moved with us."
+                : "We only publish feedback from real customers, with their permission, never invented quotes or ratings."
+            }
           />
         </Reveal>
 
         <Reveal delay={0.06} className="mt-10 lg:mt-12">
           {testimonialsEnabled ? (
-            <TestimonialGrid testimonials={testimonials} />
+            <div className="flex flex-col gap-8">
+              <TestimonialGrid testimonials={testimonials} />
+              <div className="flex flex-col items-center justify-between gap-4 rounded-xl border border-line bg-white p-6 shadow-card sm:flex-row">
+                <div>
+                  <p className="text-sm font-semibold text-ink sm:text-base">
+                    Ready for a straightforward, reliable move?
+                  </p>
+                  <p className="mt-0.5 text-xs text-ink-soft sm:text-sm">
+                    Get an itemised quote tailored to your properties with zero obligation.
+                  </p>
+                </div>
+                <Button variant="primary" asChild className="shrink-0">
+                  <Link href="/quote">
+                    Get a free quote
+                    <ArrowRight className="u-arrow size-4" aria-hidden="true" />
+                  </Link>
+                </Button>
+              </div>
+            </div>
           ) : (
             <EmptyState />
           )}
@@ -153,7 +175,7 @@ function TestimonialGrid({ testimonials }: { testimonials: Testimonial[] }) {
             {Array.from({ length: testimonial.rating }).map((_, index) => (
               <Star
                 key={index}
-                className="size-3.5 fill-accent-500 text-accent-500"
+                className="size-4 fill-amber-400 text-amber-400"
                 aria-hidden="true"
               />
             ))}

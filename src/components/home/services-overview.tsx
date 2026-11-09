@@ -15,12 +15,12 @@ export function ServicesOverview() {
         <Reveal>
           <SectionHeading
             eyebrow="What we do"
-            title="Every part of the move, handled by one team."
-            description="From a full house move to a single piece of furniture, each service is quoted individually with the crew, vehicle and materials set out in writing."
+            title="Comprehensive removal services."
+            description="From full house moves to single items. Itemised pricing, dedicated vehicles, and trained crews."
             action={
               <Button asChild variant="secondary" size="sm" className="group">
                 <Link href="/services">
-                  View all services
+                  All services
                   <ArrowRight className="u-arrow size-4" aria-hidden="true" />
                 </Link>
               </Button>

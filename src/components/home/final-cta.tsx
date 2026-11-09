@@ -21,8 +21,8 @@ export function FinalCta() {
           <Reveal>
             <SectionHeading
               eyebrow="Get a quote"
-              title="Tell us about the move. We will put it in writing."
-              description="Share the addresses, your date and what needs moving. We will review the details, confirm availability and send an itemised quotation with the crew and vehicle plan with no obligation to book."
+              title="Ready to plan your move?"
+              description="Share your addresses and dates. We will send an itemised quote with fixed pricing and no obligation."
               tone="inverse"
             />
 
@@ -34,7 +34,7 @@ export function FinalCta() {
                 className="group"
               >
                 <Link href="/quote">
-                  Request a quote
+                  Get a quote
                   <ArrowRight className="u-arrow size-4" aria-hidden="true" />
                 </Link>
               </Button>
@@ -49,8 +49,7 @@ export function FinalCta() {
             </div>
 
             <p className="mt-6 max-w-md text-sm leading-relaxed text-white/60">
-              No account needed. Checking availability is free and does not
-              commit you to booking.
+              Checking availability is free and non-binding.
             </p>
 
             {hasPhone || hasWhatsApp ? (

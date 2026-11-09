@@ -41,9 +41,8 @@ export default function ChecklistPage() {
             </Reveal>
             <Reveal immediate delay={0.08}>
               <p className="mt-6 max-w-2xl text-[15px] leading-relaxed text-ink-soft sm:text-base">
-                A stress-free move starts with clear planning. Track your
-                milestones from 8 weeks out through to moving day, key handovers,
-                and utility meter readings. Your progress is saved automatically.
+                Plan and track your move from 8 weeks out to moving day.
+                Progress saves automatically.
               </p>
             </Reveal>
           </div>

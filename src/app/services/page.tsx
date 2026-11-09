@@ -44,16 +44,14 @@ export default function ServicesPage() {
               </h1>
 
               <p className="mt-6 max-w-xl text-[15px] leading-relaxed text-navy-300 sm:text-base">
-                Seven services covering the whole move, from a single item to a
-                full commercial relocation. Every job is planned around your
-                property, your access and your dates, then quoted in writing
-                before you commit.
+                Complete moving solutions from single items to full commercial
+                relocations. Tailored to your property and quoted in writing.
               </p>
 
               <div className="mt-8 flex flex-wrap items-center gap-3">
                 <Button asChild variant="accent" size="lg" className="group">
                   <Link href="/quote">
-                    Get a free quote
+                    Get a quote
                     <ArrowRight className="u-arrow size-4" aria-hidden="true" />
                   </Link>
                 </Button>
@@ -64,8 +62,7 @@ export default function ServicesPage() {
               </div>
 
               <p className="mt-6 text-sm text-navy-300">
-                No obligation. Availability and pricing are confirmed in your
-                written quote.
+                No obligation. Fixed pricing confirmed in writing.
               </p>
             </Reveal>
 
@@ -88,7 +85,7 @@ export default function ServicesPage() {
 
       <ServicesCta
         title="Ready to plan your move?"
-        description="Tell us the addresses, your dates and anything that needs special care. We will confirm what is possible and send a written, itemised quote with no obligation."
+        description="Tell us your addresses and dates. We will send an itemised quote with fixed pricing and no obligation."
       />
     </>
   );

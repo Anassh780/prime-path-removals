@@ -71,7 +71,7 @@ export function Hero() {
             <div className="inline-flex items-center gap-2.5">
               <span className="h-0.5 w-6 rounded-full bg-accent-300" aria-hidden="true" />
               <span className="font-sans text-xs sm:text-[13px] font-bold uppercase tracking-[0.22em] text-accent-300">
-                Professional House Removals &amp; Storage
+                Professional Removals
               </span>
             </div>
           </Reveal>
@@ -92,8 +92,8 @@ export function Hero() {
           {/* Supporting Text */}
           <Reveal immediate delay={0.16} y={12} duration={0.45}>
             <p className="mt-6 max-w-xl text-[16px] sm:text-lg leading-relaxed text-navy-100/90 drop-shadow-xs">
-              From careful packing to safe transportation and secure storage, we
-              make every move straightforward and stress free.
+              From careful packing to safe transit, we make every move
+              straightforward and stress-free.
             </p>
           </Reveal>
 
@@ -107,7 +107,7 @@ export function Hero() {
                 className="h-12 px-8 text-base font-semibold shadow-lg transition-transform duration-150 hover:scale-[1.02] active:scale-[0.98]"
               >
                 <Link href="/quote">
-                  Get a Free Quote
+                  Get a Quote
                   <ArrowRight className="ml-2 size-4" aria-hidden="true" />
                 </Link>
               </Button>
@@ -119,7 +119,7 @@ export function Hero() {
                 className="h-12 border-white/30 bg-white/10 px-7 text-base text-white backdrop-blur-sm transition-all hover:border-white/50 hover:bg-white/20 active:translate-y-px"
               >
                 <Link href="/services">
-                  Explore Our Services
+                  Explore Services
                   <ArrowRight className="ml-2 size-4" aria-hidden="true" />
                 </Link>
               </Button>

@@ -30,8 +30,8 @@ export function WhyChoose() {
             </h2>
 
             <p className="mt-5 max-w-sm text-[15px] leading-relaxed text-ink-soft sm:text-base">
-              The details that make a move feel calm, planned before the crew
-              arrives rather than improvised on the day.
+              Calm, orderly moves planned down to access, vehicle sizing, and
+              protective materials.
             </p>
 
             <Button

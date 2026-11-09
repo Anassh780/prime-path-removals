@@ -16,7 +16,7 @@ export function Expectations() {
           <SectionHeading
             eyebrow="What you can expect"
             title="The standard behind every job"
-            description="None of these are extras or upgrades. They are how a move is run, whether it is a one bedroom flat or a warehouse relocation."
+            description="Standard procedures included on every move, regardless of property size."
           />
         </Reveal>
 

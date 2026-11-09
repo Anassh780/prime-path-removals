@@ -38,15 +38,13 @@ export default function QuotePage() {
               Live Quote &amp; Booking
             </span>
             <h1 className="mt-5 max-w-[20ch] font-display text-4xl leading-[1.05] tracking-[-0.02em] text-white sm:text-5xl lg:text-6xl">
-              Live quote &amp; pricing, built around your move
+              Get your live quote
             </h1>
           </Reveal>
           <Reveal immediate delay={0.08} y={16} className="max-w-2xl">
             <p className="mt-6 text-[15px] leading-relaxed text-navy-300 sm:text-base">
-              Enter your property size, locations and services below to view an
-              instant live estimated guide price. Submit when ready and we will
-              confirm your guaranteed fixed price in writing. No obligation to
-              book.
+              Enter your move details to see instant live pricing. We will
+              confirm your guaranteed fixed price in writing.
             </p>
           </Reveal>
         </Container>

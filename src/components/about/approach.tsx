@@ -43,7 +43,7 @@ export function Approach() {
             <SectionHeading
               eyebrow="Our approach"
               title="How a move is planned and delivered"
-              description="Every job runs through the same four stages. The scale changes; the order does not."
+              description="Four consistent stages from first enquiry to final check."
             />
           </Reveal>
           <Reveal delay={0.1} className="mt-8">
@@ -52,9 +52,8 @@ export function Approach() {
                 Working principle
               </p>
               <p className="mt-3 text-[15px] leading-relaxed text-ink-soft">
-                We would rather ask a second question than discover a problem on
-                the day. A move that is planned in detail is a move that takes
-                less time, not more.
+                Detailed preparation saves time. We confirm access, vehicle
+                capacity, and timelines in advance so move day is effortless.
               </p>
             </div>
           </Reveal>

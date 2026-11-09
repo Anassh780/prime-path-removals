@@ -29,8 +29,8 @@ export function Process() {
         <Reveal>
           <SectionHeading
             eyebrow="How it works"
-            title="Four steps from first enquiry to move day"
-            description="A clear sequence, one point of contact and nothing confirmed until you have it in writing."
+            title="How your move works"
+            description="A four-step process with written confirmation at every stage."
             tone="inverse"
           />
         </Reveal>
@@ -40,8 +40,8 @@ export function Process() {
         <Reveal delay={0.1}>
           <div className="mt-12 flex flex-col gap-4 border-t border-white/10 pt-8 sm:flex-row sm:items-center sm:justify-between">
             <p className="text-sm leading-relaxed text-navy-300">
-              Start with the addresses, your date and what needs moving. We will
-              take it from there.
+              Start with your addresses and inventory. We will take care of the
+              rest.
             </p>
             <Button
               variant="link"

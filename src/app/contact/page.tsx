@@ -45,9 +45,8 @@ export default function ContactPage() {
               </Reveal>
               <Reveal immediate delay={0.08} y={16}>
                 <p className="mt-6 max-w-xl text-[15px] leading-relaxed text-ink-soft sm:text-base">
-                  Whether you are planning a house move, an office relocation or
-                  a single item collection, tell us what you need and we will
-                  come back to you with a clear answer.
+                  Tell us what you need moved and our coordinators will respond
+                  promptly with clear answers.
                 </p>
               </Reveal>
             </div>

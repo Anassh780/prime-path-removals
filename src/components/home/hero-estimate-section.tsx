@@ -12,9 +12,9 @@ import { hasPhone, hasWhatsApp, siteConfig } from "@/config/site";
 import { formatPhoneHref, formatWhatsAppHref } from "@/lib/utils";
 
 const commitments = [
-  "Fixed written quotes with zero hidden extras",
-  "Trained moving crew with protective floor runners & furniture covers",
-  "Dedicated vehicle size & guaranteed date confirmation",
+  "Fixed written quotes with zero hidden fees",
+  "Trained crew with floor runners & furniture blankets",
+  "Guaranteed move dates & dedicated vehicles",
 ];
 
 export function HeroEstimateSection() {
@@ -31,21 +31,20 @@ export function HeroEstimateSection() {
             <Reveal>
               <div className="inline-flex items-center gap-2 rounded-full border border-accent-600/20 bg-accent-50 px-3.5 py-1 text-xs font-semibold text-accent-700">
                 <ShieldCheck className="size-3.5 text-accent-600" />
-                <span>Instant Removals Estimator</span>
+                <span>Instant Cost Estimator</span>
               </div>
             </Reveal>
 
             <Reveal delay={0.06}>
               <h2 className="mt-4 font-display text-3xl font-bold tracking-tight text-navy-950 sm:text-4xl lg:text-[2.6rem] lg:leading-[1.14]">
-                Plan Your Move with Clear, Upfront Pricing.
+                Clear, upfront moving costs.
               </h2>
             </Reveal>
 
             <Reveal delay={0.12}>
               <p className="mt-4 text-[15px] leading-relaxed text-ink-soft sm:text-base">
-                Get an immediate price guide and recommended vehicle size for your
-                move in seconds. No obligation, no sales calls, just a
-                transparent estimate tailored to your properties.
+                Get an instant price guide and vehicle sizing for your move in
+                seconds. No obligation, no sales calls.
               </p>
             </Reveal>
 

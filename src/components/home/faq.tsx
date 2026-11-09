@@ -26,7 +26,7 @@ export function Faq() {
               <SectionHeading
                 eyebrow="FAQs"
                 title="Questions, answered plainly"
-                description="The details people usually want settled before they book a move. If your question is not here, ask us directly."
+                description="Common questions about booking, pricing, and moving day."
               />
 
               <div className="mt-8 rounded-xl border border-navy-100 bg-navy-50 p-5">
@@ -37,8 +37,8 @@ export function Faq() {
                   Still have questions?
                 </p>
                 <p className="mt-1 text-sm leading-relaxed text-ink-soft">
-                  Send the details of your move and we will answer directly,
-                  without a sales script.
+                  Send your move details for direct answers with no sales
+                  pressure.
                 </p>
                 <Button variant="link" size="md" asChild className="group mt-3">
                   <Link href="/contact">

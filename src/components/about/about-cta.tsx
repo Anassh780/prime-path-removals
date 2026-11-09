@@ -29,11 +29,11 @@ export function AboutCta() {
               Next step
             </span>
             <h2 className="mt-5 font-display text-3xl leading-[1.1] tracking-[-0.02em] text-white sm:text-4xl lg:text-[2.6rem]">
-              Tell us about the move. We will put the plan in writing.
+              Ready to plan your move?
             </h2>
             <p className="mt-4 text-[15px] leading-relaxed text-white/70 sm:text-base">
-              Share the addresses, your date and what needs moving. You will
-              receive an itemised quotation, and there is no obligation to book.
+              Tell us about your property and preferred dates. Get an itemised
+              written quote with no obligation.
             </p>
           </Reveal>
 

@@ -33,15 +33,13 @@ export default function CalculatorPage() {
                 Live Price Calculator
               </span>
               <h1 className="mt-5 font-display text-4xl leading-[1.05] tracking-[-0.02em] text-white sm:text-5xl lg:text-6xl">
-                Calculate your house removal cost
+                Calculate your removal cost
               </h1>
             </Reveal>
             <Reveal immediate delay={0.08}>
               <p className="mt-6 max-w-2xl text-[15px] leading-relaxed text-navy-300 sm:text-base">
-                Use our live removals cost estimator to explore typical pricing
-                for your move. Adjust your property size, estimated travel
-                distance, property access and optional packing services to see an
-                instant itemised estimate and recommended vehicle plan.
+                Estimate pricing, crew requirements, and vehicle sizes based on
+                your property and travel distance.
               </p>
             </Reveal>
           </div>

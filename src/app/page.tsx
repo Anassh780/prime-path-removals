@@ -5,6 +5,7 @@ import { Faq } from "@/components/home/faq";
 import { FinalCta } from "@/components/home/final-cta";
 import { Hero } from "@/components/home/hero";
 import { HeroEstimateSection } from "@/components/home/hero-estimate-section";
+import { MovingShowcase } from "@/components/home/moving-showcase";
 import { Process } from "@/components/home/process";
 import { ServicesOverview } from "@/components/home/services-overview";
 import { Testimonials } from "@/components/home/testimonials";
@@ -37,6 +38,7 @@ export default function HomePage() {
       <Hero />
       <HeroEstimateSection />
       <ServicesOverview />
+      <MovingShowcase />
       <WhyChoose />
       <Process />
       <Testimonials />

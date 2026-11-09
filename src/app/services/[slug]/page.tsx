@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { Check } from "lucide-react";
@@ -42,11 +43,40 @@ export async function generateMetadata({
   });
 }
 
+const serviceSpotlightImages: Record<
+  string,
+  { src: string; caption: string; tag: string; specs: string[] }
+> = {
+  "packing-and-loading": {
+    src: "/images/service-packing.jpg",
+    tag: "Standard Procedure",
+    caption:
+      "Professional packing using double-walled cartons, quilted blankets and bubble wrap before items move an inch.",
+    specs: ["Quilted blankets", "Fragile glassware wrapping", "Itemised room labelling"],
+  },
+  "house-removals": {
+    src: "/images/service-loading.jpg",
+    tag: "Dedicated Fleet & Crew",
+    caption:
+      "Dedicated Luton removal van equipped with hydraulic tail-lift, transit load straps and a trained 2 to 3-person crew.",
+    specs: ["Hydraulic tail-lift", "Load-securing ratchet straps", "Floor and door runners"],
+  },
+  "furniture-moving": {
+    src: "/images/service-assembly.jpg",
+    tag: "Assembly Included",
+    caption:
+      "Bed frames, wardrobes and tables dismantled calmly, fixings bagged and tagged, and rebuilt in designated rooms.",
+    specs: ["Fixings bagged & tagged", "Cordless power tools on hand", "Positioned to your floorplan"],
+  },
+};
+
 export default async function ServicePage({ params }: ServicePageProps) {
   const { slug } = await params;
   const service = getService(slug);
 
   if (!service) notFound();
+
+  const spotlight = serviceSpotlightImages[slug];
 
   return (
     <>
@@ -63,6 +93,42 @@ export default async function ServicePage({ params }: ServicePageProps) {
                   description={service.description}
                 />
               </Reveal>
+
+              {spotlight && (
+                <Reveal delay={0.05} className="mt-8">
+                  <div className="group relative aspect-[16/9] w-full overflow-hidden rounded-2xl border border-line bg-navy-950 shadow-card">
+                    <Image
+                      src={spotlight.src}
+                      alt={`${service.title} in action`}
+                      fill
+                      sizes="(min-width: 1024px) 66vw, 100vw"
+                      className="size-full object-cover object-center transition-transform duration-700 ease-out group-hover:scale-105"
+                      priority
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-navy-950/95 via-navy-950/40 to-transparent" />
+                    <div className="absolute inset-x-0 bottom-0 flex flex-col gap-3 p-5 sm:p-7">
+                      <div className="inline-flex items-center gap-1.5 self-start rounded-full border border-white/20 bg-navy-950/80 px-3 py-1 text-xs font-semibold text-white backdrop-blur-md">
+                        <span className="size-1.5 rounded-full bg-accent-400" />
+                        <span className="text-accent-300">{spotlight.tag}</span>
+                      </div>
+                      <p className="max-w-2xl text-base font-medium leading-relaxed text-white sm:text-lg">
+                        {spotlight.caption}
+                      </p>
+                      <div className="flex flex-wrap gap-2 pt-1">
+                        {spotlight.specs.map((spec) => (
+                          <span
+                            key={spec}
+                            className="inline-flex items-center gap-1.5 rounded-md border border-white/15 bg-white/10 px-2.5 py-1 text-xs font-medium text-white/95 backdrop-blur-md"
+                          >
+                            <Check className="size-3 text-accent-300" strokeWidth={2.5} aria-hidden="true" />
+                            {spec}
+                          </span>
+                        ))}
+                      </div>
+                    </div>
+                  </div>
+                </Reveal>
+              )}
 
               <Reveal delay={0.06} className="mt-12">
                 <div className="grid gap-10 sm:grid-cols-2 lg:gap-12">

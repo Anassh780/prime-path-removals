@@ -96,31 +96,33 @@ export default async function ServicePage({ params }: ServicePageProps) {
 
               {spotlight && (
                 <Reveal delay={0.05} className="mt-8">
-                  <div className="group relative aspect-[16/9] w-full overflow-hidden rounded-2xl border border-line bg-navy-950 shadow-card">
-                    <Image
-                      src={spotlight.src}
-                      alt={`${service.title} in action`}
-                      fill
-                      sizes="(min-width: 1024px) 66vw, 100vw"
-                      className="size-full object-cover object-center transition-transform duration-700 ease-out group-hover:scale-105"
-                      priority
-                    />
-                    <div className="absolute inset-0 bg-gradient-to-t from-navy-950/95 via-navy-950/40 to-transparent" />
-                    <div className="absolute inset-x-0 bottom-0 flex flex-col gap-3 p-5 sm:p-7">
-                      <div className="inline-flex items-center gap-1.5 self-start rounded-full border border-white/20 bg-navy-950/80 px-3 py-1 text-xs font-semibold text-white backdrop-blur-md">
-                        <span className="size-1.5 rounded-full bg-accent-400" />
-                        <span className="text-accent-300">{spotlight.tag}</span>
+                  <div className="flex flex-col gap-3">
+                    <div className="relative aspect-[16/9] w-full overflow-hidden rounded-2xl border border-line bg-surface-subtle shadow-card">
+                      <Image
+                        src={spotlight.src}
+                        alt={`${service.title} in action`}
+                        fill
+                        sizes="(min-width: 1024px) 66vw, 100vw"
+                        className="size-full object-cover object-center"
+                        priority
+                      />
+                      <div className="absolute left-4 top-4 z-10 flex items-center gap-2 rounded-full border border-line/80 bg-white/90 px-3 py-1 text-xs font-semibold text-ink shadow-xs backdrop-blur-md">
+                        <span className="size-1.5 rounded-full bg-accent-600" />
+                        <span>{spotlight.tag}</span>
                       </div>
-                      <p className="max-w-2xl text-base font-medium leading-relaxed text-white sm:text-lg">
+                    </div>
+
+                    <div className="flex flex-col gap-3 rounded-xl border border-line bg-surface p-4 sm:p-5 shadow-xs">
+                      <p className="text-sm font-medium leading-relaxed text-ink sm:text-[15px]">
                         {spotlight.caption}
                       </p>
-                      <div className="flex flex-wrap gap-2 pt-1">
+                      <div className="flex flex-wrap gap-2 border-t border-line pt-3">
                         {spotlight.specs.map((spec) => (
                           <span
                             key={spec}
-                            className="inline-flex items-center gap-1.5 rounded-md border border-white/15 bg-white/10 px-2.5 py-1 text-xs font-medium text-white/95 backdrop-blur-md"
+                            className="inline-flex items-center gap-1.5 rounded-md border border-line bg-surface-subtle px-2.5 py-1 text-xs font-medium text-ink-soft"
                           >
-                            <Check className="size-3 text-accent-300" strokeWidth={2.5} aria-hidden="true" />
+                            <Check className="size-3 text-accent-600" strokeWidth={2.5} aria-hidden="true" />
                             {spec}
                           </span>
                         ))}
